@@ -41,9 +41,6 @@ const VerticalCenterAlign = styled.div`
     font-size: 1.38316rem;
     font-family: '-apple-system';
     @media (max-width: 414px) {
-      position: absolute;
-      right: 100px;
-      bottom: 30px;
     }
   }
 
@@ -116,6 +113,9 @@ const Chains = styled.div`
   flex-direction: row;
   justify-content: flex-end;
   width: 95%;
+  @media (max-width: 414px) {
+    display: none;
+  }
 `
 
 export default class Index extends React.Component {
