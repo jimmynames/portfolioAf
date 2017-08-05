@@ -22,6 +22,7 @@ const ContactUl = styled.ul`
   list-style: none;
   text-decoration: none;
   margin: 0;
+  padding: 0;
   height: 90vh;
   overflow: scroll;
   overflow: -moz-scrollbars-vertical;
