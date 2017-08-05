@@ -12,6 +12,7 @@ const HTML = styled.html`
 
 const Body = styled.body`
   background: black;
+  margin: 0;
 `
 
 const App = styled.div`

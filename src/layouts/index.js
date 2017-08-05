@@ -16,7 +16,6 @@ const Layout = styled.div`
   display: flex;
   flex-direcrion: row;
   background-color: black;
-  font-size: 12px !important;
 
   @media (max-width: 693px) {
     flex-direction: column;
@@ -77,6 +76,7 @@ const PageRender = styled.div`
 const NavMenu = styled.ul`
   text-decoration: none;
   margin: 0;
+  padding: 0;
   @media (max-width: 693px) {
 
   }
