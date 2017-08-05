@@ -4,8 +4,6 @@ import styled from 'styled-components'
 import Helmet from "react-helmet"
 import logo from './logo.png'
 
-import heart from './heart.gif'
-
 const Page = styled.div`
   width: 100%;
   height: 100%;
@@ -95,19 +93,19 @@ const CubeList = styled.ul`
   }
 `
 const CubeListItem = styled.li`
-  font-size: 1.8em;
+  font-size: 18px;
   line-height: 0px;
   padding: 0.3em 0;
   overflow: visible;
   width: 33vw;
   a {
-    font-size: 1.8em;
+    font-size: 18px;
     line-height: 0px;
   }
 `
 
 const Chains = styled.div`
-  position: absolute;
+  position: fixed;
   bottom: 0;
   display: flex;
   flex-direction: row;
@@ -125,7 +123,7 @@ export default class Index extends React.Component {
         <AboutContainer>
           <h1>My names James but most people call me Jimmy</h1>
           <h2>I live on the internet under the alias of 👔<i>Jimmy✨Names</i>👽</h2>
-          <VerticalCenterAlign about><H3 about>I'm a Front-end Web Developer and I work at </H3><a href="https://ruin.studio"><RuinLogo src={logo}/>Studio</a></VerticalCenterAlign>
+          <VerticalCenterAlign about><H3 about>I'm a Front-end Web Developer and I work at </H3><a href="https://ruin.studio" target="_blank" rel="noopener"><RuinLogo src={logo}/>Studio</a></VerticalCenterAlign>
           <h4>I love scss🤙🏻, react⚛️ & good coffee💯☕️</h4>
           <CubeContainer>
             <h4>I also dig</h4>
@@ -169,9 +167,6 @@ export default class Index extends React.Component {
               </CubeList>
             </Cube>
           </CubeContainer>
-          <Chains>
-            <img src={heart} />
-          </Chains>
         </AboutContainer>
       </Page>
     )
