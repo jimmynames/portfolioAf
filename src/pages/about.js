@@ -30,7 +30,8 @@ const VerticalCenterAlign = styled.div`
   align-items: center;
   align-content: center;
   flex-direction: row;
-  padding-bottom: ${props => props.about ? '1.45rem' : null };
+  -webkit-margin-before: 0.83em;
+  -webkit-margin-after: 0.83em;
   position: relative;
   a {
     display: flex;
@@ -85,13 +86,13 @@ const Cube = styled.div`
 `
 
 const CubeList = styled.ul`
-  font-family: '-apple-system';
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
   margin: 0;
   list-style-type: none;
   padding: 0.3rem;
   li {
     a {
-      font-size: 1.8em;
+      font-size: 1.8rem;
       line-height: 0px;
     }
   }

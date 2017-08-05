@@ -7,7 +7,7 @@ import styled, { injectGlobal, css } from 'styled-components';
 
 const HTML = styled.html`
   background: black !important;
-  font-family: '-apple-system';
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
 `
 
 const Body = styled.body`
@@ -41,7 +41,7 @@ export default class HTML extends React.Component {
     }
 
     return (
-      <HTML lang="en">
+      <HTML lang="en" style="background:black;">
         <head>
           <meta charSet="utf-8" />
           <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
@@ -52,7 +52,7 @@ export default class HTML extends React.Component {
           {this.props.headComponents}
           {css}
         </head>
-        <Body>
+        <Body style="margin:0;">
 
           <App
             id="___gatsby"
