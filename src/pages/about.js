@@ -85,36 +85,15 @@ const CubeList = styled.ul`
   margin: 0;
   list-style-type: none;
   padding: 0.3rem;
-  li {
-    a {
-      font-size: 1.8rem;
-      line-height: 0px;
-    }
-  }
 `
 const CubeListItem = styled.li`
   font-size: 18px;
-  line-height: 0px;
+  line-height: 18px;
   padding: 0.3em 0;
   overflow: visible;
   width: 33vw;
-  a {
-    font-size: 18px;
-    line-height: 0px;
-  }
 `
 
-const Chains = styled.div`
-  position: fixed;
-  bottom: 0;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  width: 95%;
-  @media (max-width: 414px) {
-    display: none;
-  }
-`
 
 export default class Index extends React.Component {
   render() {

@@ -1,7 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import Helmet from "react-helmet"
-import styled, { injectGlobal, css } from 'styled-components';
+import styled, { injectGlobal } from 'styled-components';
 // import { TypographyStyle } from "react-typography"
 // import typography from "./utils/typography"
 
