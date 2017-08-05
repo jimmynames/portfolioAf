@@ -77,13 +77,11 @@ const NavMenu = styled.ul`
   text-decoration: none;
   margin: 0;
   padding: 0;
-  @media (max-width: 693px) {
-
-  }
+  @media (max-width: 693px) {  }
 `
 
 const NavItem = styled.li`
-  font-size: 1.6em;
+  font-size: 18px;
   color: white;
   padding: 0.666em;
   font-family: '-apple-system', Helvetica;
