@@ -8,11 +8,13 @@ const Page = styled.div`
   width: 100%;
   height: 100%;
   padding: 5px;
+  box-sizing: border-box;
 `
 
 const AboutContainer = styled.div`
   color: white;
   padding: 0.75rem;
+  box-sizing: border-box;
   position: relative;
   height: 100%;
   width: 100%;
@@ -85,6 +87,7 @@ const CubeList = styled.ul`
   margin: 0;
   list-style-type: none;
   padding: 0.3rem;
+  box-sizing: border-box;
 `
 const CubeListItem = styled.li`
   font-size: 18px;
