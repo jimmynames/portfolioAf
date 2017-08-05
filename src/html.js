@@ -17,6 +17,7 @@ const Body = styled.body`
 
 const App = styled.div`
   background: black;
+  box-sizing: border-box;
 `
 
 const BUILD_TIME = new Date().getTime()

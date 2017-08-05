@@ -41,6 +41,7 @@ const Container = styled.section`
   height: 100vh;
   width: 20%;
   background-color: black;
+  box-sizing: border-box;
   @media (max-width: 693px) {
     width: 100%;
     height: 30vh;
