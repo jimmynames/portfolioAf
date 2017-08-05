@@ -10,6 +10,7 @@ const Page = styled.div`
   width: 100%;
   height: 100%;
   padding: 5px;
+  box-sizing: border-box;
 `
 
 const ContactContainer = styled.div`
@@ -33,6 +34,7 @@ const ContactLi = styled.li`
   padding: 0.75rem;
   text-decoration: none;
   margin: 0;
+  box-sizing: border-box;
   a {
     text-decoration: none;
     color: white;
