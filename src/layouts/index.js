@@ -56,6 +56,7 @@ const Container = styled.section`
 const PaddingMobile = styled.div`
 @media (max-width: 414px) {
   padding: 5px;
+  box-sizing: border-box;
 }
 `
 
@@ -66,7 +67,7 @@ const PageRender = styled.div`
   background-color: black;
   @media (max-width: 693px) {
     width: 100%;
-    height: 70vh;
+    height: 100vh;
   }
   @media (max-width: 414px) {
     width: 100%;
