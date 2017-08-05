@@ -38,7 +38,7 @@ const VerticalCenterAlign = styled.div`
     align-items: center;
     color: white;
     text-decoration: none;
-    font-size: 1.38316rem;
+    font-size: 18px;
     font-family: '-apple-system';
     @media (max-width: 414px) {
     }
