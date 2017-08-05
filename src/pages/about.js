@@ -70,7 +70,7 @@ const CubeContainer = styled.div`
 `
 
 const Cube = styled.div`
-  height: 5vh;
+  height: 30px;
   width: 33.33%;
   margin-left: 1rem;
   border: 2px dotted white;
