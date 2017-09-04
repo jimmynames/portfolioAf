@@ -1,6 +1,6 @@
 import React from "react"
 import Link from "gatsby-link"
-import styled from 'styled-components'
+import styled, { injectGlobal, css } from 'styled-components';
 import Helmet from "react-helmet"
 import welcome from './welcome.gif'
 
