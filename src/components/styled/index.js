@@ -14,7 +14,7 @@ injectGlobal`
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     color: white;
-
+    margin: 0;
   }
   a {
     color: white;

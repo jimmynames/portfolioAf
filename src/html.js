@@ -6,7 +6,6 @@ import styled, { injectGlobal } from 'styled-components';
 // import typography from "./utils/typography"
 
 const HTML = styled.html`
-  background: pink !important;
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
 `
 
