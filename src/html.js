@@ -3,14 +3,19 @@ import PropTypes from "prop-types"
 import Helmet from "react-helmet"
 import styled, { injectGlobal } from 'styled-components';
 // import { TypographyStyle } from "react-typography"
-// import typography from "./utils/typography"
+import typography from "./utils/typography"
 
 const HTML = styled.html`
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  background: black;
+
+  body {
+    background: black !important;
+  }
 `
 
 const Body = styled.body`
-  background: black;
+  background: black !important;
   margin: 0;
 `
 
@@ -35,13 +40,14 @@ export default class HTML extends React.Component {
         <style
           dangerouslySetInnerHTML={{
             __html: require("!raw!../public/styles.css"),
+            'background': 'black !important;'
           }}
         />
       )
     }
 
     return (
-      <HTML lang="en" style="background:black;">
+      <HTML lang="en" style="background:black !important;">
         <head>
           <meta charSet="utf-8" />
           <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
@@ -53,7 +59,7 @@ export default class HTML extends React.Component {
           {this.props.headComponents}
           {css}
         </head>
-        <Body style="margin:0;">
+        <Body style="background: black !important">
 
           <App
             id="___gatsby"

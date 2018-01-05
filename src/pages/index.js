@@ -16,7 +16,7 @@ const Page = styled.div`
 
 const AboutContainer = styled.div`
   color: white;
-  padding: 0.75rem;
+  ${'' /* padding: 0.75rem; */}
 `
 
 const ScrollLeft = styled.div`
@@ -30,6 +30,7 @@ const ScrollLeft = styled.div`
     margin: 0;
     line-height: 50px;
     text-align: center;
+    font-family: '-apple-system';
     right: 0;
     /* Starting position */
     -moz-transform:translateX(200%);
@@ -67,6 +68,7 @@ const Welcome = styled.img`
 
 const P = styled.p`
   color: lightgreen;
+  font-size: 12px;
 `
 
 export default class Index extends React.Component {
@@ -76,7 +78,8 @@ export default class Index extends React.Component {
         <AboutContainer>
           <ScrollLeft>
             <P>
-              Welcome to my website, please enjoy your stay // Welcome to my website, please enjoy your stay // Welcome to my website, please enjoy your stay // Welcome to my website, please enjoy your stay // Welcome to my website, please enjoy your stay // Welcome to my website, please enjoy your stay // Welcome to my website, please enjoy your stay // Welcome to my website, please enjoy your stay // Welcome to my website, please enjoy your stay // Welcome to my website, please enjoy your stay // Welcome to my website, please enjoy your stay // Welcome to my website, please enjoy your stay // Welcome to my website, please enjoy your stay // Welcome to my website, please enjoy your stay //
+              Welcome to my website, please enjoy your stay welcome to my website, please enjoy your stay welcome to my website, please enjoy your stay  welcome to my website, please enjoy your stay  welcome to my website, please enjoy your stay  welcome to my website, please enjoy your stay welcome to my website, please enjoy your stay welcome to my website, please enjoy your stay welcome to my website, please enjoy your stay welcome to my website, please enjoy your stay welcome to my website, please enjoy your stay welcome to my website, please enjoy your stay welcome to my website, please enjoy your stay  welcome to my website, please enjoy your stay
+              welcome to my website, please enjoy your stay welcome to my website, please enjoy your stay welcome to my website, please enjoy your stay  welcome to my website, please enjoy your stay  welcome to my website, please enjoy your stay  welcome to my website, please enjoy your stay welcome to my website, please enjoy your stay welcome to my website, please enjoy your stay welcome to my website, please enjoy your stay welcome to my website, please enjoy your stay welcome to my website, please enjoy your stay welcome to my website, please enjoy your stay welcome to my website, please enjoy your stay  welcome to my website, please enjoy your stay
             </P>
           </ScrollLeft>
 

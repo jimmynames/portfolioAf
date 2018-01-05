@@ -6,13 +6,12 @@ import logo from './logo.png'
 
 const Page = styled.div`
   width: 100%;
-  height: 100%;
+  height: auto;
   box-sizing: border-box;
 `
 
 const AboutContainer = styled.div`
   color: white;
-  padding: 0.75rem;
   box-sizing: border-box;
   position: relative;
   height: 100%;
@@ -70,12 +69,14 @@ const Cube = styled.div`
   height: 30px;
   width: 33.33%;
   margin-left: 1rem;
-  border: 2px dotted white;
+  border: 2px dotted blue;
   overflow: scroll;
   &:hover {
-    background: white;
+    background: blue;
+    border: 2px dotted white;
+    transition: all 0.2s ease;
     ul {
-      color: black;
+      color: white;
       transition: color 0.3s ease;
     }
   }

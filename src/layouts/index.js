@@ -8,15 +8,15 @@ import styled, { injectGlobal, css } from 'styled-components';
 import logo from './jn.gif'
 
 const Background = styled.div`
-  background: black;
   height: 100%;
   width: 100%;
+  background: black;
 `
 
 const Layout = styled.div`
   display: flex;
   flex-direcrion: row;
-  background-color: black;
+  ${'' /* background-color: black; */}
 
   @media (max-width: 693px) {
     flex-direction: column;
@@ -66,6 +66,7 @@ const PageRender = styled.div`
   width: 80%;
   height: 100vh;
   background-color: black;
+  padding: 0.75rem;
   @media (max-width: 693px) {
     width: 100%;
     height: auto;
