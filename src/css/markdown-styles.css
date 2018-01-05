@@ -1,6 +1,7 @@
+require('normalize-css');
+
 body, html {
   margin: 0;
-  background: pink;
 }
 
 body, html {
@@ -16,11 +17,6 @@ a {
   &:hover, &:focus, &:visited {
     color: white;
   }
-}
-
-* {
-margin: 0;
-background: pink !important;
 }
 
 ul {

@@ -23,11 +23,6 @@ injectGlobal`
     }
   }
 
-  * {
-  margin: 0;
-  background: pink !important;
-  }
-
   ul {
     -webkit-margin-before: 0;
     -webkit-margin-after: 0;
