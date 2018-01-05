@@ -37,6 +37,9 @@ const ContactLi = styled.li`
   a {
     text-decoration: none;
     color: white;
+    h1 {
+      margin: 0;
+    }
   }
   &:hover {
     background: blue;
@@ -54,6 +57,10 @@ const Gallery = styled.div`
   align-items: center;
   justify-content: space-between;
   overflow-x: scroll;
+
+  @media (max-width: 616px) {
+    display: none;
+  }
 `
 
 const Window = styled.img`

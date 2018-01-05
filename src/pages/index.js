@@ -8,6 +8,10 @@ const Page = styled.div`
   width: 100%;
   height: 100%;
   overflow: hidden;
+
+  @media (max-width: 616px ) {
+    height: 75vh;
+  }
 `
 
 const AboutContainer = styled.div`
@@ -26,11 +30,12 @@ const ScrollLeft = styled.div`
     margin: 0;
     line-height: 50px;
     text-align: center;
+    right: 0;
     /* Starting position */
     -moz-transform:translateX(200%);
     -webkit-transform:translateX(200%);
     transform:translateX(200%);
-    animation: scroll-left 30s linear infinite;
+    animation: scroll-left 50s linear infinite;
 
       @-moz-keyframes scroll-left {
       0% { -moz-transform: translateX(100%); }

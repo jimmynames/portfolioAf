@@ -20,6 +20,7 @@ const Layout = styled.div`
 
   @media (max-width: 693px) {
     flex-direction: column;
+    height: 100vh;
   }
 `
 const Wrap = styled.div`
@@ -56,7 +57,6 @@ const Container = styled.section`
 
 const PaddingMobile = styled.div`
 @media (max-width: 414px) {
-  padding: 5px;
   box-sizing: border-box;
 }
 `
@@ -68,11 +68,11 @@ const PageRender = styled.div`
   background-color: black;
   @media (max-width: 693px) {
     width: 100%;
-    height: 100vh;
+    height: auto;
   }
   @media (max-width: 414px) {
     width: 100%;
-    height: 100vh;
+    height: auto;
   }
 `
 
@@ -81,6 +81,15 @@ const NavMenu = styled.ul`
   margin: 0;
   padding: 0;
   @media (max-width: 693px) {  }
+
+  a {
+    text-decoration: none;
+    color: white;
+  }
+
+  a:hover {
+    color: white;
+  }
 `
 
 const NavItem = styled.li`
@@ -100,6 +109,7 @@ const NavItem = styled.li`
     background-position: 100% 0;
     background-size: 200% 100%;
     transition: all .2s ease-in;
+    width: 95%;
   a {
     text-decoration: none;
     color: white;
@@ -134,8 +144,7 @@ const NavItem = styled.li`
   }
   &:hover {
    padding-left: 1em;
-   color: #006600;
-
+   color: black;
    background-position: 0 0;
     a {
       color: black;
@@ -209,9 +218,9 @@ export default class Template extends React.Component {
             <Link to="/"><Logo src={logo} /></Link>
 
             <NavMenu className="Nav Menu">
-              <NavItem><Link to="/about/">About.i</Link></NavItem>
-              <NavItem><Link to="/me/">Me.png</Link></NavItem>
-              <NavItem>Cv.pdf<a href='' download /></NavItem>
+              <Link to="/about/"><NavItem>About.i</NavItem></Link>
+              <Link to="/me/"><NavItem>Me.png</NavItem></Link>
+              <a href='' download><NavItem>Cv.pdf</NavItem></a>
             </NavMenu>
           </PaddingMobile>
         </Container>
