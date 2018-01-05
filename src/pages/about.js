@@ -7,7 +7,6 @@ import logo from './logo.png'
 const Page = styled.div`
   width: 100%;
   height: 100%;
-  padding: 5px;
   box-sizing: border-box;
 `
 

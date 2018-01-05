@@ -7,7 +7,6 @@ import { rhythm } from "../utils/typography"
 import styled, { injectGlobal, css } from 'styled-components';
 import logo from './jn.gif'
 
-
 const Background = styled.div`
   background: black;
   height: 100%;

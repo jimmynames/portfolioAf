@@ -2,6 +2,7 @@ require('normalize-css');
 
 body, html {
   margin: 0;
+  background: black;
 }
 
 body, html {
