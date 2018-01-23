@@ -1,8 +1,6 @@
 import React from "react"
-import Link from "gatsby-link"
-import styled, { injectGlobal, css } from 'styled-components';
-import Helmet from "react-helmet"
-import welcome from './welcome.gif'
+import styled from 'styled-components'
+import welcome from './../gif/welcome.gif'
 
 const Page = styled.div`
   width: 100%;
@@ -82,7 +80,6 @@ export default class Index extends React.Component {
               welcome to my website, please enjoy your stay welcome to my website, please enjoy your stay welcome to my website, please enjoy your stay  welcome to my website, please enjoy your stay  welcome to my website, please enjoy your stay  welcome to my website, please enjoy your stay welcome to my website, please enjoy your stay welcome to my website, please enjoy your stay welcome to my website, please enjoy your stay welcome to my website, please enjoy your stay welcome to my website, please enjoy your stay welcome to my website, please enjoy your stay welcome to my website, please enjoy your stay  welcome to my website, please enjoy your stay
             </P>
           </ScrollLeft>
-
           <Welcome src={welcome} />
         </AboutContainer>
       </Page>
