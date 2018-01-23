@@ -1,8 +1,8 @@
 import React from "react"
 import styled from 'styled-components';
-import me from './images/me.png'
-import plant from './images/plantlife.png'
-import fish from './images/fish.png'
+import me from './../images/me.png'
+import plant from './../images/plantlife.png'
+import fish from './../images/fish.png'
 
 const Page = styled.div`
   width: 100%;
