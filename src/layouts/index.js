@@ -1,9 +1,9 @@
+require('normalize.css')
+
 import React from "react"
 import PropTypes from "prop-types"
-require('normalize.css')
 import Link from "gatsby-link"
 import Helmet from "react-helmet"
-import { rhythm } from "../utils/typography"
 import styled  from 'styled-components'
 import logo from './../gif/jn.gif'
 
