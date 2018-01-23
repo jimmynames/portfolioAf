@@ -1,8 +1,7 @@
 import React from "react"
-import Link from "gatsby-link"
 import styled from 'styled-components'
-import Helmet from "react-helmet"
-import logo from './logo.png'
+import logo from './../images/logo.png'
+// import Page from './../components/Page'
 
 const Page = styled.div`
   width: 100%;

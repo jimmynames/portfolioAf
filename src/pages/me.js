@@ -1,10 +1,8 @@
 import React from "react"
-import Link from "gatsby-link"
-import Helmet from "react-helmet"
-import styled, { injectGlobal, css } from 'styled-components';
-import me from './me.png'
-import plant from './plantlife.png'
-import fish from './fish.png'
+import styled from 'styled-components';
+import me from './images/me.png'
+import plant from './images/plantlife.png'
+import fish from './images/fish.png'
 
 const Page = styled.div`
   width: 100%;
@@ -94,10 +92,9 @@ export default class Index extends React.Component {
                  <Gallery>
                    <Window src={me} />
                    <Window src={plant} />
-                    <Window src={fish} />
+                   <Window src={fish} />
                  </Gallery>
                </ContactLi>
-
            </ContactUl>
         </ContactContainer>
       </Page>

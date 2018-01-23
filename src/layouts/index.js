@@ -4,8 +4,8 @@ require('normalize.css')
 import Link from "gatsby-link"
 import Helmet from "react-helmet"
 import { rhythm } from "../utils/typography"
-import styled, { injectGlobal, css } from 'styled-components';
-import logo from './jn.gif'
+import styled  from 'styled-components'
+import logo from './../gif/jn.gif'
 
 const Background = styled.div`
   height: 100%;
