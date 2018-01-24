@@ -1,6 +1,16 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
+    title: `Jimmy Names Codes`,
   },
-  plugins: [`gatsby-plugin-react-helmet`, `gatsby-plugin-styled-components`]
+  plugins: [
+    `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-styled-components`,
+    {
+    resolve: `gatsby-plugin-google-analytics`,
+    options: {
+      trackingId: "UA-112975901-1",
+      anonymize: true,
+    },
+  }
+  ]
 }

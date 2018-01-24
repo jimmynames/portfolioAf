@@ -1,9 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import Helmet from "react-helmet"
-import styled, { injectGlobal } from 'styled-components';
-// import { TypographyStyle } from "react-typography"
-import typography from "./utils/typography"
+import styled from 'styled-components';
 
 const HTML = styled.html`
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
@@ -55,11 +53,9 @@ export default class HTML extends React.Component {
             name="viewport"
             content="width=device-width, initial-scale=1.0"
           />
-          <script src='https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.css'></script>
           {this.props.headComponents}
-          {css}
         </head>
-        <Body style="background: black !important">
+        <Body>
 
           <App
             id="___gatsby"
