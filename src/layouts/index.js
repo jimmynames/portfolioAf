@@ -221,7 +221,7 @@ export default class Template extends React.Component {
             <NavMenu className="Nav Menu">
               <Link to="/about/"><NavItem>About.i</NavItem></Link>
               <Link to="/me/"><NavItem>Me.png</NavItem></Link>
-              <a href='' download><NavItem>Cv.pdf</NavItem></a>
+              <a href=''><NavItem>Cv.pdf</NavItem></a>
             </NavMenu>
           </PaddingMobile>
         </Container>
