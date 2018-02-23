@@ -36,8 +36,9 @@ const Logo = styled.img`
   }
 `
 
-const Container = styled.section`
+const Nav = styled.section`
   width: 20%;
+  position: fixed;
   box-sizing: border-box;
   @media (max-width: 693px) {
     width: 100%;
@@ -76,6 +77,7 @@ const PageRender = styled.div`
 
 const NavMenu = styled.ul`
   text-decoration: none;
+  width: 100%;
   margin: 0;
   padding: 0;
   @media (max-width: 693px) {  }
@@ -107,7 +109,7 @@ const NavItem = styled.li`
     background-position: 100% 0;
     background-size: 200% 100%;
     transition: all .2s ease-in;
-    width: 95%;
+    width: 100%;
   a {
     text-decoration: none;
     color: white;
@@ -211,6 +213,7 @@ const theme = {
 
 const TransitionContainer = styled.div`
   width: 78vw;
+  left: 20%;
 `
 
 class TransitionHandler extends React.Component {
@@ -239,17 +242,18 @@ const TemplateWrapper = ({ children, location }) => (
           ]}
         />
 
-        <Container className="Nav">
+        <Nav className="Nav">
           <PaddingMobile>
             <Link to="/" exact><Logo src={logo} /></Link>
 
             <NavMenu className="Menu">
-              <Link to="/about/"><NavItem>About.i</NavItem></Link>
-              <Link to="/me/"><NavItem>Me.png</NavItem></Link>
+              <Link to="/about/"><NavItem>About.info</NavItem></Link>
+              <Link to="/me/"><NavItem>Me.href</NavItem></Link>
+              <Link to="/projects/"><NavItem>Work.life</NavItem></Link>
               <a href=''><NavItem>Cv.pdf</NavItem></a>
             </NavMenu>
           </PaddingMobile>
-        </Container>
+        </Nav>
 
         <TransitionGroup>
           <CSSTransition

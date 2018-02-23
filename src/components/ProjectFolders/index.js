@@ -10,21 +10,23 @@ const ProjectFolders = styled.div`
   height: 100%;
   flex-wrap: wrap;
   align-items: flex-start;
-  align-content: center;
+  align-content: flex-flex-start;
+  padding-top: 80px;
 `
 
 export default class ProjectFoldersComp extends React.Component {
   render () {
     return (
       <ProjectFolders>
-        <FolderComp projectTitle='Aural Youth' info='' src='' src2x='' />
-        <FolderComp projectTitle='SR Design' info='' src='' src2x='' />
-        <FolderComp projectTitle='Ruin.studio Works' info='' src='' src2x='' />
-        <FolderComp projectTitle='Legends Barber' info='' src='' src2x='' />
-        <FolderComp projectTitle='LEFT' info='' src='' src2x='' />
-        <FolderComp projectTitle='Codepen Experiments' info='' src='' src2x='' />
-        <FolderComp projectTitle='Digital Zine[0]' info='' src='' src2x='' />
-        <FolderComp projectTitle='First Website Lel' info='' src='' src2x='' />
+        <FolderComp projectTitle='Aural Youth' info='' projectLink='#' src='' src2x='' />
+        <FolderComp projectTitle='SR Design' info='' projectLink='#' src='' src2x='' />
+        <FolderComp projectTitle='Ruin.studio Works' info='' projectLink='#' src='' src2x='' />
+        <FolderComp projectTitle='Legends Barber' info='' projectLink='#' src='' src2x='' />
+        <FolderComp projectTitle='LEFT' info='' src='' projectLink='#' src2x='' />
+        <FolderComp projectTitle='Digital Zine[0]' info='' projectLink='#' src='' src2x='' />
+        <FolderComp projectTitle='Checkm8s.net' info='' projectLink='#' src='' src2x='' />
+        <FolderComp projectTitle='Codepen Experiments' info='' projectLink='#' src='' src2x='' />
+        <FolderComp projectTitle='First Website Lel' info='' projectLink='#' src='' src2x='' />
       </ProjectFolders>
     )
   }

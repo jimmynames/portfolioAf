@@ -15,6 +15,10 @@ const FolderHolder = styled.div`
      img {
          top: -50px;
        }
+
+      p {
+        color: blue;
+      }
      }
 `
 // .folder-holder a:hover .project-image {

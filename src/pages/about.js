@@ -7,6 +7,8 @@ const Page = styled.div`
   width: 100%;
   height: auto;
   box-sizing: border-box;
+  padding-top: 0.75rem;
+  padding-left: 0.75rem;
 `
 
 const AboutContainer = styled.div`
