@@ -116,13 +116,16 @@ const CubeListItem = styled.li`
   }
 `
 
+const H1 = styled.h1`
+  margin-top: 0;
+`
 
 export default class Index extends React.Component {
   render() {
     return (
       <Page>
         <AboutContainer>
-          <h1>My names James but most people call me Jimmy</h1>
+          <H1>My names James but most people call me Jimmy</H1>
           <h2>I live on the internet under the alias of 👔<i>Jimmy✨Names</i>👽</h2>
           <VerticalCenterAlign about><H3 about>I'm a Front-end Web Developer and I work at </H3><a href="https://ruin.studio" target="_blank" rel="noopener"><RuinLogo src={logo}/>Studio</a></VerticalCenterAlign>
           <h4>I fuck with Css-in-js/Sass/Vanilla Css™, React.js⚛️ & SVGs💖</h4>
@@ -136,31 +139,44 @@ export default class Index extends React.Component {
                 <CubeListItem>blah millennial blah stuff</CubeListItem>
                 <CubeListItem>plants</CubeListItem>
                 <CubeListItem>sunsets</CubeListItem>
+                <CubeListItem>challenging myself</CubeListItem>
                 <CubeListItem>stories</CubeListItem>
+                <CubeListItem>style</CubeListItem>
+                <CubeListItem>performing</CubeListItem>
                 <CubeListItem>emoji use</CubeListItem>
                 <CubeListItem>candles</CubeListItem>
                 <CubeListItem>fashion</CubeListItem>
+                <CubeListItem>youtube dj'ing</CubeListItem>
                 <CubeListItem>writing</CubeListItem>
                 <CubeListItem>memes</CubeListItem>
+                <CubeListItem>lighting</CubeListItem>
                 <CubeListItem>swimming</CubeListItem>
                 <CubeListItem>literature</CubeListItem>
+                <CubeListItem>drawing</CubeListItem>
+                <CubeListItem>comfort</CubeListItem>
                 <CubeListItem>tinder lol</CubeListItem>
                 <CubeListItem>sesh</CubeListItem>
                 <CubeListItem>culture</CubeListItem>
                 <CubeListItem>wine</CubeListItem>
+                <CubeListItem>purple</CubeListItem>
+                <CubeListItem>teams/packs/gangs</CubeListItem>
                 <CubeListItem>graffiti</CubeListItem>
+                <CubeListItem>wrestling</CubeListItem>
                 <CubeListItem>things</CubeListItem>
                 <CubeListItem>learning</CubeListItem>
+                <CubeListItem>brutalism</CubeListItem>
                 <CubeListItem>irony</CubeListItem>
                 <CubeListItem>good design</CubeListItem>
                 <CubeListItem>weed i guess</CubeListItem>
+                <CubeListItem>meditation</CubeListItem>
                 <CubeListItem>good people</CubeListItem>
                 <CubeListItem>eating out</CubeListItem>
                 <CubeListItem>exposed brick, plaster..</CubeListItem>
                 <CubeListItem>making jokes</CubeListItem>
                 <CubeListItem>work weirdly</CubeListItem>
+                <CubeListItem>good energy</CubeListItem>
                 <CubeListItem>chilling</CubeListItem>
-                <CubeListItem>pale ales</CubeListItem>
+                <CubeListItem>occasional beer</CubeListItem>
                 <CubeListItem>dancing</CubeListItem>
                 <CubeListItem>nature</CubeListItem>
                 <CubeListItem>code duh</CubeListItem>

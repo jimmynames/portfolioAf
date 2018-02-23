@@ -87,7 +87,7 @@ export default class Index extends React.Component {
                <ContactLi><a href="https://www.codecademy.com/jimmynames" target="_blank"><h1>Codecademy - /jimmynames</h1></a></ContactLi>
                <ContactLi><a href="https://www.freecodecamp.org/jimmynames" target="_blank"><h1>freeCodeCamp - /jimmynames</h1></a></ContactLi>
                <ContactLi><a href="https://jimmynames.tumblr.com/" target="_blank"><h1>tumblr - //jimmynames.</h1></a></ContactLi>
-               <ContactLi><a href="https://soundcloud.com/somepeoplecallmejames" target="_blank"><h1>Soundcloud - /somepeoplecallmejames</h1></a></ContactLi>
+               <ContactLi><a href="https://soundcloud.com/namesnames" target="_blank"><h1>Soundcloud - /namesnames</h1></a></ContactLi>
                <ContactLi gallery>
                  <Gallery>
                    <Window src={me} />

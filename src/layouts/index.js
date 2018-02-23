@@ -60,8 +60,10 @@ const PaddingMobile = styled.div`
 
 const PageRender = styled.div`
   width: auto;
-  height: auto;
-  padding: 0.75rem;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 1.35rem;
+  padding-left: 4rem;
   @media (max-width: 693px) {
     width: 100%;
     height: auto;
@@ -239,7 +241,7 @@ const TemplateWrapper = ({ children, location }) => (
 
         <Container className="Nav">
           <PaddingMobile>
-            <Link to="/"><Logo src={logo} /></Link>
+            <Link to="/" exact><Logo src={logo} /></Link>
 
             <NavMenu className="Menu">
               <Link to="/about/"><NavItem>About.i</NavItem></Link>
