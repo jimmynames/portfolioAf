@@ -78,7 +78,7 @@ const CubeContainer = styled.div`
 
 const Cube = styled.div`
   height: 30px;
-  width: 33.33%;
+  width: 300px;
   margin-left: 1rem;
   border: 2px solid white;
   overflow:hidden;

@@ -5,18 +5,16 @@ import PropTypes from "prop-types"
 import Link from "gatsby-link"
 import Helmet from "react-helmet"
 import logo from './../gif/jn.gif'
-import styled, { ThemeProvider, injectGlobal } from 'styled-components'
 
-const Background = styled.div`
-  height: 100%;
-  width: 100%;
-  background: black;
-`
+import withRouter from 'react-router-dom/withRouter'
+import styled, { ThemeProvider, injectGlobal } from 'styled-components'
+import { TransitionGroup, CSSTransition } from 'react-transition-group'
+import './animations.css'
 
 const Layout = styled.div`
   display: flex;
   flex-direcrion: row;
-  ${'' /* background-color: black; */}
+  width: 100%;
 
   @media (max-width: 693px) {
     flex-direction: column;
@@ -40,9 +38,7 @@ const Logo = styled.img`
 `
 
 const Container = styled.section`
-  height: 100vh;
   width: 20%;
-  background-color: black;
   box-sizing: border-box;
   @media (max-width: 693px) {
     width: 100%;
@@ -56,6 +52,7 @@ const Container = styled.section`
 `
 
 const PaddingMobile = styled.div`
+  height: 100%;
 @media (max-width: 414px) {
   box-sizing: border-box;
 }
@@ -63,9 +60,7 @@ const PaddingMobile = styled.div`
 
 
 const PageRender = styled.div`
-  width: 80%;
-  height: 100vh;
-  background-color: black;
+  width: 79vw;
   padding: 0.75rem;
   @media (max-width: 693px) {
     width: 100%;
@@ -210,17 +205,31 @@ const theme = {
   background: 'pink'
 }
 
-export default class Template extends React.Component {
-  static propTypes = {
-    children: PropTypes.func,
+
+
+const TransitionContainer = styled.div`
+  width: 100%;
+`
+
+class TransitionHandler extends React.Component {
+  shouldComponentUpdate (nextProps, nextState) {
+    return this.props.location.pathname === window.location.pathname
   }
 
-  render() {
+  render () {
+    const {children} = this.props
     return (
+      <TransitionContainer className='transition-container'>
+        {children}
+      </TransitionContainer>
+    )
+  }
+}
+
+const TemplateWrapper = ({ children, location }) => (
       <ThemeProvider className="theme" theme={theme}>
-      <Background>
       <Wrap>
-        <Layout className="Nav-PageRender-Flex-Container">
+        <Layout className='Nav-PageRender-Flex-Container'>
 
         <Helmet
           title="jimmyNames"
@@ -242,14 +251,27 @@ export default class Template extends React.Component {
           </PaddingMobile>
         </Container>
 
-        <PageRender className='PageRender'>
-          {this.props.children()}
-        </PageRender>
+        <TransitionGroup>
+          <CSSTransition
+              key={location.pathname}
+              classNames="example"
+              timeout={{ enter: 1000, exit: 300 }}
+            >
+              <TransitionHandler location={location}>
 
+        <PageRender id="page-wrap" className='PageRender'>
+          {children()}
+        </PageRender>
+      </TransitionHandler>
+    </CSSTransition>
+</TransitionGroup>
       </Layout>
     </Wrap>
-    </Background>
     </ThemeProvider>
-    )
-  }
+)
+
+TemplateWrapper.propTypes = {
+  children: PropTypes.func
 }
+
+export default withRouter(TemplateWrapper)

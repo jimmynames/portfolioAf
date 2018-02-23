@@ -11,6 +11,7 @@
     "gatsby-plugin-styled-components": "^1.0.1",
     "normalize-css": "^2.3.1",
     "normalize.css": "^7.0.0",
+    "react-transition-group": "^2.2.1",
     "react-typography": "^0.15.10",
     "typography": "^0.15.12",
     "typography-breakpoint-constants": "^0.14.0",
