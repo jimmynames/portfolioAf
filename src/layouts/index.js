@@ -11,7 +11,10 @@ import styled, { ThemeProvider, injectGlobal } from 'styled-components'
 import { TransitionGroup, CSSTransition } from 'react-transition-group'
 import './animations.css'
 
-const Layout = styled.div`
+const WrapLayout = styled.div`
+	max-width: 1200px;
+  margin: 0 auto;
+
   display: flex;
   flex-direcrion: row;
   width: 100%;
@@ -20,10 +23,6 @@ const Layout = styled.div`
     flex-direction: column;
     height: 100vh;
   }
-`
-const Wrap = styled.div`
-	max-width: 1200px;
-  margin: 0 auto;
 `
 
 const Logo = styled.img`
@@ -60,7 +59,8 @@ const PaddingMobile = styled.div`
 
 
 const PageRender = styled.div`
-  width: 79vw;
+  width: auto;
+  height: auto;
   padding: 0.75rem;
   @media (max-width: 693px) {
     width: 100%;
@@ -208,7 +208,7 @@ const theme = {
 
 
 const TransitionContainer = styled.div`
-  width: 100%;
+  width: 78vw;
 `
 
 class TransitionHandler extends React.Component {
@@ -228,9 +228,7 @@ class TransitionHandler extends React.Component {
 
 const TemplateWrapper = ({ children, location }) => (
       <ThemeProvider className="theme" theme={theme}>
-      <Wrap>
-        <Layout className='Nav-PageRender-Flex-Container'>
-
+        <WrapLayout className='Nav-PageRender-Flex-Container Also-Wrap'>
         <Helmet
           title="jimmyNames"
           meta={[
@@ -265,8 +263,7 @@ const TemplateWrapper = ({ children, location }) => (
       </TransitionHandler>
     </CSSTransition>
 </TransitionGroup>
-      </Layout>
-    </Wrap>
+    </WrapLayout>
     </ThemeProvider>
 )
 
