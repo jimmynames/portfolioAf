@@ -28,7 +28,7 @@ const ScrollLeft = styled.div`
     margin: 0;
     line-height: 50px;
     text-align: center;
-    font-family: '-apple-system';
+    font-family: 'Open Sans Condensed';
     right: 0;
     /* Starting position */
     -moz-transform:translateX(200%);

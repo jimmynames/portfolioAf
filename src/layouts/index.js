@@ -4,8 +4,8 @@ import React from "react"
 import PropTypes from "prop-types"
 import Link from "gatsby-link"
 import Helmet from "react-helmet"
-import styled  from 'styled-components'
 import logo from './../gif/jn.gif'
+import styled, { ThemeProvider, injectGlobal } from 'styled-components'
 
 const Background = styled.div`
   height: 100%;
@@ -97,7 +97,7 @@ const NavItem = styled.li`
   font-size: 18px;
   color: white;
   padding: 0.666em;
-  font-family: '-apple-system', Helvetica;
+  font-family: 'Open Sans Condensed', Helvetica;
   list-style-type: none;
   text-decoration: none;
   text-align: left;
@@ -119,7 +119,7 @@ const NavItem = styled.li`
     padding: 0.1333em;
     margin: 0;
   }
-  &:before {
+  ${'' /* &:before {
   content: "";
   position: absolute;
   width: 100%;
@@ -136,7 +136,7 @@ const NavItem = styled.li`
   transform: scaleX(0);
   -webkit-transition: all 0.3s ease-in-out 0s;
   transition: all 0.3s ease-in-out 0s;
-}
+} */}
 
   &:hover,
   &:visited,
@@ -195,6 +195,18 @@ const NavItem = styled.li`
 }
 `
 
+injectGlobal`
+  h1, h2, h3, h4, h5, p, a {
+    font-family: 'Open Sans Condensed', sans-serif;
+  }
+`
+
+const theme = {
+	header: '40px',
+	copy: '20px',
+  background: 'pink'
+}
+
 export default class Template extends React.Component {
   static propTypes = {
     children: PropTypes.func,
@@ -202,9 +214,10 @@ export default class Template extends React.Component {
 
   render() {
     return (
+      <ThemeProvider className="theme" theme={theme}>
       <Background>
       <Wrap>
-        <Layout className="Layout Nav">
+        <Layout className="Nav-PageRender-Flex-Container">
 
         <Helmet
           title="jimmyNames"
@@ -214,11 +227,11 @@ export default class Template extends React.Component {
           ]}
         />
 
-        <Container className="LayoutContainer">
+        <Container className="Nav">
           <PaddingMobile>
             <Link to="/"><Logo src={logo} /></Link>
 
-            <NavMenu className="Nav Menu">
+            <NavMenu className="Menu">
               <Link to="/about/"><NavItem>About.i</NavItem></Link>
               <Link to="/me/"><NavItem>Me.png</NavItem></Link>
               <a href=''><NavItem>Cv.pdf</NavItem></a>
@@ -226,13 +239,14 @@ export default class Template extends React.Component {
           </PaddingMobile>
         </Container>
 
-        <PageRender className='Page Render'>
+        <PageRender className='PageRender'>
           {this.props.children()}
         </PageRender>
 
       </Layout>
     </Wrap>
     </Background>
+    </ThemeProvider>
     )
   }
 }

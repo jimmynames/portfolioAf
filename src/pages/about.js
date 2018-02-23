@@ -36,7 +36,7 @@ const VerticalCenterAlign = styled.div`
     color: white;
     text-decoration: none;
     font-size: 18px;
-    font-family: '-apple-system';
+    font-family: 'Open Sans Condensed';
     @media (max-width: 414px) {
     }
   }
@@ -82,7 +82,7 @@ const Cube = styled.div`
 `
 
 const CubeList = styled.ul`
-  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: 'Open Sans Condensed', sans-serif;
   margin: 0;
   list-style-type: none;
   padding: 0.3rem;

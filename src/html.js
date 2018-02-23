@@ -3,22 +3,11 @@ import PropTypes from "prop-types"
 import Helmet from "react-helmet"
 import styled from 'styled-components';
 
-const HTML = styled.html`
-  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-  background: black;
+const HTML = styled.html``
 
-  body {
-    background: black !important;
-  }
-`
-
-const Body = styled.body`
-  background: black !important;
-  margin: 0;
-`
+const Body = styled.body``
 
 const App = styled.div`
-  background: black;
   box-sizing: border-box;
 `
 
