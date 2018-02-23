@@ -103,9 +103,9 @@ const NavItem = styled.li`
   text-align: left;
   margin: 1.5em 0;
   background-image: linear-gradient(to right,
-                                      #CCFF33,
-                                      #CCFF33 50%,
-                                      transparent 50%,
+                                      blue,
+                                      blue 50%,
+                                      transparent 80%,
                                       transparent);
     background-position: 100% 0;
     background-size: 200% 100%;

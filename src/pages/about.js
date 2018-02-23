@@ -36,8 +36,18 @@ const VerticalCenterAlign = styled.div`
     color: white;
     text-decoration: none;
     font-size: 18px;
-    font-family: 'Open Sans Condensed';
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-weight: 700;
+    border: 2px solid black;
+    padding-right: 2px;
+    img {
+      padding-right: 3px;
+    }
     @media (max-width: 414px) {
+    }
+    &:hover {
+      background: blue;
+      border: 2px solid blue;
     }
   }
 
@@ -58,9 +68,11 @@ const CubeContainer = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
+  align-items: flex-start;
   justify-content: flex-start;
   h4 {
     margin: 0;
+    padding-top: 8px;
   }
 `
 
@@ -68,12 +80,16 @@ const Cube = styled.div`
   height: 30px;
   width: 33.33%;
   margin-left: 1rem;
-  border: 2px dotted blue;
-  overflow: scroll;
+  border: 2px solid white;
+  overflow:hidden;
+  overflow-y:auto;
+  transition: height 0.3s ease-in-out;
   &:hover {
     background: blue;
-    border: 2px dotted white;
+    border: 2px solid blue;
     transition: all 0.2s ease;
+    height: 60px;
+
     ul {
       color: white;
       transition: color 0.3s ease;
@@ -87,6 +103,7 @@ const CubeList = styled.ul`
   list-style-type: none;
   padding: 0.3rem;
   box-sizing: border-box;
+  padding-bottom: 33px;
 `
 const CubeListItem = styled.li`
   font-size: 18px;
@@ -94,6 +111,9 @@ const CubeListItem = styled.li`
   padding: 0.3em 0;
   overflow: visible;
   width: 33vw;
+  &:first-child {
+    padding-top: 0;
+  }
 `
 
 
@@ -105,7 +125,7 @@ export default class Index extends React.Component {
           <h1>My names James but most people call me Jimmy</h1>
           <h2>I live on the internet under the alias of 👔<i>Jimmy✨Names</i>👽</h2>
           <VerticalCenterAlign about><H3 about>I'm a Front-end Web Developer and I work at </H3><a href="https://ruin.studio" target="_blank" rel="noopener"><RuinLogo src={logo}/>Studio</a></VerticalCenterAlign>
-          <h4>I love scss🤙🏻, react⚛️ & good coffee💯☕️</h4>
+          <h4>I fuck with Css-in-js/Sass/Vanilla Css™, React.js⚛️ & SVGs💖</h4>
           <CubeContainer>
             <h4>I also dig</h4>
             <Cube>
@@ -144,7 +164,7 @@ export default class Index extends React.Component {
                 <CubeListItem>dancing</CubeListItem>
                 <CubeListItem>nature</CubeListItem>
                 <CubeListItem>code duh</CubeListItem>
-                <CubeListItem>aspirational dreams of becoming a 🦄</CubeListItem>
+                {/* <CubeListItem>aspirational dreams of becoming a 🦄</CubeListItem> */}
               </CubeList>
             </Cube>
           </CubeContainer>
