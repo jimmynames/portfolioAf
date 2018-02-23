@@ -27,8 +27,9 @@ const ScrollLeft = styled.div`
     height: 100%;
     margin: 0;
     line-height: 50px;
+    font-size: 46px;
     text-align: center;
-    font-family: 'Open Sans Condensed';
+    font-family: 'Open Sans Condensed', sans-serif;
     right: 0;
     /* Starting position */
     -moz-transform:translateX(200%);

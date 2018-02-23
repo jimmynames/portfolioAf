@@ -196,6 +196,9 @@ const NavItem = styled.li`
 `
 
 injectGlobal`
+  body {
+    background: black;
+  }
   h1, h2, h3, h4, h5, p, a {
     font-family: 'Open Sans Condensed', sans-serif;
   }
