@@ -12,8 +12,8 @@ const SlideshowContent = styled.p`
   left: 0;
   top: 0;
   height: 100%;
-  width: 7666px;
-  animation: moveSlideshow 96.6s linear infinite;
+  width: 17666px;
+  animation: moveSlideshow 196.6s linear infinite;
   margin: 0;
   line-height: 50px;
   font-size: 46px;
@@ -41,6 +41,12 @@ export default class SlideshowComp extends React.Component {
           <SlideshowContent>Welcome to my website, please enjoy your stay.. HTML
             CSS _Styling.scss vanilla.js $Jquery Cross-browser Compatability Svg Retina Gulp Webpack UX import React from 'react' React.Native
             Responsive UI Agile REST HTTP Gatsby Nunjucks API User Testing Grunt xCode Pair Programming Wordpress PHP CMS Someone with the job title Recruiter has viewed your profile
+            Welcome to my website, please enjoy your stay.. HTML
+              CSS _Styling.scss vanilla.js $Jquery Cross-browser Compatability Svg Retina Gulp Webpack UX import React from 'react' React.Native
+              Responsive UI Agile REST HTTP Gatsby Nunjucks API User Testing Grunt xCode Pair Programming Wordpress PHP CMS Someone with the job title Recruiter has viewed your profile
+              Welcome to my website, please enjoy your stay.. HTML
+                CSS _Styling.scss vanilla.js $Jquery Cross-browser Compatability Svg Retina Gulp Webpack UX import React from 'react' React.Native
+                Responsive UI Agile REST HTTP Gatsby Nunjucks API User Testing Grunt xCode Pair Programming Wordpress PHP CMS Someone with the job title Recruiter has viewed your profile
           </SlideshowContent>
         </Slideshow>
       // </SlideshowAbsolute>

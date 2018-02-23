@@ -13,11 +13,11 @@ const Page = styled.div`
   }
 `
 
-export default class Index extends React.Component {
+export default class Projects extends React.Component {
   render () {
     return (
       <Page>
-        <SlideshowComp />
+        <ProjectFolderComp />
       </Page>
     )
   }

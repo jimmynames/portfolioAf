@@ -40,6 +40,7 @@ const VerticalCenterAlign = styled.div`
     font-weight: 700;
     border: 2px solid black;
     padding-right: 2px;
+    transition: all 0.3s ease-in-out;
     img {
       padding-right: 3px;
     }
