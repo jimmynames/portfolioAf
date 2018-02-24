@@ -123,13 +123,19 @@ const H1 = styled.h1`
   margin-top: 0;
 `
 
+const H2 = styled.h2`
+  i {
+    padding-right: 5px;
+  }
+`
+
 export default class Index extends React.Component {
   render() {
     return (
       <Page>
         <AboutContainer>
           <H1>My names James but most people call me Jimmy</H1>
-          <h2>I live on the internet under the alias of 👔<i>Jimmy✨Names</i>👽</h2>
+          <H2>I live on the internet under the alias of 👽<i>Names</i>👔</H2>
           <VerticalCenterAlign about><H3 about>I'm a Front-end Web Developer and I work at </H3><a href="https://ruin.studio" target="_blank" rel="noopener"><RuinLogo src={logo}/>Studio</a></VerticalCenterAlign>
           <h4>I fuck with Css-in-js/Sass/Vanilla Css™, React.js⚛️ & SVGs💖</h4>
           <CubeContainer>
