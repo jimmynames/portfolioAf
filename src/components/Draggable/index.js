@@ -2,34 +2,43 @@ import React from 'react'
 import styled from 'styled-components'
 import Draggable from 'react-draggable'
 
-import chains from './../../gif/chains.gif'
-
-const Container = styled.div`
-  width: 100%;
-  height: 100%;
-  position: relative;
-
-  div {
-    padding: 1em;
-  }
-
-  img {
-    user-select: none;
-  }
-`
-
-const Random = () => {
-  return (Math.floor((Math.random() * 100) + 1))
-}
+// const DraggableContainer = styled.div`
+//   width: 100%;
+//   height: 100%;
+//   position: relative;
+//
+//   div {
+//     padding: 1em;
+//   }
+//
+//   img {
+//     user-select: none;
+//   }
+// `
 
 export default class DraggableComp extends React.Component {
+  // constructor () {
+  //   super()
+  // }
+  // componentWillMount = () => {
+  //     var number = Math.floor((Math.random() * 666) + 1)
+  //     console.log ('number>>', number)
+  //     return number
+  // }
+  Random () {
+    var number = Math.floor((Math.random() * 666) + 1)
+    console.log ('number>>', number)
+    return number
+  }
   render () {
     return (
-      <Container>
-        <Draggable bounds='parent' style={{position: 'absolute', bottom: Random(), right: Random()}}>
-            <img src={chains} draggable='false' />
+
+        <Draggable bounds='parent'>
+          <div style={{position: 'absolute', bottom: this.Random(), right: this.Random()}}>
+            <img src={this.props.src} draggable='false' />
+          </div>
         </Draggable>
-      </Container>
+
     )
   }
 }

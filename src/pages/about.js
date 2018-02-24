@@ -141,19 +141,25 @@ export default class Index extends React.Component {
                 <CubeListItem>art..</CubeListItem>
                 <CubeListItem>blah millennial blah stuff</CubeListItem>
                 <CubeListItem>plants</CubeListItem>
+                <CubeListItem>muted youtube videos</CubeListItem>
                 <CubeListItem>sunsets</CubeListItem>
                 <CubeListItem>challenging myself</CubeListItem>
                 <CubeListItem>stories</CubeListItem>
                 <CubeListItem>style</CubeListItem>
                 <CubeListItem>performing</CubeListItem>
                 <CubeListItem>emoji use</CubeListItem>
+                <CubeListItem>instagram</CubeListItem>
                 <CubeListItem>candles</CubeListItem>
+                <CubeListItem>croissants</CubeListItem>
                 <CubeListItem>fashion</CubeListItem>
                 <CubeListItem>youtube dj'ing</CubeListItem>
                 <CubeListItem>writing</CubeListItem>
                 <CubeListItem>memes</CubeListItem>
+                <CubeListItem>color: orange</CubeListItem>
                 <CubeListItem>lighting</CubeListItem>
                 <CubeListItem>swimming</CubeListItem>
+                <CubeListItem>dumplings</CubeListItem>
+                <CubeListItem>internet culture</CubeListItem>
                 <CubeListItem>literature</CubeListItem>
                 <CubeListItem>drawing</CubeListItem>
                 <CubeListItem>comfort</CubeListItem>
@@ -161,6 +167,7 @@ export default class Index extends React.Component {
                 <CubeListItem>sesh</CubeListItem>
                 <CubeListItem>culture</CubeListItem>
                 <CubeListItem>wine</CubeListItem>
+                <CubeListItem>fruit</CubeListItem>
                 <CubeListItem>purple</CubeListItem>
                 <CubeListItem>teams/packs/gangs</CubeListItem>
                 <CubeListItem>graffiti</CubeListItem>
@@ -179,6 +186,7 @@ export default class Index extends React.Component {
                 <CubeListItem>work weirdly</CubeListItem>
                 <CubeListItem>good energy</CubeListItem>
                 <CubeListItem>chilling</CubeListItem>
+                <CubeListItem>healthy eating</CubeListItem>
                 <CubeListItem>occasional beer</CubeListItem>
                 <CubeListItem>dancing</CubeListItem>
                 <CubeListItem>nature</CubeListItem>
