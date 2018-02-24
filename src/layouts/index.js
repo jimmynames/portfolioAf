@@ -21,8 +21,18 @@ const WrapLayout = styled.div`
 
   @media (max-width: 693px) {
     flex-direction: column;
-    height: 100vh;
+    ${'' /* height: 100vh; */}
   }
+`
+
+
+const TransitionContainer = styled.div`
+  width: 78vw;
+  left: 20%;
+	@media (max-width: 693px) {
+		width: 100%;
+    left: 0;
+	}
 `
 
 const PageRender = styled.div`
@@ -31,15 +41,17 @@ const PageRender = styled.div`
   box-sizing: border-box;
   padding: 1.35rem;
   padding-left: 4rem;
+	width: 78vw;
   @media (max-width: 693px) {
     width: 100%;
     height: auto;
+		padding: 0;
   }
   @media (max-width: 414px) {
     width: 100%;
     height: auto;
   }
-  background: lightyellow;
+  ${'' /* background: lightyellow; */}
 `
 
 injectGlobal`
@@ -57,12 +69,6 @@ const theme = {
   background: 'pink'
 }
 
-
-
-const TransitionContainer = styled.div`
-  width: 78vw;
-  left: 20%;
-`
 
 class TransitionHandler extends React.Component {
   shouldComponentUpdate (nextProps, nextState) {

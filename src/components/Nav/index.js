@@ -7,15 +7,14 @@ const NavComp = styled.section`
   width: 20%;
   position: fixed;
   box-sizing: border-box;
+  overflow: hidden;
   @media (max-width: 693px) {
     width: 100%;
-    height: 30vh;
     padding: 0.75em;
+    position: relative;
   }
   @media (max-width: 414px) {
-    height: 25vh;
   }
-background: pink;
 `
 
 
@@ -63,6 +62,7 @@ const NavItem = styled.li`
   text-decoration: none;
   text-align: left;
   margin: 1.5em 0;
+  ${'' /* linear-gradient(to right, transparent, red 50%, transparent 90%, transparent) */}
   background-image: linear-gradient(to right,
                                       blue,
                                       blue 50%,
