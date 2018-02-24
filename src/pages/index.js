@@ -3,6 +3,7 @@ import styled from 'styled-components'
 
 import SlideshowComp from './../components/Slider'
 import DraggableComp from './../components/Draggable'
+import DownloadComp from './../components/Download'
 
 import chains from './../gif/chains.gif'
 import chess from './../gif/chess.gif'
@@ -46,6 +47,7 @@ export default class Index extends React.Component {
     return (
       <Page>
         <SlideshowComp />
+        <DownloadComp />
         <DraggableContainer>
           <DraggableComp src={chains} />
           {/* <DraggableComp src={chess} />

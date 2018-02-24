@@ -259,7 +259,7 @@ const TemplateWrapper = ({ children, location }) => (
           <CSSTransition
               key={location.pathname}
               classNames="example"
-              timeout={{ enter: 1000, exit: 300 }}
+              timeout={{ enter: 666, exit: 333 }}
             >
               <TransitionHandler location={location}>
 
