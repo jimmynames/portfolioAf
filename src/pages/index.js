@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 import SlideshowComp from './../components/Slider'
-import ProjectFolderComp from './../components/ProjectFolders'
+import DraggableComp from './../components/Draggable'
 
 const Page = styled.div`
   width: 100%;
@@ -18,6 +18,7 @@ export default class Index extends React.Component {
     return (
       <Page>
         <SlideshowComp />
+        <DraggableComp />
       </Page>
     )
   }
