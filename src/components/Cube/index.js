@@ -29,7 +29,7 @@ const Cube = styled.div`
     height: 60px;
 
     ul {
-      color: ${({theme}) => theme.color.white};
+      color: ${({theme}) => theme.color.black};
       transition: color 0.3s ease;
     }
   }
@@ -51,7 +51,6 @@ const CubeList = styled.ul`
 
 const CubeListItem = styled.li`
   font-size: 18px;
-  color: ${({theme}) => theme.color.white};
   line-height: 18px;
   padding: 0.3em 0;
   overflow: visible;

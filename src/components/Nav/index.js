@@ -45,7 +45,6 @@ const NavMenu = styled.ul`
 
   a {
     text-decoration: none;
-    color: ${({theme}) => theme.color.white};
   }
 
   a:hover {
@@ -55,7 +54,6 @@ const NavMenu = styled.ul`
 
 const NavItem = styled.li`
   font-size: 18px;
-  color: ${({theme}) => theme.color.white};
   padding: 0.666em;
   font-family: 'Open Sans Condensed', Helvetica;
   list-style-type: none;
@@ -74,7 +72,6 @@ const NavItem = styled.li`
     width: 100%;
   a {
     text-decoration: none;
-    color: ${({theme}) => theme.color.white};
   }
   @media (max-width: 693px) {
     padding: 0.1333em;

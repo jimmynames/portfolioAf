@@ -52,7 +52,7 @@ const ContactLi = styled.li`
   transition: background 1.666s ease;
   a {
     text-decoration: none;
-    color: ${({theme}) => theme.color.white};
+    ${'' /* color: ${({theme}) => theme.color.white}; */}
     transition: all .1s ease-out;
     h1 {
       margin: 0;

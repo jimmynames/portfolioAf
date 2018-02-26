@@ -18,7 +18,6 @@ const SlideshowContent = styled.p`
   line-height: 50px;
   font-size: 46px;
   font-family: 'Open Sans Condensed', sans-serif;
-  color: ${({theme}) => theme.color.white};
   opacity: 0.1;
   transform: translate3d(0, 0, 0);
   ${'' /* @keyframes slideshow {

@@ -45,7 +45,6 @@ const VerticalCenterAlign = styled.div`
   a {
     display: flex;
     align-items: center;
-    color: ${({theme}) => theme.color.white};
     text-decoration: none;
     font-size: 18px;
     font-family: 'Open Sans Condensed', sans-serif;
@@ -59,8 +58,8 @@ const VerticalCenterAlign = styled.div`
     @media (max-width: 414px) {
     }
     &:hover {
-      background: blue;
-      border: 2px solid blue;
+      background: ${({theme}) => theme.color.blue};;
+      border: 2px solid ${({theme}) => theme.color.blue};;
     }
   }
 

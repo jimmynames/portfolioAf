@@ -64,7 +64,7 @@ injectGlobal`
   body {
     background: ${theme.color.black};
   }
-  h1, h2, h3, h4, h5, p, a {
+  h1, h2, h3, h4, h5, p, a, ul, li {
     font-family: 'Open Sans Condensed', sans-serif;
     color: ${theme.color.white};
   }
