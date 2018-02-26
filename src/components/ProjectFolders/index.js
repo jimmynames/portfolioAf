@@ -3,6 +3,8 @@ import styled from 'styled-components'
 
 import FolderComp from './../../components/Folder'
 
+import skel from './../../gif/skel.gif'
+
 const ProjectFolders = styled.div`
   display: flex;
   flex-direction: row;
@@ -18,7 +20,7 @@ export default class ProjectFoldersComp extends React.Component {
   render () {
     return (
       <ProjectFolders>
-        <FolderComp projectTitle='Aural Youth' info='' projectLink='#' src='' src2x='' />
+        <FolderComp projectTitle='Aural Youth' info='' projectLink='#' src={skel} src2x='' />
         <FolderComp projectTitle='SR Design' info='' projectLink='#' src='' src2x='' />
         <FolderComp projectTitle='Ruin.studio Works' info='' projectLink='#' src='' src2x='' />
         <FolderComp projectTitle='Legends Barber' info='' projectLink='#' src='' src2x='' />

@@ -1,5 +1,4 @@
 import React from 'react'
-import styled from 'styled-components'
 import Draggable from 'react-draggable'
 
 // const DraggableContainer = styled.div`
@@ -27,18 +26,16 @@ export default class DraggableComp extends React.Component {
   // }
   Random () {
     var number = Math.floor((Math.random() * 666) + 1)
-    console.log ('number>>', number)
+    console.log('number>>', number)
     return number
   }
   render () {
     return (
-
-        <Draggable bounds='parent'>
-          <div style={{position: 'absolute', bottom: this.Random(), right: this.Random()}}>
-            <img src={this.props.src} draggable='false' />
-          </div>
-        </Draggable>
-
+      <Draggable bounds='parent'>
+        <div style={{position: 'absolute', zIndex: this.props.zIndex, bottom: this.Random(), right: this.Random()}}>
+          <img src={this.props.src} draggable='false' />
+        </div>
+      </Draggable>
     )
   }
 }

@@ -1,6 +1,6 @@
-import React from "react"
-import PropTypes from "prop-types"
-import Helmet from "react-helmet"
+import React from 'react'
+import PropTypes from 'prop-types'
+import Helmet from 'react-helmet'
 import styled from 'styled-components';
 
 const HTML = styled.html``
@@ -15,18 +15,18 @@ const BUILD_TIME = new Date().getTime()
 
 export default class HTML extends React.Component {
   static propTypes = {
-    body: PropTypes.string,
+    body: PropTypes.string
   }
 
   render() {
     const head = Helmet.rewind()
 
     let css
-    if (process.env.NODE_ENV === "production") {
+    if (process.env.NODE_ENV === 'production') {
       css = (
         <style
           dangerouslySetInnerHTML={{
-            __html: require("!raw!../public/styles.css"),
+            __html: require('!raw!../public/styles.css'),
             'background': 'black !important;'
           }}
         />
@@ -34,20 +34,20 @@ export default class HTML extends React.Component {
     }
 
     return (
-      <HTML lang="en" style="background:black !important;">
+      <HTML lang='en' style='background:black !important;'>
         <head>
-          <meta charSet="utf-8" />
-          <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+          <meta charSet='utf-8' />
+          <meta httpEquiv='X-UA-Compatible' content='IE=edge' />
           <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1.0"
+            name='viewport'
+            content='width=device-width, initial-scale=1.0'
           />
           {this.props.headComponents}
         </head>
         <Body>
 
           <App
-            id="___gatsby"
+            id='___gatsby'
             dangerouslySetInnerHTML={{ __html: this.props.body }}
           />
 

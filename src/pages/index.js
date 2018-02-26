@@ -30,13 +30,18 @@ const DraggableContainer = styled.div`
   width: 100%;
   height: 100%;
   position: relative;
-
+  overflow: hidden;
+  z-index: 0;
   div {
     padding: 1em;
   }
 
   img {
     user-select: none;
+  }
+
+  .heart {
+    z-index: 1;
   }
 `
 
@@ -46,18 +51,18 @@ export default class Index extends React.Component {
       <Page>
         <SlideshowComp />
         <DraggableContainer>
-          <DraggableComp src={chains} />
-          <DraggableComp src={chess} />
-          <DraggableComp src={dove} />
-          <DraggableComp src={gang} />
-          <DraggableComp src={heart} />
-          <DraggableComp src={ice} />
-          <DraggableComp src={newgif} />
-          <DraggableComp src={omni} />
-          <DraggableComp src={ying} />
-          <DraggableComp src={yang} />
-          <DraggableComp src={skel} />
-          <DraggableComp src={para} />
+          <DraggableComp src={chains} zIndex='3' />
+          <DraggableComp src={chess} zIndex='1' />
+          <DraggableComp src={dove} zIndex='2' />
+          <DraggableComp src={gang} zIndex='2' />
+          <DraggableComp src={ice} zIndex='2' />
+          <DraggableComp src={newgif} zIndex='4' />
+          <DraggableComp src={omni} zIndex='2' />
+          <DraggableComp src={ying} zIndex='2' />
+          <DraggableComp src={yang} zIndex='2' />
+          <DraggableComp src={para} zIndex='1' />
+          <DraggableComp src={skel} zIndex='-10' />
+          <DraggableComp src={heart} zIndex='-10' />
         </DraggableContainer>
       </Page>
     )

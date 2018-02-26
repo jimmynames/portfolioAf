@@ -1,7 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-import Draggable from 'react-draggable'
-
 
 const DownloadPopup = styled.div`
   height: 90%;
@@ -31,9 +29,7 @@ export default class DownloadComp extends React.Component {
   // }
   render () {
     return (
-        <DownloadPopup>
-        </DownloadPopup>
-
+      <DownloadPopup />
     )
   }
 }

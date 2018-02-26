@@ -66,7 +66,7 @@ const ContactLi = styled.li`
   }
   &:hover {
     background: blue;
-    background: ${props => props.gallery ? 'black' : null };
+    background: ${props => props.gallery ? 'black' : null};
     a {
       color: black;
 
@@ -99,35 +99,35 @@ const Window = styled.img`
 `
 
 export default class Index extends React.Component {
-  render() {
+  render () {
     return (
       <Page>
         <Intro>
-        <H1>Hyperlinks</H1>
-        <P>A collection of links to stalk me further   👀</P>
-        <P>Follow, Say <i>hey</i>     👋🏻</P>
-        <P>Always down for making friends, collaborating, freelance and/or sharing music     ♻️</P>
+          <H1>Hyperlinks</H1>
+          <P>A collection of links to stalk me further   👀</P>
+          <P>Follow, Say <i>hey</i>     👋🏻</P>
+          <P>Always down for making friends, collaborating, freelance and/or sharing music     ♻️</P>
         </Intro>
         <ContactContainer>
-           <ContactUl>
-               <ContactLi><a href="mailto:jim.me.ryan@gmail.com"><h1>Email - jim.me.ryan@gmail.com</h1></a></ContactLi>
-               <ContactLi><a href="https://twitter.com/namescodes" target='_blank' rel='noopener'><h1>Twitter - @namescodes</h1></a></ContactLi>
-               <ContactLi><a href="https://github.com/jimmynames" target='_blank' rel='noopener'><h1>Github - jimmynames</h1></a></ContactLi>
-               <ContactLi><a href="https://www.linkedin.com/in/jimmyNames" target='_blank' rel='noopener'><h1>LinkedIn - /in/jimmyNames</h1></a></ContactLi>
-               <ContactLi><a href="https://codepen.io/Jimmynames/" target='_blank' rel='noopener'><h1>Codepen - /Jimmynames</h1></a></ContactLi>
-               <ContactLi><a href="http://teamtreehouse.com/names" target='_blank' rel='noopener'><h1>treehouse - /names</h1></a></ContactLi>
-               <ContactLi><a href="https://www.codecademy.com/jimmynames" target='_blank' rel='noopener'><h1>Codecademy - /jimmynames</h1></a></ContactLi>
-               <ContactLi><a href="https://www.freecodecamp.org/jimmynames" target='_blank' rel='noopener'><h1>freeCodeCamp - /jimmynames</h1></a></ContactLi>
-               <ContactLi><a href="https://jimmynames.tumblr.com/" target='_blank' rel='noopener'><h1>tumblr - //jimmynames.</h1></a></ContactLi>
-               <ContactLi><a href="https://soundcloud.com/namesnames" target='_blank' rel='noopener'><h1>Soundcloud - /namesnames</h1></a></ContactLi>
-               <ContactLi gallery>
-                 <Gallery>
-                   <Window src={me} />
-                   <Window src={plant} />
-                   <Window src={fish} />
-                 </Gallery>
-               </ContactLi>
-           </ContactUl>
+          <ContactUl>
+            <ContactLi><a href='mailto:jim.me.ryan@gmail.com'><h1>Email - jim.me.ryan@gmail.com</h1></a></ContactLi>
+            <ContactLi><a href='https://twitter.com/namescodes' target='_blank' rel='noopener'><h1>Twitter - @namescodes</h1></a></ContactLi>
+            <ContactLi><a href='https://github.com/jimmynames' target='_blank' rel='noopener'><h1>Github - jimmynames</h1></a></ContactLi>
+            <ContactLi><a href='https://www.linkedin.com/in/jimmyNames' target='_blank' rel='noopener'><h1>LinkedIn - /in/jimmyNames</h1></a></ContactLi>
+            <ContactLi><a href='https://codepen.io/Jimmynames/' target='_blank' rel='noopener'><h1>Codepen - /Jimmynames</h1></a></ContactLi>
+            <ContactLi><a href='http://teamtreehouse.com/names' target='_blank' rel='noopener'><h1>treehouse - /names</h1></a></ContactLi>
+            <ContactLi><a href='https://www.codecademy.com/jimmynames' target='_blank' rel='noopener'><h1>Codecademy - /jimmynames</h1></a></ContactLi>
+            <ContactLi><a href='https://www.freecodecamp.org/jimmynames' target='_blank' rel='noopener'><h1>freeCodeCamp - /jimmynames</h1></a></ContactLi>
+            <ContactLi><a href='https://jimmynames.tumblr.com/' target='_blank' rel='noopener'><h1>tumblr - //jimmynames.</h1></a></ContactLi>
+            <ContactLi><a href='https://soundcloud.com/namesnames' target='_blank' rel='noopener'><h1>Soundcloud - /namesnames</h1></a></ContactLi>
+            <ContactLi gallery>
+              <Gallery>
+                <Window src={me} />
+                <Window src={plant} />
+                <Window src={fish} />
+              </Gallery>
+            </ContactLi>
+          </ContactUl>
         </ContactContainer>
       </Page>
     )

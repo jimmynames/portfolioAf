@@ -2,7 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 // import Draggable from 'react-draggable'
 import logo from './../../gif/jn.gif'
-import Link from "gatsby-link"
+import Link from 'gatsby-link'
+
 const NavComp = styled.section`
   width: 20%;
   position: fixed;
@@ -16,7 +17,6 @@ const NavComp = styled.section`
   @media (max-width: 414px) {
   }
 `
-
 
 const Logo = styled.img`
   width: 100%;
@@ -62,7 +62,7 @@ const NavItem = styled.li`
   text-decoration: none;
   text-align: left;
   margin: 1.5em 0;
-  ${'' /* linear-gradient(to right, transparent, red 50%, transparent 90%, transparent) */}
+  /* linear-gradient(to right, transparent, red 50%, transparent 90%, transparent) */
   background-image: linear-gradient(to right,
                                       blue,
                                       blue 50%,

@@ -1,8 +1,6 @@
-require('normalize.css')
-
-import React from "react"
-import PropTypes from "prop-types"
-import Helmet from "react-helmet"
+import React from 'react'
+import PropTypes from 'prop-types'
+import Helmet from 'react-helmet'
 import Nav from './../components/Nav'
 import DownloadComp from './../components/Download'
 
@@ -11,28 +9,27 @@ import styled, { ThemeProvider, injectGlobal } from 'styled-components'
 import { TransitionGroup, CSSTransition } from 'react-transition-group'
 import './animations.css'
 
-const WrapLayout = styled.div`
-	max-width: 1200px;
-  margin: 0 auto;
+require('normalize.css')
 
+const WrapLayout = styled.div`
+  max-width: 1200px;
+  margin: 0 auto;
   display: flex;
   flex-direcrion: row;
   width: 100%;
 
   @media (max-width: 693px) {
     flex-direction: column;
-    ${'' /* height: 100vh; */}
   }
 `
-
 
 const TransitionContainer = styled.div`
   width: 78vw;
   left: 20%;
-	@media (max-width: 693px) {
-		width: 100%;
+  @media (max-width: 693px) {
+    width: 100%;
     left: 0;
-	}
+  }
 `
 
 const PageRender = styled.div`
@@ -41,17 +38,16 @@ const PageRender = styled.div`
   box-sizing: border-box;
   padding: 1.35rem;
   padding-left: 4rem;
-	width: 78vw;
+  width: 78vw;
   @media (max-width: 693px) {
     width: 100%;
     height: auto;
-		padding: 0;
+    padding: 0;
   }
   @media (max-width: 414px) {
     width: 100%;
     height: auto;
   }
-  ${'' /* background: lightyellow; */}
 `
 
 injectGlobal`
@@ -65,10 +61,9 @@ injectGlobal`
 
 const theme = {
 	header: '40px',
-	copy: '20px',
+  copy: '20px',
   background: 'pink'
 }
-
 
 class TransitionHandler extends React.Component {
   shouldComponentUpdate (nextProps, nextState) {
@@ -86,35 +81,32 @@ class TransitionHandler extends React.Component {
 }
 
 const TemplateWrapper = ({ children, location }) => (
-      <ThemeProvider className="theme" theme={theme}>
-        <WrapLayout className='Nav-PageRender-Flex-Container Also-Wrap'>
-        <Helmet
-          title="jimmyNames"
-          meta={[
-            { name: "description", content: "Jimmy Names" },
-            { name: "keywords", content: "jimmy names, jimmyNames" },
-          ]}
-        />
-
-        <Nav />
-
-        <TransitionGroup>
-          <CSSTransition
-              key={location.pathname}
-              classNames="example"
-              timeout={{ enter: 666, exit: 333 }}
-            >
-              <TransitionHandler location={location}>
-
-        <PageRender id="page-wrap" className='PageRender'>
-          <DownloadComp />
-          {children()}
-        </PageRender>
-      </TransitionHandler>
-    </CSSTransition>
-</TransitionGroup>
-    </WrapLayout>
-    </ThemeProvider>
+  <ThemeProvider className='theme' theme={theme}>
+    <WrapLayout className='Nav-PageRender-Flex-Container Also-Wrap'>
+			<Helmet
+	      title='jimmyNames'
+	      meta={[
+	        { name: 'description', content: 'Jimmy Names' },
+	        { name: 'keywords', content: 'jimmy names, jimmyNames' },
+	      ]}
+	    />
+    	<Nav />
+		  <TransitionGroup>
+		    <CSSTransition
+		      key={location.pathname}
+		      classNames='example'
+		      timeout={{ enter: 666, exit: 333 }}
+		        >
+		      <TransitionHandler location={location}>
+		    			<PageRender id='page-wrap' className='PageRender'>
+		      			<DownloadComp />
+		      				{children()}
+		    			</PageRender>
+		      </TransitionHandler>
+		    </CSSTransition>
+			</TransitionGroup>
+  	</WrapLayout>
+  </ThemeProvider>
 )
 
 TemplateWrapper.propTypes = {

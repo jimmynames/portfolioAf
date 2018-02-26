@@ -1,4 +1,4 @@
-import React from "react"
+import React from 'react'
 import styled from 'styled-components'
 import logo from './../images/logo.png'
 // import Page from './../components/Page'
@@ -21,7 +21,7 @@ const AboutContainer = styled.div`
 
 const H3 = styled.h3`
   margin: 0;
-  margin-right: ${props => props.about ? '0.3em' : null };
+  margin-right: ${props => props.about ? '0.3em' : null};
 `
 
 const VerticalCenterAlign = styled.div`
@@ -130,13 +130,13 @@ const H2 = styled.h2`
 `
 
 export default class Index extends React.Component {
-  render() {
+  render () {
     return (
       <Page>
         <AboutContainer>
           <H1>My names James but most people call me Jimmy</H1>
           <H2>I live on the internet under the alias of 👽<i>Names</i>👔</H2>
-          <VerticalCenterAlign about><H3 about>I'm a Front-end Web Developer and I work at </H3><a href="https://ruin.studio" target="_blank" rel="noopener"><RuinLogo src={logo}/>Studio</a></VerticalCenterAlign>
+          <VerticalCenterAlign about><H3 about>I'm a Front-end Web Developer and I work at </H3><a href='https://ruin.studio' target='_blank' rel='noopener'><RuinLogo src={logo} />Studio</a></VerticalCenterAlign>
           <h4>I fuck with Css-in-js/Sass/Vanilla Css™, React.js⚛️ & SVGs💖</h4>
           <CubeContainer>
             <h4>I also dig</h4>
@@ -197,7 +197,6 @@ export default class Index extends React.Component {
                 <CubeListItem>dancing</CubeListItem>
                 <CubeListItem>nature</CubeListItem>
                 <CubeListItem>code duh</CubeListItem>
-                {/* <CubeListItem>aspirational dreams of becoming a 🦄</CubeListItem> */}
               </CubeList>
             </Cube>
           </CubeContainer>
