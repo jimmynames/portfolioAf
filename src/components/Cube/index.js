@@ -23,8 +23,8 @@ const Cube = styled.div`
   overflow-y:auto;
   transition: height 0.3s ease-in-out;
   &:hover {
-    background: blue;
-    border: 2px solid blue;
+    background: ${({theme}) => theme.color.blue};
+    border: 2px solid ${({theme}) => theme.color.blue};
     transition: all 0.2s ease;
     height: 60px;
 

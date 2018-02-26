@@ -14,7 +14,6 @@ const Page = styled.div`
   }
 
   h1, p {
-    color: white;
     width: 50%;
   }
 

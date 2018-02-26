@@ -45,17 +45,17 @@ const NavMenu = styled.ul`
 
   a {
     text-decoration: none;
-    color: white;
+    color: ${({theme}) => theme.color.white};
   }
 
   a:hover {
-    color: white;
+    color: ${({theme}) => theme.color.white};
   }
 `
 
 const NavItem = styled.li`
   font-size: 18px;
-  color: white;
+  color: ${({theme}) => theme.color.white};
   padding: 0.666em;
   font-family: 'Open Sans Condensed', Helvetica;
   list-style-type: none;
@@ -74,7 +74,7 @@ const NavItem = styled.li`
     width: 100%;
   a {
     text-decoration: none;
-    color: white;
+    color: ${({theme}) => theme.color.white};
   }
   @media (max-width: 693px) {
     padding: 0.1333em;
@@ -88,10 +88,10 @@ const NavItem = styled.li`
   }
   &:hover {
    padding-left: 1em;
-   color: black;
+   color: ${({theme}) => theme.color.black};
    background-position: 0 0;
     a {
-      color: black;
+      color: ${({theme}) => theme.color.black};
     }
      &:before {
      visibility: visible;

@@ -17,7 +17,7 @@ const FolderHolder = styled.div`
        }
 
       p {
-        color: blue;
+        color: ${({theme}) => theme.color.blue};
       }
      }
 `

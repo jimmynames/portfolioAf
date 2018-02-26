@@ -18,7 +18,7 @@ const SlideshowContent = styled.p`
   line-height: 50px;
   font-size: 46px;
   font-family: 'Open Sans Condensed', sans-serif;
-  color: white;
+  color: ${({theme}) => theme.color.white};
   opacity: 0.1;
   transform: translate3d(0, 0, 0);
   ${'' /* @keyframes slideshow {
@@ -37,8 +37,8 @@ export default class SlideshowComp extends React.Component {
   render () {
     return (
       // <SlideshowAbsolute>
-        <Slideshow>
-          <SlideshowContent>Welcome to my website, please enjoy your stay.. HTML
+      <Slideshow>
+        <SlideshowContent>Welcome to my website, please enjoy your stay.. HTML
             CSS _Styling.scss vanilla.js $Jquery Cross-browser Compatability Svg Retina Gulp Webpack UX import React from 'react' React.Native
             Responsive UI Agile REST HTTP Gatsby Nunjucks API User Testing Grunt xCode Pair Programming Wordpress PHP CMS Someone with the job title Recruiter has viewed your profile
             Welcome to my website, please enjoy your stay.. HTML
@@ -48,7 +48,7 @@ export default class SlideshowComp extends React.Component {
                 CSS _Styling.scss vanilla.js $Jquery Cross-browser Compatability Svg Retina Gulp Webpack UX import React from 'react' React.Native
                 Responsive UI Agile REST HTTP Gatsby Nunjucks API User Testing Grunt xCode Pair Programming Wordpress PHP CMS Someone with the job title Recruiter has viewed your profile
           </SlideshowContent>
-        </Slideshow>
+      </Slideshow>
       // </SlideshowAbsolute>
     )
   }

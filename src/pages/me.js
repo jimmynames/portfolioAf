@@ -52,7 +52,7 @@ const ContactLi = styled.li`
   transition: background 1.666s ease;
   a {
     text-decoration: none;
-    color: white;
+    color: ${({theme}) => theme.color.white};
     transition: all .1s ease-out;
     h1 {
       margin: 0;
@@ -63,13 +63,13 @@ const ContactLi = styled.li`
     }
   }
   &:hover {
-    background: blue;
+    background: ${({theme}) => theme.color.blue};
     background: ${props => props.gallery ? 'none' : null};
     a {
-      color: black;
+      color: ${({theme}) => theme.color.black};
     }
     h1 {
-      color: black;
+      color: ${({theme}) => theme.color.black};
     }
   }
 `

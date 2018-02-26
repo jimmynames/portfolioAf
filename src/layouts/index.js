@@ -14,9 +14,6 @@ require('normalize.css')
 const theme = {
   header: '40px',
   copy: '20px',
-  backgroundPink: 'pink',
-  backgroundBlack: 'black',
-  backgroundWhite: 'white',
   color: {
     black: 'black',
     white: 'white',
