@@ -11,13 +11,25 @@ import './animations.css'
 
 require('normalize.css')
 
+const theme = {
+  header: '40px',
+  copy: '20px',
+  backgroundPink: 'pink',
+  backgroundBlack: 'black',
+  backgroundWhite: 'white',
+  color: {
+    black: 'black',
+    white: 'white',
+    blue: 'blue'
+  }
+}
+
 const WrapLayout = styled.div`
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
   flex-direcrion: row;
   width: 100%;
-
   @media (max-width: 693px) {
     flex-direction: column;
   }
@@ -29,6 +41,7 @@ const TransitionContainer = styled.div`
   @media (max-width: 693px) {
     width: 100%;
     left: 0;
+    height: auto;
   }
 `
 
@@ -52,18 +65,13 @@ const PageRender = styled.div`
 
 injectGlobal`
   body {
-    background: black;
+    background: ${theme.color.black};
   }
   h1, h2, h3, h4, h5, p, a {
     font-family: 'Open Sans Condensed', sans-serif;
+    color: ${theme.color.white};
   }
 `
-
-const theme = {
-	header: '40px',
-  copy: '20px',
-  background: 'pink'
-}
 
 class TransitionHandler extends React.Component {
   shouldComponentUpdate (nextProps, nextState) {
@@ -81,7 +89,7 @@ class TransitionHandler extends React.Component {
 }
 
 const TemplateWrapper = ({ children, location }) => (
-  <ThemeProvider className='theme' theme={theme}>
+  <ThemeProvider className='Theme' theme={theme}>
     <WrapLayout className='Nav-PageRender-Flex-Container Also-Wrap'>
 			<Helmet
 	      title='jimmyNames'

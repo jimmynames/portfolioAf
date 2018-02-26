@@ -21,12 +21,10 @@ const Intro = styled.div`
 `
 
 const H1 = styled.h1`
-  color: white;
   margin-top: 0;
 `
 
 const P = styled.p`
-  color: white;
 `
 
 const ContactContainer = styled.div`
@@ -66,10 +64,12 @@ const ContactLi = styled.li`
   }
   &:hover {
     background: blue;
-    background: ${props => props.gallery ? 'black' : null};
+    background: ${props => props.gallery ? 'none' : null};
     a {
       color: black;
-
+    }
+    h1 {
+      color: black;
     }
   }
 `
