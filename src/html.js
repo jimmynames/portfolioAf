@@ -45,14 +45,11 @@ export default class HTML extends React.Component {
           {this.props.headComponents}
         </head>
         <Body>
-
           <App
             id='___gatsby'
             dangerouslySetInnerHTML={{ __html: this.props.body }}
           />
-
           {this.props.postBodyComponents}
-
         </Body>
       </HTML>
     )

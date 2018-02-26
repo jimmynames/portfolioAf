@@ -80,24 +80,6 @@ const NavItem = styled.li`
     padding: 0.1333em;
     margin: 0;
   }
-  ${'' /* &:before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 5px;
-  bottom: 0;
-  left: 0;
-  background: linear-gradient(-45deg, coral, blue, purple, orange);
-	background-size: 400% 400%;
-	-webkit-animation: Gradient 15s ease infinite;
-	-moz-animation: Gradient 15s ease infinite;
-	animation: Gradient 15s ease infinite;
-  visibility: hidden;
-  -webkit-transform: scaleX(0);
-  transform: scaleX(0);
-  -webkit-transition: all 0.3s ease-in-out 0s;
-  transition: all 0.3s ease-in-out 0s;
-} */}
 
   &:hover,
   &:visited,
@@ -117,43 +99,24 @@ const NavItem = styled.li`
      transform: scaleX(1);
     }
   }
-  &:hover
 
   @-webkit-keyframes Gradient {
-	0% {
-		background-position: 0% 50%
-	}
-	50% {
-		background-position: 100% 50%
-	}
-	100% {
-		background-position: 0% 50%
-	}
-}
+    0% {background-position: 0% 50%}
+    50% {background-position: 100% 50%}
+    100% {background-position: 0% 50%}
+  }
 
-@-moz-keyframes Gradient {
-	0% {
-		background-position: 0% 50%
-	}
-	50% {
-		background-position: 100% 50%
-	}
-	100% {
-		background-position: 0% 50%
-	}
-}
+  @-moz-keyframes Gradient {
+    0% {background-position: 0% 50% }
+    50% {background-position: 100% 50% }
+    100% {background-position: 0% 50% }
+  }
 
-@keyframes Gradient {
-	0% {
-		background-position: 0% 50%
-	}
-	50% {
-		background-position: 100% 50%
-	}
-	100% {
-		background-position: 0% 50%
-	}
-}
+  @keyframes Gradient {
+    0% { background-position: 0% 50% }
+    50% { background-position: 100% 50% }
+    100% { background-position: 0% 50% }
+  }
 `
 
 export default class Nav extends React.Component {
@@ -164,21 +127,21 @@ export default class Nav extends React.Component {
     }
     this.onClick = this.onClick.bind(this)
   }
-  onClick() {
+  onClick () {
     this.setState(prevState => ({
       shouldHide: !prevState.shouldHide
-    }));
+    }))
   }
   render () {
     return (
-      <NavComp className="Nav">
+      <NavComp className='Nav'>
         <PaddingMobile>
-          <Link to="/" exact><Logo src={logo} /></Link>
+          <Link to='/' exact><Logo src={logo} /></Link>
 
-          <NavMenu className="Menu">
-            <Link to="/about/"><NavItem>About.info</NavItem></Link>
-            <Link to="/me/"><NavItem>Me.href</NavItem></Link>
-            <Link to="/projects/"><NavItem>Work.life</NavItem></Link>
+          <NavMenu className='Menu'>
+            <Link to='/about/'><NavItem>About.info</NavItem></Link>
+            <Link to='/me/'><NavItem>Me.href</NavItem></Link>
+            <Link to='/projects/'><NavItem>Work.life</NavItem></Link>
             <a onClick={this.onClick}><NavItem>Cv.pdf</NavItem></a>
           </NavMenu>
         </PaddingMobile>
