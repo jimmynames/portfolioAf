@@ -52,7 +52,7 @@ const ContactLi = styled.li`
   transition: background 1.666s ease;
   a {
     text-decoration: none;
-    ${'' /* color: ${({theme}) => theme.color.white}; */}
+    ${'' /* color: ${({theme}) => theme.darkColor.white}; */}
     transition: all .1s ease-out;
     h1 {
       margin: 0;
@@ -63,13 +63,13 @@ const ContactLi = styled.li`
     }
   }
   &:hover {
-    background: ${({theme}) => theme.color.blue};
+    background: ${({theme}) => theme.darkColor.blue};
     background: ${props => props.gallery ? 'none' : null};
     a {
-      color: ${({theme}) => theme.color.black};
+      color: ${({theme}) => theme.darkColor.black};
     }
     h1 {
-      color: ${({theme}) => theme.color.black};
+      color: ${({theme}) => theme.darkColor.black};
     }
   }
 `

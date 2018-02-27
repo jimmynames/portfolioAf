@@ -49,7 +49,7 @@ const VerticalCenterAlign = styled.div`
     font-size: 18px;
     font-family: 'Open Sans Condensed', sans-serif;
     font-weight: 700;
-    border: 2px solid ${({theme}) => theme.color.black};
+    border: 2px solid ${({theme}) => theme.darkColor.black};
     padding-right: 2px;
     transition: all 0.3s ease-in-out;
     img {
@@ -58,8 +58,8 @@ const VerticalCenterAlign = styled.div`
     @media (max-width: 414px) {
     }
     &:hover {
-      background: ${({theme}) => theme.color.blue};;
-      border: 2px solid ${({theme}) => theme.color.blue};;
+      background: ${({theme}) => theme.darkColor.blue};;
+      border: 2px solid ${({theme}) => theme.darkColor.blue};;
     }
   }
 

@@ -14,8 +14,13 @@ require('normalize.css')
 const theme = {
   header: '40px',
   copy: '20px',
-  color: {
+  darkColor: {
     black: 'black',
+    white: 'white',
+    blue: 'blue'
+  },
+  lightColor: {
+    black: 'blue',
     white: 'white',
     blue: 'blue'
   }
@@ -62,11 +67,11 @@ const PageRender = styled.div`
 
 injectGlobal`
   body {
-    background: ${theme.color.black};
+    background: ${theme.darkColor.black};
   }
   h1, h2, h3, h4, h5, p, a, ul, li {
     font-family: 'Open Sans Condensed', sans-serif;
-    color: ${theme.color.white};
+    color: ${theme.darkColor.white};
   }
 `
 

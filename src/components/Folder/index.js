@@ -17,7 +17,7 @@ const FolderHolder = styled.div`
        }
 
       p {
-        color: ${({theme}) => theme.color.blue};
+        color: ${({theme}) => theme.darkColor.blue};
       }
      }
 `
@@ -76,16 +76,6 @@ const FolderCloseP = styled.p`
  font-size: 18px;
 `
 
-const FolderCloseDate = styled.p`
-  position: absolute;
-  width: 100%;
-  text-align: left;
-  left: 20px;
-  color: #4d3300;
-  bottom: -10px;
-  font-size: 14px;
-`
-
 export default class FolderComp extends React.Component {
   render () {
     return (
@@ -95,7 +85,6 @@ export default class FolderComp extends React.Component {
           <ProjectImage class='project-image' src={this.props.src} srcSet={this.props.src + ' 1x, ' + this.props.src2x + ' 2x'} />
           <FolderClose class='folder-close'>
             <FolderCloseP>{this.props.projectTitle}</FolderCloseP>
-            <FolderCloseDate class='date'>{this.props.info}</FolderCloseDate>
           </FolderClose>
         </Link>
       </FolderHolder>

@@ -7,6 +7,7 @@ const Slideshow = styled.div`
   height: 50px;
 `
 
+
 const SlideshowContent = styled.p`
   position: absolute;
   left: 0;
