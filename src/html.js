@@ -21,7 +21,7 @@ export default class HTML extends React.Component {
   render() {
     const head = Helmet.rewind()
 
-    let css
+    // let css
     if (process.env.NODE_ENV === 'production') {
       css = (
         <style

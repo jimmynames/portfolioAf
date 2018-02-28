@@ -77,7 +77,7 @@ injectGlobal`
 
 class TransitionHandler extends React.Component {
   shouldComponentUpdate (nextProps, nextState) {
-    return this.props.location.pathname === window.location.pathname
+    return location.pathname === window.location.pathname
   }
 
   render () {
@@ -90,34 +90,84 @@ class TransitionHandler extends React.Component {
   }
 }
 
-const TemplateWrapper = ({ children, location }) => (
-  <ThemeProvider className='Theme' theme={theme}>
-    <WrapLayout className='Nav-PageRender-Flex-Container Also-Wrap'>
-			<Helmet
-	      title='jimmyNames'
-	      meta={[
-	        { name: 'description', content: 'Jimmy Names' },
-	        { name: 'keywords', content: 'jimmy names, jimmyNames' },
-	      ]}
-	    />
-    	<Nav />
-		  <TransitionGroup>
-		    <CSSTransition
-		      key={location.pathname}
-		      classNames='example'
-		      timeout={{ enter: 666, exit: 333 }}
-		        >
-		      <TransitionHandler location={location}>
-		    			<PageRender id='page-wrap' className='PageRender'>
-		      			<DownloadComp />
-		      				{children()}
-		    			</PageRender>
-		      </TransitionHandler>
-		    </CSSTransition>
-			</TransitionGroup>
-  	</WrapLayout>
-  </ThemeProvider>
-)
+// const TemplateWrapper = ({ children, location }) => (
+//
+//   <ThemeProvider className='Theme' theme={theme}>
+//     <WrapLayout className='Nav-PageRender-Flex-Container Also-Wrap'>
+// 			<Helmet
+// 	      title='jimmyNames'
+// 	      meta={[
+// 	        { name: 'description', content: 'Jimmy Names' },
+// 	        { name: 'keywords', content: 'jimmy names, jimmyNames' },
+// 	      ]}
+// 	    />
+//     	<Nav />
+// 		  <TransitionGroup>
+// 		    <CSSTransition
+// 		      key={location.pathname}
+// 		      classNames='example'
+// 		      timeout={{ enter: 666, exit: 333 }}
+// 		        >
+// 		      <TransitionHandler location={location}>
+// 		    			<PageRender id='page-wrap' className='PageRender'>
+// 		      			<DownloadComp />
+// 		      				{children()}
+// 		    			</PageRender>
+// 		      </TransitionHandler>
+// 		    </CSSTransition>
+// 			</TransitionGroup>
+//   	</WrapLayout>
+//   </ThemeProvider>
+// )
+
+class TemplateWrapper extends React.Component {
+  // constructor (props) {
+  //   super(props)
+    // this.state = {
+    //   color: 'dark'
+    // }
+    // this.onClick = this.onClick.bind(this)
+  // }
+  // onClick () {
+  //   this.setState(prevState => ({
+  //     color: !prevState.color
+  //   }))
+  // }
+  render () {
+    const { children, location } = this.props
+    return (
+      <div>
+      {/* <a onClick={this.onClick}>CLick</a> */}
+      <ThemeProvider className='Theme' theme={theme}>
+        <WrapLayout className='Nav-PageRender-Flex-Container Also-Wrap'>
+    			<Helmet
+    	      title='jimmyNames'
+    	      meta={[
+    	        { name: 'description', content: 'Jimmy Names' },
+    	        { name: 'keywords', content: 'jimmy names, jimmyNames' },
+    	      ]}
+    	    />
+        	<Nav />
+    		  <TransitionGroup>
+    		    <CSSTransition
+    		      key={location.pathname}
+    		      classNames='example'
+    		      timeout={{ enter: 666, exit: 333 }}
+    		        >
+    		      <TransitionHandler >
+    		    			<PageRender id='page-wrap' className='PageRender'>
+    		      			<DownloadComp />
+    		      				{children()}
+    		    			</PageRender>
+    		      </TransitionHandler>
+    		    </CSSTransition>
+    			</TransitionGroup>
+      	</WrapLayout>
+      </ThemeProvider>
+      </div>
+    )
+  }
+}
 
 TemplateWrapper.propTypes = {
   children: PropTypes.func
