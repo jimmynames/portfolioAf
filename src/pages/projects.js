@@ -24,6 +24,33 @@ const Page = styled.div`
   }
 `
 
+const A = styled.a`
+position: relative;
+text-decoration: none;
+padding: 5px;
+&:after {
+  position: absolute;
+  content: '';
+  height: 2px;
+  bottom: 5px;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background: blue;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+&:hover {
+  &:after {
+    height: 100%;
+    bottom: 0;
+    z-index: -1;
+  }
+}
+`
+
 const ProjectFolders = styled.div`
   display: flex;
   flex-direction: row;
@@ -40,7 +67,7 @@ export default class Projects extends React.Component {
     return (
       <Page>
         <h1>Projects</h1>
-        <p>Whilst the majority of my <strong>most recent</strong> code has been written at Ruin.Studio here's a few selected works from my freelance and for fun</p>
+        <p>Whilst the majority of my <i>most recent</i> code has been written at <A href='https://ruin.studio' rel='noopener' target='_blank'>Ruin.Studio</A> here's a few selected works from my freelance and for fun</p>
         <ProjectFolders fire={this.props.fire}>
           <FolderComp fire projectTitle='Aural Youth' info='' projectLink='/projects/auralyouth' src={ay1} src2x='' />
           <FolderComp fire projectTitle='SR Design' info='' projectLink='#' src='' src2x='' />

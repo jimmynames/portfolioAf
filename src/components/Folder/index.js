@@ -32,6 +32,9 @@ const FolderHolder = styled.div`
         box-shadow: 0 7px 5px -2px blue;
       }
      }
+  @media (max-width: 900px) {
+    margin: 15px;
+  }
 `
 // .folder-holder a:hover .project-image {
 //    top: -50px;
