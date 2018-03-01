@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 import Link from 'gatsby-link'
+import ScrollAnimation from 'react-animate-on-scroll'
+import 'animate.css/animate.min.css'
 
 import ay1 from './../../images/projects/auralyouth/ay1.png'
 import ay2 from './../../images/projects/auralyouth/ay2.png'
@@ -25,6 +27,32 @@ const H1 = styled.h1`
 `
 
 const P = styled.p`
+  a{
+    position: relative;
+    text-decoration: none;
+    padding: 5px;
+    &:after {
+      position: absolute;
+      content: '';
+      height: 2px;
+      bottom: -4px;
+      margin: 0 auto;
+      left: 0;
+      right: 0;
+      width: 100%;
+      background: blue;
+      -webkit-transition: 0.5s;
+      transition: 0.5s;
+    }
+
+    &:hover {
+      &:after {
+        height: 100%;
+        bottom: 0;
+        z-index: -1;
+      }
+    }
+  }
 `
 
 const ImageContainer = styled.section`
@@ -68,6 +96,7 @@ a {
     background: white;
     color: blue;
     border: 2px solid blue;
+    cursor: pointer;
   }
 }
 `
@@ -80,19 +109,26 @@ export default class AuralYouthPage extends React.Component {
           <H1>Aural Youth</H1>
           <P>Freelance project</P>
           <P>Built using Gatsby.js, Styled-components & React.js</P>
+          <P>Designed by <a href='https://www.linkedin.com/in/simone-ludeman-342042b3/' rel='noopener' target='_blank'>Simone Ludderman</a></P>
         </Intro>
 
-        <ImageContainer>
-          <img src={ay1} />
-        </ImageContainer>
+        <ScrollAnimation animateIn='fadeIn' offset='500'>
+          <ImageContainer>
+            <img src={ay1} />
+          </ImageContainer>
+        </ScrollAnimation>
 
+        <ScrollAnimation animateIn='fadeIn' offset='300'>
         <ImageContainer>
           <img src={ay2} />
         </ImageContainer>
+        </ScrollAnimation>
 
+        <ScrollAnimation animateIn='fadeIn' offset='200'>
         <ImageContainer>
           <img src={ay3} />
         </ImageContainer>
+        </ScrollAnimation>
 
         <Outro>
           <Link to='/projects'>🔙 Projects</Link>

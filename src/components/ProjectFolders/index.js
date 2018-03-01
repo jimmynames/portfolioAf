@@ -20,7 +20,7 @@ export default class ProjectFoldersComp extends React.Component {
   render () {
     return (
       <ProjectFolders>
-        <FolderComp projectTitle='Aural Youth' info='' projectLink='#' src={skel} src2x='' />
+        <FolderComp fire projectTitle='Aural Youth' info='' projectLink='#' src={skel} src2x='' />
         <FolderComp projectTitle='SR Design' info='' projectLink='#' src='' src2x='' />
         <FolderComp projectTitle='Ruin.studio Works' info='' projectLink='#' src='' src2x='' />
         <FolderComp projectTitle='Legends Barber' info='' projectLink='#' src='' src2x='' />
