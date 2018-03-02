@@ -1,87 +1,69 @@
-import React from "react"
+import React from 'react'
 import styled from 'styled-components'
-import welcome from './../gif/welcome.gif'
+
+import SlideshowComp from './../components/Slider'
+import DraggableComp from './../components/Draggable'
+import chains from './../gif/chains.gif'
+import chess from './../gif/chess.gif'
+import dove from './../gif/dove.gif'
+import gang from './../gif/gang.gif'
+import heart from './../gif/heart.gif'
+import ice from './../gif/ice.gif'
+import newgif from './../gif/new.gif'
+import omni from './../gif/omni.gif'
+import ying from './../gif/yin.gif'
+import yang from './../gif/yang.gif'
+import para from './../gif/para.gif'
+import skel from './../gif/skel.gif'
 
 const Page = styled.div`
   width: 100%;
   height: 100%;
+  position: relative;
   overflow: hidden;
-
   @media (max-width: 616px ) {
     height: 75vh;
   }
 `
 
-const AboutContainer = styled.div`
-  color: white;
-  ${'' /* padding: 0.75rem; */}
-`
-
-const ScrollLeft = styled.div`
-  height: 50px;
-  overflow: hidden;
+const DraggableContainer = styled.div`
+  width: 100%;
+  height: 100%;
   position: relative;
-  p {
-    position: absolute;
-    width: 200%;
-    height: 100%;
-    margin: 0;
-    line-height: 50px;
-    text-align: center;
-    font-family: '-apple-system';
-    right: 0;
-    /* Starting position */
-    -moz-transform:translateX(200%);
-    -webkit-transform:translateX(200%);
-    transform:translateX(200%);
-    animation: scroll-left 50s linear infinite;
+  overflow: hidden;
+  z-index: 0;
+  div {
+    padding: 1em;
+  }
 
-      @-moz-keyframes scroll-left {
-      0% { -moz-transform: translateX(100%); }
-      100% { -moz-transform: translateX(-100%); }
-      }
-      @-webkit-keyframes scroll-left {
-      0% { -webkit-transform: translateX(100%); }
-      100% { -webkit-transform: translateX(-100%); }
-      }
-      @keyframes scroll-left {
-      0% {
-      -moz-transform: translateX(100%); /* Browser bug fix */
-      -webkit-transform: translateX(100%); /* Browser bug fix */
-      transform: translateX(100%);
-      }
-      100% {
-      -moz-transform: translateX(-100%); /* Browser bug fix */
-      -webkit-transform: translateX(-100%); /* Browser bug fix */
-      transform: translateX(-100%);
-      }
-      }
+  img {
+    user-select: none;
+  }
+
+  .heart {
+    z-index: 1;
   }
 `
 
-const Welcome = styled.img`
-  height: 50%;
-  width: 100%;
-`
-
-const P = styled.p`
-  color: lightgreen;
-  font-size: 12px;
-`
-
 export default class Index extends React.Component {
-  render() {
+  render () {
     return (
       <Page>
-        <AboutContainer>
-          <ScrollLeft>
-            <P>
-              Welcome to my website, please enjoy your stay welcome to my website, please enjoy your stay welcome to my website, please enjoy your stay  welcome to my website, please enjoy your stay  welcome to my website, please enjoy your stay  welcome to my website, please enjoy your stay welcome to my website, please enjoy your stay welcome to my website, please enjoy your stay welcome to my website, please enjoy your stay welcome to my website, please enjoy your stay welcome to my website, please enjoy your stay welcome to my website, please enjoy your stay welcome to my website, please enjoy your stay  welcome to my website, please enjoy your stay
-              welcome to my website, please enjoy your stay welcome to my website, please enjoy your stay welcome to my website, please enjoy your stay  welcome to my website, please enjoy your stay  welcome to my website, please enjoy your stay  welcome to my website, please enjoy your stay welcome to my website, please enjoy your stay welcome to my website, please enjoy your stay welcome to my website, please enjoy your stay welcome to my website, please enjoy your stay welcome to my website, please enjoy your stay welcome to my website, please enjoy your stay welcome to my website, please enjoy your stay  welcome to my website, please enjoy your stay
-            </P>
-          </ScrollLeft>
-          <Welcome src={welcome} />
-        </AboutContainer>
+        <SlideshowComp />
+        <DraggableContainer>
+          <DraggableComp src={chains} zIndex='3' />
+          <DraggableComp src={chess} zIndex='1' />
+          <DraggableComp src={dove} zIndex='2' />
+          <DraggableComp src={gang} zIndex='2' />
+          <DraggableComp src={ice} zIndex='2' />
+          <DraggableComp src={newgif} zIndex='4' />
+          <DraggableComp src={omni} zIndex='2' />
+          <DraggableComp src={ying} zIndex='2' />
+          <DraggableComp src={yang} zIndex='2' />
+          <DraggableComp src={para} zIndex='1' />
+          <DraggableComp src={skel} zIndex='-10' />
+          <DraggableComp src={heart} zIndex='-10' />
+        </DraggableContainer>
       </Page>
     )
   }

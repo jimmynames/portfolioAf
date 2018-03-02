@@ -1,16 +1,18 @@
-import React from "react"
+import React from 'react'
 import styled from 'styled-components'
+
+import CubeComp from './../components/Cube'
+
 import logo from './../images/logo.png'
-// import Page from './../components/Page'
 
 const Page = styled.div`
   width: 100%;
   height: auto;
   box-sizing: border-box;
+  padding: 0.75rem;
 `
 
 const AboutContainer = styled.div`
-  color: white;
   box-sizing: border-box;
   position: relative;
   height: 100%;
@@ -19,7 +21,17 @@ const AboutContainer = styled.div`
 
 const H3 = styled.h3`
   margin: 0;
-  margin-right: ${props => props.about ? '0.3em' : null };
+  margin-right: ${props => props.about ? '0.3em' : null};
+`
+
+const H1 = styled.h1`
+  margin-top: 0;
+`
+
+const H2 = styled.h2`
+  i {
+    padding-right: 5px;
+  }
 `
 
 const VerticalCenterAlign = styled.div`
@@ -33,11 +45,21 @@ const VerticalCenterAlign = styled.div`
   a {
     display: flex;
     align-items: center;
-    color: white;
     text-decoration: none;
     font-size: 18px;
-    font-family: '-apple-system';
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-weight: 700;
+    border: 2px solid ${({theme}) => theme.darkColor.black};
+    padding-right: 2px;
+    transition: all 0.3s ease-in-out;
+    img {
+      padding-right: 3px;
+    }
     @media (max-width: 414px) {
+    }
+    &:hover {
+      background: ${({theme}) => theme.darkColor.blue};
+      border: 2px solid ${({theme}) => theme.darkColor.blue};
     }
   }
 
@@ -54,100 +76,16 @@ const RuinLogo = styled.img`
   margin: 0;
 `
 
-const CubeContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-  h4 {
-    margin: 0;
-  }
-`
-
-const Cube = styled.div`
-  height: 30px;
-  width: 33.33%;
-  margin-left: 1rem;
-  border: 2px dotted blue;
-  overflow: scroll;
-  &:hover {
-    background: blue;
-    border: 2px dotted white;
-    transition: all 0.2s ease;
-    ul {
-      color: white;
-      transition: color 0.3s ease;
-    }
-  }
-`
-
-const CubeList = styled.ul`
-  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-  margin: 0;
-  list-style-type: none;
-  padding: 0.3rem;
-  box-sizing: border-box;
-`
-const CubeListItem = styled.li`
-  font-size: 18px;
-  line-height: 18px;
-  padding: 0.3em 0;
-  overflow: visible;
-  width: 33vw;
-`
-
-
 export default class Index extends React.Component {
-  render() {
+  render () {
     return (
-      <Page>
+      <Page theme={this.props.theme}>
         <AboutContainer>
-          <h1>My names James but most people call me Jimmy</h1>
-          <h2>I live on the internet under the alias of 👔<i>Jimmy✨Names</i>👽</h2>
-          <VerticalCenterAlign about><H3 about>I'm a Front-end Web Developer and I work at </H3><a href="https://ruin.studio" target="_blank" rel="noopener"><RuinLogo src={logo}/>Studio</a></VerticalCenterAlign>
-          <h4>I love scss🤙🏻, react⚛️ & good coffee💯☕️</h4>
-          <CubeContainer>
-            <h4>I also dig</h4>
-            <Cube>
-              <CubeList>
-                <CubeListItem>music</CubeListItem>
-                <CubeListItem>anime</CubeListItem>
-                <CubeListItem>art..</CubeListItem>
-                <CubeListItem>blah millennial blah stuff</CubeListItem>
-                <CubeListItem>plants</CubeListItem>
-                <CubeListItem>sunsets</CubeListItem>
-                <CubeListItem>stories</CubeListItem>
-                <CubeListItem>emoji use</CubeListItem>
-                <CubeListItem>candles</CubeListItem>
-                <CubeListItem>fashion</CubeListItem>
-                <CubeListItem>writing</CubeListItem>
-                <CubeListItem>memes</CubeListItem>
-                <CubeListItem>swimming</CubeListItem>
-                <CubeListItem>literature</CubeListItem>
-                <CubeListItem>tinder lol</CubeListItem>
-                <CubeListItem>sesh</CubeListItem>
-                <CubeListItem>culture</CubeListItem>
-                <CubeListItem>wine</CubeListItem>
-                <CubeListItem>graffiti</CubeListItem>
-                <CubeListItem>things</CubeListItem>
-                <CubeListItem>learning</CubeListItem>
-                <CubeListItem>irony</CubeListItem>
-                <CubeListItem>good design</CubeListItem>
-                <CubeListItem>weed i guess</CubeListItem>
-                <CubeListItem>good people</CubeListItem>
-                <CubeListItem>eating out</CubeListItem>
-                <CubeListItem>exposed brick, plaster..</CubeListItem>
-                <CubeListItem>making jokes</CubeListItem>
-                <CubeListItem>work weirdly</CubeListItem>
-                <CubeListItem>chilling</CubeListItem>
-                <CubeListItem>pale ales</CubeListItem>
-                <CubeListItem>dancing</CubeListItem>
-                <CubeListItem>nature</CubeListItem>
-                <CubeListItem>code duh</CubeListItem>
-                <CubeListItem>aspirational dreams of becoming a 🦄</CubeListItem>
-              </CubeList>
-            </Cube>
-          </CubeContainer>
+          <H1>My names James but most people call me Jimmy</H1>
+          <H2>I live on the internet under the alias of 👽<i>Names</i>👔</H2>
+          <VerticalCenterAlign about><H3 about>I'm a Front-end Web Developer and I work at </H3><a href='https://ruin.studio' target='_blank' rel='noopener'><RuinLogo src={logo} />Studio</a></VerticalCenterAlign>
+          <h4>I fuck with Css-in-js/Sass/Vanilla Css™, React.js⚛️ & SVGs💖</h4>
+          <CubeComp />
         </AboutContainer>
       </Page>
     )

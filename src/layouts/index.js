@@ -1,75 +1,63 @@
+import React from 'react'
+import PropTypes from 'prop-types'
+import Helmet from 'react-helmet'
+import Nav from './../components/Nav'
+import DownloadComp from './../components/Download'
+
+import withRouter from 'react-router-dom/withRouter'
+import styled, { ThemeProvider, injectGlobal } from 'styled-components'
+import { TransitionGroup, CSSTransition } from 'react-transition-group'
+import './animations.css'
+
 require('normalize.css')
 
-import React from "react"
-import PropTypes from "prop-types"
-import Link from "gatsby-link"
-import Helmet from "react-helmet"
-import styled  from 'styled-components'
-import logo from './../gif/jn.gif'
+const theme = {
+  header: '40px',
+  copy: '20px',
+  darkColor: {
+    black: 'black',
+    white: 'white',
+    blue: 'blue'
+  },
+  lightColor: {
+    black: 'blue',
+    white: 'white',
+    blue: 'blue'
+  }
+}
 
-const Background = styled.div`
-  height: 100%;
-  width: 100%;
-  background: black;
-`
-
-const Layout = styled.div`
+const WrapLayout = styled.div`
+  max-width: 1200px;
+  margin: 0 auto;
   display: flex;
   flex-direcrion: row;
-  ${'' /* background-color: black; */}
-
+  width: 100%;
   @media (max-width: 693px) {
     flex-direction: column;
-    height: 100vh;
-  }
-`
-const Wrap = styled.div`
-	max-width: 1200px;
-  margin: 0 auto;
-`
-
-const Logo = styled.img`
-  width: 100%;
-  padding-top: 1.25rem;
-  margin: 0;
-  @media (max-width: 693px) {
-    padding-top: 0;
-    width: 50%;
-    margin: 0 auto;
   }
 `
 
-const Container = styled.section`
-  height: 100vh;
-  width: 20%;
-  background-color: black;
-  box-sizing: border-box;
+const TransitionContainer = styled.div`
+  width: 78vw;
+  left: 20%;
   @media (max-width: 693px) {
     width: 100%;
-    height: 30vh;
-    padding: 0.75em;
+    left: 0;
+    height: auto;
   }
-  @media (max-width: 414px) {
-    height: 25vh;
-  }
-
 `
-
-const PaddingMobile = styled.div`
-@media (max-width: 414px) {
-  box-sizing: border-box;
-}
-`
-
 
 const PageRender = styled.div`
-  width: 80%;
-  height: 100vh;
-  background-color: black;
-  padding: 0.75rem;
+  width: auto;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 1.35rem;
+  padding-left: 4rem;
+  width: 78vw;
   @media (max-width: 693px) {
     width: 100%;
     height: auto;
+    padding: 0;
   }
   @media (max-width: 414px) {
     width: 100%;
@@ -77,162 +65,62 @@ const PageRender = styled.div`
   }
 `
 
-const NavMenu = styled.ul`
-  text-decoration: none;
-  margin: 0;
-  padding: 0;
-  @media (max-width: 693px) {  }
-
-  a {
-    text-decoration: none;
-    color: white;
+injectGlobal`
+  body {
+    background: ${theme.darkColor.black};
   }
-
-  a:hover {
-    color: white;
+  h1, h2, h3, h4, h5, p, a, ul, li {
+    font-family: 'Open Sans Condensed', sans-serif;
+    color: ${theme.darkColor.white};
   }
 `
 
-const NavItem = styled.li`
-  font-size: 18px;
-  color: white;
-  padding: 0.666em;
-  font-family: '-apple-system', Helvetica;
-  list-style-type: none;
-  text-decoration: none;
-  text-align: left;
-  margin: 1.5em 0;
-  background-image: linear-gradient(to right,
-                                      #CCFF33,
-                                      #CCFF33 50%,
-                                      transparent 50%,
-                                      transparent);
-    background-position: 100% 0;
-    background-size: 200% 100%;
-    transition: all .2s ease-in;
-    width: 95%;
-  a {
-    text-decoration: none;
-    color: white;
-  }
-  @media (max-width: 693px) {
-    padding: 0.1333em;
-    margin: 0;
-  }
-  &:before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 5px;
-  bottom: 0;
-  left: 0;
-  background: linear-gradient(-45deg, coral, blue, purple, orange);
-	background-size: 400% 400%;
-	-webkit-animation: Gradient 15s ease infinite;
-	-moz-animation: Gradient 15s ease infinite;
-	animation: Gradient 15s ease infinite;
-  visibility: hidden;
-  -webkit-transform: scaleX(0);
-  transform: scaleX(0);
-  -webkit-transition: all 0.3s ease-in-out 0s;
-  transition: all 0.3s ease-in-out 0s;
-}
-
-  &:hover,
-  &:visited,
-  &:focus {
-    text-decoration: none;
-  }
-  &:hover {
-   padding-left: 1em;
-   color: black;
-   background-position: 0 0;
-    a {
-      color: black;
-    }
-     &:before {
-     visibility: visible;
-     -webkit-transform: scaleX(1);
-     transform: scaleX(1);
-    }
-  }
-  &:hover
-
-  @-webkit-keyframes Gradient {
-	0% {
-		background-position: 0% 50%
-	}
-	50% {
-		background-position: 100% 50%
-	}
-	100% {
-		background-position: 0% 50%
-	}
-}
-
-@-moz-keyframes Gradient {
-	0% {
-		background-position: 0% 50%
-	}
-	50% {
-		background-position: 100% 50%
-	}
-	100% {
-		background-position: 0% 50%
-	}
-}
-
-@keyframes Gradient {
-	0% {
-		background-position: 0% 50%
-	}
-	50% {
-		background-position: 100% 50%
-	}
-	100% {
-		background-position: 0% 50%
-	}
-}
-`
-
-export default class Template extends React.Component {
-  static propTypes = {
-    children: PropTypes.func,
+class TransitionHandler extends React.Component {
+  shouldComponentUpdate (nextProps, nextState) {
+    return this.props.location.pathname === window.location.pathname
   }
 
-  render() {
+  render () {
+    const {children} = this.props
     return (
-      <Background>
-      <Wrap>
-        <Layout className="Layout Nav">
-
-        <Helmet
-          title="jimmyNames"
-          meta={[
-            { name: "description", content: "Jimmy Names" },
-            { name: "keywords", content: "jimmy names, jimmyNames" },
-          ]}
-        />
-
-        <Container className="LayoutContainer">
-          <PaddingMobile>
-            <Link to="/"><Logo src={logo} /></Link>
-
-            <NavMenu className="Nav Menu">
-              <Link to="/about/"><NavItem>About.i</NavItem></Link>
-              <Link to="/me/"><NavItem>Me.png</NavItem></Link>
-              <a href=''><NavItem>Cv.pdf</NavItem></a>
-            </NavMenu>
-          </PaddingMobile>
-        </Container>
-
-        <PageRender className='Page Render'>
-          {this.props.children()}
-        </PageRender>
-
-      </Layout>
-    </Wrap>
-    </Background>
+      <TransitionContainer className='transition-container'>
+        {children}
+      </TransitionContainer>
     )
   }
 }
+
+const TemplateWrapper = ({ children, location }) => (
+  <ThemeProvider className='Theme' theme={theme}>
+    <WrapLayout className='Nav-PageRender-Flex-Container Also-Wrap'>
+			<Helmet
+	      title='jimmyNames'
+	      meta={[
+	        { name: 'description', content: 'Jimmy Names' },
+	        { name: 'keywords', content: 'jimmy names, jimmyNames' },
+	      ]}
+	    />
+    	<Nav />
+		  <TransitionGroup>
+		    <CSSTransition
+		      key={location.pathname}
+		      classNames='example'
+		      timeout={{ enter: 666, exit: 333 }}
+		        >
+		      <TransitionHandler location={location}>
+		    			<PageRender id='page-wrap' className='PageRender'>
+		      			<DownloadComp />
+		      				{children()}
+		    			</PageRender>
+		      </TransitionHandler>
+		    </CSSTransition>
+			</TransitionGroup>
+  	</WrapLayout>
+  </ThemeProvider>
+)
+
+TemplateWrapper.propTypes = {
+  children: PropTypes.func
+}
+
+export default withRouter(TemplateWrapper)
