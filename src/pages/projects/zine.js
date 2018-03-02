@@ -6,9 +6,9 @@ import 'animate.css/animate.min.css'
 
 import CTABannerComp from './../../components/CTABanner'
 
-import ay1 from './../../images/projects/auralyouth/ay1.png'
-import ay2 from './../../images/projects/auralyouth/ay2.png'
-import ay3 from './../../images/projects/auralyouth/ay3.png'
+import ay1 from './../../images/projects/zine/jb1.png'
+import ay2 from './../../images/projects/zine/jb2.png'
+import ay3 from './../../images/projects/zine/jb3.png'
 
 const Page = styled.div`
   width: 100%;
@@ -73,17 +73,44 @@ const ImageContainer = styled.section`
   }
 `
 
+const Outro = styled.section`
+height: 100vh;
+width: 100%;
+display: flex;
+justify-content: center;
+flex-direction: row;
+align-items: center;
+align-content: center;
 
+a {
+  text-decoration: none;
+  padding: 1em 1.5em;
+  background: blue;
+  min-width: 136.66px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  border: 2px solid black;
+  margin: 0.666em;
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    background: white;
+    color: blue;
+    border: 2px solid blue;
+    cursor: pointer;
+  }
+}
+`
 
-export default class AuralYouthPage extends React.Component {
+export default class JimmysBongoLifestyleBlog extends React.Component {
   render () {
     return (
       <Page theme={this.props.theme}>
         <Intro>
-          <H1>Aural Youth</H1>
-          <P>Freelance project</P>
-          <P>Built using Gatsby.js, Styled-components & React.js</P>
-          <P>Designed by <a href='https://www.linkedin.com/in/simone-ludeman-342042b3/' rel='noopener' target='_blank'>Simone Ludderman</a></P>
+          <H1>Jimmy's Bongo Lifestyle Blog </H1>
+          <P>Personal project</P>
+          <P>2016</P>
         </Intro>
 
         <ScrollAnimation animateIn='fadeIn' offset='500'>
@@ -104,8 +131,8 @@ export default class AuralYouthPage extends React.Component {
           </ImageContainer>
         </ScrollAnimation>
 
-        <CTABannerComp codelink='https://github.com/jimmynames/auralYouth' weblink='https://auralyouth.co.uk' />
-        
+        <CTABannerComp weblink='https://jimmynames.github.io/BongoLifestyle/' />
+
       </Page>
     )
   }

@@ -6,9 +6,7 @@ import 'animate.css/animate.min.css'
 
 import CTABannerComp from './../../components/CTABanner'
 
-import ay1 from './../../images/projects/auralyouth/ay1.png'
-import ay2 from './../../images/projects/auralyouth/ay2.png'
-import ay3 from './../../images/projects/auralyouth/ay3.png'
+import le1 from './../../images/projects/left/le1.png'
 
 const Page = styled.div`
   width: 100%;
@@ -73,39 +71,55 @@ const ImageContainer = styled.section`
   }
 `
 
+const Outro = styled.section`
+height: 100vh;
+width: 100%;
+display: flex;
+justify-content: center;
+flex-direction: row;
+align-items: center;
+align-content: center;
 
+a {
+  text-decoration: none;
+  padding: 1em 1.5em;
+  background: blue;
+  min-width: 136.66px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  border: 2px solid black;
+  margin: 0.666em;
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    background: white;
+    color: blue;
+    border: 2px solid blue;
+    cursor: pointer;
+  }
+}
+`
 
-export default class AuralYouthPage extends React.Component {
+export default class LeftPage extends React.Component {
   render () {
     return (
       <Page theme={this.props.theme}>
         <Intro>
-          <H1>Aural Youth</H1>
-          <P>Freelance project</P>
-          <P>Built using Gatsby.js, Styled-components & React.js</P>
-          <P>Designed by <a href='https://www.linkedin.com/in/simone-ludeman-342042b3/' rel='noopener' target='_blank'>Simone Ludderman</a></P>
+          <H1>LEFT</H1>
+          <P>Geek Night Project</P>
+          <P>Designed & Built to promote m8s release/soundcloud</P>
+          <P>And generally to play with :pseudo css, this 3d cube and soundcloud import</P>
         </Intro>
 
         <ScrollAnimation animateIn='fadeIn' offset='500'>
           <ImageContainer>
-            <img src={ay1} />
+            <img src={le1} />
           </ImageContainer>
         </ScrollAnimation>
 
-        <ScrollAnimation animateIn='fadeIn' offset='300'>
-          <ImageContainer>
-            <img src={ay2} />
-          </ImageContainer>
-        </ScrollAnimation>
+        <CTABannerComp weblink='https://jimmynames.github.io/LEFT/' />
 
-        <ScrollAnimation animateIn='fadeIn' offset='200'>
-          <ImageContainer>
-            <img src={ay3} />
-          </ImageContainer>
-        </ScrollAnimation>
-
-        <CTABannerComp codelink='https://github.com/jimmynames/auralYouth' weblink='https://auralyouth.co.uk' />
-        
       </Page>
     )
   }

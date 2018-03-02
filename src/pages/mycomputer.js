@@ -4,6 +4,10 @@ import styled from 'styled-components'
 import FolderComp from './../components/Folder'
 
 import ay1 from './../images/projects/auralyouth/ay1.png'
+import spr1 from './../images/projects/srdesign/spr3.png'
+import le1 from './../images/projects/left/le1.png'
+import jb1 from './../images/projects/zine/jb3.png'
+import cp1 from './../images/projects/codepen/cp1.png'
 
 const Page = styled.div`
   width: 100%;
@@ -55,11 +59,11 @@ const ProjectFolders = styled.div`
   display: flex;
   flex-direction: row;
   width: 100%;
-  height: 100%;
   flex-wrap: wrap;
   align-items: flex-start;
-  align-content: flex-flex-start;
   padding-top: 80px;
+  align-content: flex-start;
+  justify-content: flex-start;
 `
 
 export default class Projects extends React.Component {
@@ -67,15 +71,13 @@ export default class Projects extends React.Component {
     return (
       <Page>
         <h1>Projects</h1>
-        <p>Whilst the majority of my <i>most recent</i> code has been written at <A href='https://ruin.studio' rel='noopener' target='_blank'>Ruin.Studio</A> here's a few selected works from my freelance and for fun</p>
+        <p>Whilst the majority of my <i>most frequent</i> code has been written at <A href='https://ruin.studio' rel='noopener' target='_blank'>Ruin.Studio</A> here's a few selected works from my freelance and/or for projects/sites built for fun</p>
         <ProjectFolders fire={this.props.fire}>
           <FolderComp fire projectTitle='Aural Youth' info='' projectLink='/projects/auralyouth' src={ay1} src2x='' />
-          <FolderComp fire projectTitle='SR Design' info='' projectLink='#' src='' src2x='' />
-          <FolderComp projectTitle='LEFT' info='' src='' projectLink='#' src2x='' />
-          <FolderComp fire projectTitle='Digital Zine[0]' info='' projectLink='#' src='' src2x='' />
-          <FolderComp projectTitle='Checkm8s.net' info='' projectLink='#' src='' src2x='' />
-          <FolderComp fire projectTitle='Codepen Experiments' info='' projectLink='#' src='' src2x='' />
-          <FolderComp projectTitle='Legends Barber' info='' projectLink='#' src='' src2x='' />
+          <FolderComp fire projectTitle='SR Design' info='' projectLink='/projects/seanryan' src={spr1} src2x='' />
+          <FolderComp projectTitle='LEFT' info='' projectLink='/projects/left' src={le1} src2x='' />
+          <FolderComp projectTitle='Digital Zine[0]' info='' projectLink='/projects/zine' src={jb1} src2x='' />
+          <FolderComp projectTitle='Codepen Experiments' info='' projectLink='/projects/codepen' src={cp1} src2x='' />
         </ProjectFolders>
       </Page>
     )

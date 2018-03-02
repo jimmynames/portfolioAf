@@ -6,9 +6,11 @@ import 'animate.css/animate.min.css'
 
 import CTABannerComp from './../../components/CTABanner'
 
-import ay1 from './../../images/projects/auralyouth/ay1.png'
-import ay2 from './../../images/projects/auralyouth/ay2.png'
-import ay3 from './../../images/projects/auralyouth/ay3.png'
+import cp1 from './../../images/projects/codepen/cp1.png'
+import cp2 from './../../images/projects/codepen/cp2.png'
+import cp3 from './../../images/projects/codepen/cp3.png'
+import cp4 from './../../images/projects/codepen/cp4.png'
+import cp5 from './../../images/projects/codepen/cp5.png'
 
 const Page = styled.div`
   width: 100%;
@@ -73,39 +75,76 @@ const ImageContainer = styled.section`
   }
 `
 
+const Outro = styled.section`
+height: 100vh;
+width: 100%;
+display: flex;
+justify-content: center;
+flex-direction: row;
+align-items: center;
+align-content: center;
 
+a {
+  text-decoration: none;
+  padding: 1em 1.5em;
+  background: ${({theme}) => theme.darkColor.blue};
+  min-width: 136.66px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  border: 2px solid ${({theme}) => theme.darkColor.black};
+  margin: 0.666em;
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    background: white;
+    color: blue;
+    border: 2px solid ${({theme}) => theme.darkColor.blue};
+    cursor: pointer;
+  }
+}
+`
 
-export default class AuralYouthPage extends React.Component {
+export default class CodepenPage extends React.Component {
   render () {
     return (
-      <Page theme={this.props.theme}>
+      <Page >
         <Intro>
-          <H1>Aural Youth</H1>
-          <P>Freelance project</P>
-          <P>Built using Gatsby.js, Styled-components & React.js</P>
-          <P>Designed by <a href='https://www.linkedin.com/in/simone-ludeman-342042b3/' rel='noopener' target='_blank'>Simone Ludderman</a></P>
+          <H1>Codepen</H1>
         </Intro>
 
         <ScrollAnimation animateIn='fadeIn' offset='500'>
           <ImageContainer>
-            <img src={ay1} />
+            <img src={cp1} />
           </ImageContainer>
         </ScrollAnimation>
 
         <ScrollAnimation animateIn='fadeIn' offset='300'>
           <ImageContainer>
-            <img src={ay2} />
+            <img src={cp2} />
           </ImageContainer>
         </ScrollAnimation>
 
         <ScrollAnimation animateIn='fadeIn' offset='200'>
           <ImageContainer>
-            <img src={ay3} />
+            <img src={cp3} />
           </ImageContainer>
         </ScrollAnimation>
 
-        <CTABannerComp codelink='https://github.com/jimmynames/auralYouth' weblink='https://auralyouth.co.uk' />
-        
+        <ScrollAnimation animateIn='fadeIn' offset='0'>
+          <ImageContainer>
+            <img src={cp4} />
+          </ImageContainer>
+        </ScrollAnimation>
+
+        <ScrollAnimation animateIn='fadeIn' offset='0'>
+          <ImageContainer>
+            <img src={cp5} />
+          </ImageContainer>
+        </ScrollAnimation>
+
+        <CTABannerComp weblink='https://codepen.io/Jimmynames/' />
+
       </Page>
     )
   }

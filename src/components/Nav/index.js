@@ -136,10 +136,10 @@ export default class Nav extends React.Component {
           <Link to='/' exact><Logo src={logo} /></Link>
 
           <NavMenu className='Menu'>
-            <Link to='/about/'><NavItem>About.info</NavItem></Link>
+            <Link to='/about/'><NavItem>About.i</NavItem></Link>
             <Link to='/me/'><NavItem>Me.href</NavItem></Link>
-            <Link to='/projects/'><NavItem>Work.life</NavItem></Link>
-            <a onClick={this.onClick}><NavItem>Cv.pdf</NavItem></a>
+            <Link to='/mycomputer/'><NavItem>Projects</NavItem></Link>
+            <a onClick={this.onClick}><NavItem>Cv.dmg</NavItem></a>
           </NavMenu>
         </PaddingMobile>
       </NavComp>

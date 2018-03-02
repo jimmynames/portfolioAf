@@ -58,8 +58,8 @@ const VerticalCenterAlign = styled.div`
     @media (max-width: 414px) {
     }
     &:hover {
-      background: ${({theme}) => theme.darkColor.blue};;
-      border: 2px solid ${({theme}) => theme.darkColor.blue};;
+      background: ${({theme}) => theme.darkColor.blue};
+      border: 2px solid ${({theme}) => theme.darkColor.blue};
     }
   }
 
