@@ -8,6 +8,7 @@ import spr1 from './../images/projects/srdesign/spr3.png'
 import le1 from './../images/projects/left/le1.png'
 import jb1 from './../images/projects/zine/jb3.png'
 import cp1 from './../images/projects/codepen/cp1.png'
+import mg1 from './../images/projects/250/mg2.png'
 
 const Page = styled.div`
   width: 100%;
@@ -75,6 +76,7 @@ export default class Projects extends React.Component {
         <ProjectFolders fire={this.props.fire}>
           <FolderComp fire projectTitle='Aural Youth' info='' projectLink='/projects/auralyouth' src={ay1} src2x='' />
           <FolderComp fire projectTitle='SR Design' info='' projectLink='/projects/seanryan' src={spr1} src2x='' />
+          <FolderComp fire projectTitle='250mg' info='' projectLink='/projects/250mg' src={mg1} src2x='' />
           <FolderComp projectTitle='LEFT' info='' projectLink='/projects/left' src={le1} src2x='' />
           <FolderComp projectTitle='Digital Zine[0]' info='' projectLink='/projects/zine' src={jb1} src2x='' />
           <FolderComp projectTitle='Codepen Experiments' info='' projectLink='/projects/codepen' src={cp1} src2x='' />
