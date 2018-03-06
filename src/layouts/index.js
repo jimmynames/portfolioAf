@@ -54,6 +54,8 @@ const PageRender = styled.div`
   padding: 1.35rem;
   padding-left: 4rem;
   width: 78vw;
+  overflow: hidden;
+  overflow-y: scroll;
   @media (max-width: 693px) {
     width: 100%;
     height: auto;

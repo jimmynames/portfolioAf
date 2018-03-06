@@ -6,7 +6,6 @@ import Link from 'gatsby-link'
 
 const NavComp = styled.section`
   width: 20%;
-  position: fixed;
   box-sizing: border-box;
   overflow: hidden;
   @media (max-width: 693px) {
