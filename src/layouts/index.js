@@ -45,6 +45,13 @@ const TransitionContainer = styled.div`
     left: 0;
     height: auto;
   }
+
+  @media (min-width: 1295px) {
+    max-width: 1000px;
+    width: 100%;
+    left: 90%;
+    transform: translateX(-90%);
+  }
 `
 
 const PageRender = styled.div`
@@ -64,6 +71,10 @@ const PageRender = styled.div`
   @media (max-width: 414px) {
     width: 100%;
     height: auto;
+  }
+
+  @media (min-width: 1295px) {
+    width: 100%;
   }
 `
 
