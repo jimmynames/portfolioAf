@@ -49,8 +49,7 @@ const TransitionContainer = styled.div`
   @media (min-width: 1295px) {
     max-width: 1000px;
     width: 100%;
-    left: 90%;
-    transform: translateX(-90%);
+    left: 35%;
   }
 `
 
