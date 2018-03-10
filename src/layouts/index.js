@@ -33,12 +33,14 @@ require('normalize.css')
 // }
 
 const nightMode = {
+  label: 'nightMode',
   black: 'black',
   white: 'white',
   blue: 'blue'
 }
 
 const lightMode = {
+  label: 'lightMode',
   black: 'white',
   white: 'black',
   blue: 'blue'
@@ -340,6 +342,20 @@ overflow: visible;
 }
 `
 
+const DownloadPopup = styled.div`
+  height: 333px;
+  width: 333px;
+  background: blue;
+  position: fixed;
+  top: 33.3%;
+  left: 66.6%;
+  z-index: 666;
+  border: 2px solid white;
+  visibility: ${props => props.visible ? 'visible' : 'hidden'};
+  height: ${props => props.visible ? '333px' : '0px'};
+  width: ${props => props.visible ? '333px' : '0px'};
+`
+
 class TransitionHandler extends React.Component {
   shouldComponentUpdate (nextProps, nextState) {
     return location.pathname === window.location.pathname
@@ -360,18 +376,18 @@ class TemplateWrapper extends React.Component {
     super(props)
     this.state = {
       isDark: true,
-      theme: nightMode
+      theme: nightMode,
+      shouldHide: false
     }
+    this.handlePopUp = this.handlePopUp.bind(this)
   }
-    // this.onClick = this.onClick.bind(this)
-  // }
-  // onClick () {
-  //   this.setState(prevState => ({
-  //     color: !prevState.color
-  //   }))
-  // }
 
-  handleClick() {
+  handlePopUp() {
+    this.setState(prevState => ({
+      shouldHide: !prevState.shouldHide
+    }));
+  }
+  HandleColorChange() {
     // Toggle day / night on click
     const isDark = !this.state.isDark
 
@@ -394,6 +410,7 @@ class TemplateWrapper extends React.Component {
     	        { name: 'keywords', content: 'jimmy names, jimmyNames' },
     	      ]}
     	    />
+          <DownloadPopup visible={this.state.shouldHide} />
         	{/* <Nav /> */}
           <NavComp className='Nav'>
             <PaddingMobile>
@@ -403,11 +420,11 @@ class TemplateWrapper extends React.Component {
                 <Link to='/about/'><NavItem>About.i</NavItem></Link>
                 <Link to='/me/'><NavItem>Me.href</NavItem></Link>
                 <Link to='/mycomputer/'><NavItem>Projects</NavItem></Link>
-                <a onClick={this.onClick}><NavItem>Cv.dmg</NavItem></a>
+                <a onClick={() => this.handlePopUp()}><NavItem>Cv.dmg</NavItem></a>
               </NavMenu>
 
               <Emoji>
-                <div className="kitty-switch" onClick={() => this.handleClick()}>
+                <div className="kitty-switch" onClick={() => this.HandleColorChange()}>
                   <input type="checkbox" id="toggle" tabindex="1"></input>
                   <div className="kitty"></div>
                   <label for="toggle" className="well"></label>
@@ -424,7 +441,7 @@ class TemplateWrapper extends React.Component {
     		        >
     		      <TransitionHandler >
     		    			<PageRender id='page-wrap' className='PageRender'>
-    		      			<DownloadComp />
+
     		      				{children()}
     		    			</PageRender>
     		      </TransitionHandler>

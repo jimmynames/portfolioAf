@@ -15,6 +15,20 @@ const CubeContainer = styled.div`
   }
 `
 
+// const HoverAdjustments = (state) => {
+//   if (this.state.theme.label === 'darkMode') {
+//     return `
+//       color: pink;
+//       background: pink;
+//     `
+//   } else {
+//     return `
+//       background: red;
+//       color: red;
+//     `
+//   }
+// }
+
 const Cube = styled.div`
   height: 30px;
   width: 100%;
@@ -25,14 +39,24 @@ const Cube = styled.div`
   overflow:hidden;
   overflow-y:auto;
   transition: height 0.3s ease-in-out;
+  ::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 7px;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, .5);
+  -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, .5);
+}
+  ${'' /* ${({state}) => HoverAdjustments(state)} */}
   &:hover {
     background: ${props => props.theme.blue};
     border: 2px solid ${props => props.theme.blue};
     transition: all 0.2s ease;
     height: 60px;
-
+    ${'' /* color: ${(this.state.theme.label === 'nightMode') ? props => props.theme.blue : props => props.theme.white}; */}
     ul {
-      color: ${props => props.theme.white};
+
       transition: color 0.3s ease;
     }
   }
@@ -68,7 +92,7 @@ export default class CubeComp extends React.Component {
     return (
       <CubeContainer theme={this.props.theme}>
         <H4>I also dig</H4>
-        <Cube>
+        <Cube >
           <CubeList>
             <CubeListItem>music</CubeListItem>
             <CubeListItem>anime</CubeListItem>

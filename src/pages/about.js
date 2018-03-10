@@ -37,6 +37,7 @@ const H1about = styled(H1)`
 const H2about = styled(H2)`
   i {
     padding-right: 5px;
+    color: ${props => props.theme.white};
   }
 `
 
