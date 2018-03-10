@@ -7,6 +7,8 @@ import {H3} from './../components/HTML/H3'
 import {H4} from './../components/HTML/H4'
 import {A} from './../components/HTML/A'
 
+import {HoverAdjustments} from './../components/HoverAdjustments'
+
 import CubeComp from './../components/Cube'
 
 import logo from './../images/logo.png'
@@ -64,6 +66,7 @@ const VerticalCenterAlign = styled.div`
     font-family: 'Open Sans Condensed', sans-serif;
     font-weight: 700;
     color: ${props => props.theme.white};
+    ${({theme}) => HoverAdjustments(theme)}
     border: 2px solid ${props => props.theme.black};
     padding-right: 2px;
     transition: all 0.3s ease-in-out;

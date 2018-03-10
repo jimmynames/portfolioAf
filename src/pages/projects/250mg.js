@@ -5,6 +5,8 @@ import 'animate.css/animate.min.css'
 import {H1} from './../../components/HTML/H1'
 import {P} from './../../components/HTML/P'
 
+import {HoverAdjustments} from './../../components/HoverAdjustments'
+
 import ProjectImageComp from './../../components/ProjectImage'
 import CTABannerComp from './../../components/CTABanner'
 
@@ -31,6 +33,7 @@ const H1case = styled(H1)`
 
 const Pcase = styled(P)`
   a{
+    ${({theme}) => HoverAdjustments(theme)}
     position: relative;
     color: ${props => props.theme.white};
     text-decoration: none;

@@ -47,7 +47,7 @@ const lightMode = {
 }
 
 const WrapLayout = styled.div`
-  max-width: 1200px;
+  ${'' /* max-width: 1200px; */}
   margin: 0 auto;
   display: flex;
   flex-direcrion: row;
@@ -59,7 +59,7 @@ const WrapLayout = styled.div`
 `
 
 const TransitionContainer = styled.div`
-  width: 78vw;
+  width: 100%;
   left: 20%;
   @media (max-width: 693px) {
     width: 100%;
@@ -133,7 +133,7 @@ injectGlobal`
 //   `;
 //   return Children.only(children);
 // };
-//
+
 // export default withTheme(Global);
 
 //* NAV */

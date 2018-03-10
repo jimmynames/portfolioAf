@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import {HoverAdjustments} from './../HoverAdjustments'
 import {H4} from './../HTML/H4'
 
 const CubeContainer = styled.div`
@@ -14,28 +15,6 @@ const CubeContainer = styled.div`
     padding-top: 8px;
   }
 `
-
-const HoverAdjustments = (theme, props) => {
-  if (theme.label === 'nightMode') {
-    console.log('hover theme: ', theme)
-    return `
-      &:hover {
-
-      }
-    `
-  } else {
-    console.log('hover theme: fail', theme)
-    return `
-      &:hover {
-      color: white;
-      transition: none;
-    }
-    ul, li {
-      transition: none;
-    }
-    `
-  }
-}
 
 const Cube = styled.div`
   height: 30px;

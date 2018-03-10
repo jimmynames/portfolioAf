@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import Link from 'gatsby-link'
 
+import {HoverAdjustments} from './../HoverAdjustments'
 import {A} from './../HTML/A'
 
 const Acta = styled(A)`
@@ -29,6 +30,7 @@ a {
   align-content: center;
   border: 2px solid ${props => props.theme.black};
   color: ${props => props.theme.white};
+  ${'' /* ${({theme}) => HoverAdjustments(theme)} */}
   margin: 0.666em;
   transition: all 0.3s ease-in-out;
   &:hover {

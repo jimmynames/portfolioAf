@@ -71,6 +71,9 @@ export default class CodepenPage extends React.Component {
       <Page >
         <Intro>
           <H1case>Codepen</H1case>
+          <Pcase>Yung Jim Projects</Pcase>
+          <Pcase>Projects built early into learning code back in 2015</Pcase>
+          <Pcase>Javascript, Sass, SVG</Pcase>
         </Intro>
 
         <ProjectImageComp src={cp1} />
