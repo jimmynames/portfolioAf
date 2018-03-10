@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import {H4} from './../HTML/H4'
+
 const CubeContainer = styled.div`
   display: flex;
   flex-direction: row;
@@ -19,7 +21,7 @@ const Cube = styled.div`
   max-width: 300px;
   margin-left: 1rem;
   border: 2px solid ${props => props.theme.blue};
-
+  color: ${props => props.theme.white};
   overflow:hidden;
   overflow-y:auto;
   transition: height 0.3s ease-in-out;
@@ -30,7 +32,7 @@ const Cube = styled.div`
     height: 60px;
 
     ul {
-      color: ${props => props.theme.black};
+      color: ${props => props.theme.white};
       transition: color 0.3s ease;
     }
   }
@@ -65,7 +67,7 @@ export default class CubeComp extends React.Component {
   render () {
     return (
       <CubeContainer theme={this.props.theme}>
-        <h4>I also dig</h4>
+        <H4>I also dig</H4>
         <Cube>
           <CubeList>
             <CubeListItem>music</CubeListItem>

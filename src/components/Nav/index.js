@@ -115,6 +115,112 @@ const NavItem = styled.li`
   }
 `
 
+const Emoji = styled.div`
+
+
+
+.kitty-switch {
+width: auto;
+display: block;
+position: relative;
+margin: 30px 0px 20px 0px;
+}
+.kitty-switch .prompt {
+display: inline-block;
+margin-top: 10px;
+}
+.kitty-switch .well {
+background: white;
+height: 20px;
+width: 65px;
+position: absolute;
+right: 50px;
+top: 7px;
+border-radius: 10px;
+box-shadow: inset 0 2px 0 rgba(0, 0, 0, 0.1);
+border: 1px solid #a5d4e4;
+cursor: pointer;
+}
+.kitty-switch #toggle {
+opacity: 0;
+border: none;
+border-radius: 0;
+outline: none;
+appearance: none;
+-moz-appearance: none;
+-webkit-appearance: none;
+height: 29px;
+width: 140px;
+background: transparent;
+position: absolute;
+right: 0px;
+top: 3px;
+cursor: pointer;
+z-index: 100;
+color: tranparent;
+}
+.kitty-switch #toggle:after {
+content: '';
+background-color: transparent;
+height: 40px;
+width: 80px;
+position: absolute;
+left: 30px;
+top: -5px;
+}
+.kitty-switch #toggle ~ div.kitty:before {
+content: "\01F431";
+position: absolute;
+right: 80px;
+top: -10px;
+font-size: 45px;
+z-index: 1;
+color: #53adcb;
+-moz-transition: all 0.25s ease-out;
+-webkit-transition: all 0.25s ease-out;
+-o-transition: all 0.25s ease-out;
+transition: all 0.25s ease-out;
+}
+.kitty-switch #toggle:checked {
+right: 0px;
+}
+.kitty-switch #toggle:checked:after {
+left: -80px;
+}
+.kitty-switch #toggle:checked ~ div.kitty:before {
+content: '\01F63A';
+top: -10px;
+right: 41px;
+}
+.kitty-switch #toggle:checked ~ div.visible {
+opacity: 1;
+max-height: 900px;
+overflow: visible;
+}
+.kitty-switch #toggle ~ label:before {
+content: "No";
+position: absolute;
+color: #53adcb;
+left: -30px;
+top: 0px;
+font-size: 16px;
+}
+.kitty-switch #toggle ~ label:after {
+content: "Yes";
+position: absolute;
+color: #bbbbbb;
+left: 83px;
+top: 0px;
+font-size: 16px;
+}
+.kitty-switch #toggle:checked ~ label:before {
+color: #bbbbbb;
+}
+.kitty-switch #toggle:checked ~ label:after {
+color: #53adcb;
+}
+`
+
 export default class Nav extends React.Component {
   constructor (props) {
     super(props)
@@ -139,6 +245,15 @@ export default class Nav extends React.Component {
             <Link to='/me/'><NavItem>Me.href</NavItem></Link>
             <Link to='/mycomputer/'><NavItem>Projects</NavItem></Link>
             <a onClick={this.onClick}><NavItem>Cv.dmg</NavItem></a>
+
+            <Emoji>
+              <div className="kitty-switch">
+                <input type="checkbox" id="toggle" tabindex="1"></input>
+                <div className="kitty"></div>
+                <label for="toggle" className="well"></label>
+              </div>
+            </Emoji>
+
           </NavMenu>
         </PaddingMobile>
       </NavComp>

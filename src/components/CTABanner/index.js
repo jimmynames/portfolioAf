@@ -39,8 +39,8 @@ export default class CTABanner extends React.Component {
       <div>
         <CTABannerComp weblink={this.props.weblink} codelink={this.props.codelink}>
           <Link to='/mycomputer'>🔙 Projects</Link>
-          ${(this.props.weblink) ? <a href={this.props.weblink} rel='noopener' target='_blank'>🌐 Website</a> : null }
-          ${(this.props.codelink) ? <a href={this.props.codelink} rel='noopener' target='_blank'>💾 Code</a> : null }
+          {(this.props.weblink) ? <a href={this.props.weblink} rel='noopener' target='_blank'>🌐 Website</a> : null }
+          {(this.props.codelink) ? <a href={this.props.codelink} rel='noopener' target='_blank'>💾 Code</a> : null }
         </CTABannerComp>
       </div>
     )

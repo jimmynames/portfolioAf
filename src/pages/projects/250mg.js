@@ -1,9 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
-import Link from 'gatsby-link'
-import ScrollAnimation from 'react-animate-on-scroll'
 import 'animate.css/animate.min.css'
 
+import {H1} from './../../components/HTML/H1'
+import {P} from './../../components/HTML/P'
+
+import ProjectImageComp from './../../components/ProjectImage'
 import CTABannerComp from './../../components/CTABanner'
 
 import mg1 from './../../images/projects/250/mg1.png'
@@ -23,15 +25,17 @@ const Intro = styled.div`
   }
 `
 
-const H1 = styled.h1`
+const H1case = styled(H1)`
   margin-top: 0;
 `
 
-const P = styled.p`
+const Pcase = styled(P)`
   a{
     position: relative;
+    color: ${props => props.theme.white};
     text-decoration: none;
     padding: 5px;
+    z-index: 2;
     &:after {
       position: absolute;
       content: '';
@@ -42,11 +46,12 @@ const P = styled.p`
       right: 0;
       width: 100%;
       background: blue;
-      -webkit-transition: 0.5s;
       transition: 0.5s;
     }
 
     &:hover {
+      color: ${props => props.theme.white};
+      z-index: 666;
       &:after {
         height: 100%;
         bottom: 0;
@@ -56,46 +61,20 @@ const P = styled.p`
   }
 `
 
-const ImageContainer = styled.section`
-  height: 100%;
-  width: 100%;
-  margin: 30px 0;
-  border: 2px solid white;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  align-content: center;
-  img {
-    height: 90%;
-    width: 100%;
-  }
-`
-
-
-
 export default class MG250 extends React.Component {
   render () {
     return (
-      <Page theme={this.props.theme}>
+      <Page>
         <Intro>
-          <H1>250mg</H1>
-          <P>Charcoal Face Mask Project</P>
-          <P>Built and conceptualised with <a href='https://twitter.com/senso_info' rel='noopener' target='_blank'>Senso36</a> to provide random[i]zed ambient visuals overlaying random[i]zed ambient mixes</P>
-          <P>React Boilerplate, React.js, Styled-components</P>
+          <H1case>250mg</H1case>
+          <Pcase>Charcoal Face Mask Project</Pcase>
+          <Pcase>Built and conceptualised with <a href='https://twitter.com/senso_info' rel='noopener' target='_blank'>Senso36</a> to provide random[i]zed ambient visuals overlaying random[i]zed ambient mixes</Pcase>
+          <Pcase>React Boilerplate, React.js, Styled-components</Pcase>
         </Intro>
 
-        <ScrollAnimation animateIn='fadeIn' offset='500'>
-          <ImageContainer>
-            <img src={mg1} />
-          </ImageContainer>
-        </ScrollAnimation>
+        <ProjectImageComp src={mg1} />
 
-        <ScrollAnimation animateIn='fadeIn' offset='300'>
-          <ImageContainer>
-            <img src={mg2} />
-          </ImageContainer>
-        </ScrollAnimation>
+        <ProjectImageComp src={mg2} />
 
 
         <CTABannerComp codelink='https://github.com/thompson-mcdonald/250mg/' weblink='http://250mg.site' />

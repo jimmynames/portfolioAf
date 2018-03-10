@@ -1,10 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
-import Link from 'gatsby-link'
-import ScrollAnimation from 'react-animate-on-scroll'
+
 import 'animate.css/animate.min.css'
 
+import {H1} from './../../components/HTML/H1'
+import {P} from './../../components/HTML/P'
+
 import CTABannerComp from './../../components/CTABanner'
+import ProjectImageComp from './../../components/ProjectImage'
 
 import cp1 from './../../images/projects/codepen/cp1.png'
 import cp2 from './../../images/projects/codepen/cp2.png'
@@ -26,81 +29,38 @@ const Intro = styled.div`
   }
 `
 
-const H1 = styled.h1`
+const H1case = styled(H1)`
   margin-top: 0;
 `
 
-const P = styled.p`
-  a{
-    position: relative;
-    text-decoration: none;
-    padding: 5px;
-    &:after {
-      position: absolute;
-      content: '';
-      height: 2px;
-      bottom: -4px;
-      margin: 0 auto;
-      left: 0;
-      right: 0;
-      width: 100%;
-      background: blue;
-      -webkit-transition: 0.5s;
-      transition: 0.5s;
-    }
-
-    &:hover {
-      &:after {
-        height: 100%;
-        bottom: 0;
-        z-index: -1;
-      }
-    }
-  }
-`
-
-const ImageContainer = styled.section`
-  height: 100%;
-  width: 100%;
-  margin: 30px 0;
-  border: 2px solid white;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  align-content: center;
-  img {
-    height: 90%;
-    width: 100%;
-  }
-`
-
-const Outro = styled.section`
-height: 100vh;
-width: 100%;
-display: flex;
-justify-content: center;
-flex-direction: row;
-align-items: center;
-align-content: center;
-
-a {
+const Pcase = styled(P)`
+a{
+  position: relative;
+  color: ${props => props.theme.white};
   text-decoration: none;
-  padding: 1em 1.5em;
-  background: ${props => props.theme.blue};
-  min-width: 136.66px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-  border: 2px solid ${props => props.theme.black};
-  margin: 0.666em;
-  transition: all 0.3s ease-in-out;
+  padding: 5px;
+  z-index: 2;
+  &:after {
+    position: absolute;
+    content: '';
+    height: 2px;
+    bottom: -4px;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background: blue;
+    transition: 0.5s;
+  }
+
   &:hover {
-    background: white;
-    color: blue;
-    border: 2px solid ${props => props.theme.blue};
-    cursor: pointer;
+    color: ${props => props.theme.white};
+    z-index: 666;
+    &:after {
+      height: 100%;
+      bottom: 0;
+      z-index: -1;
+    }
   }
 }
 `
@@ -110,38 +70,14 @@ export default class CodepenPage extends React.Component {
     return (
       <Page >
         <Intro>
-          <H1>Codepen</H1>
+          <H1case>Codepen</H1case>
         </Intro>
 
-        <ScrollAnimation animateIn='fadeIn' offset='500'>
-          <ImageContainer>
-            <img src={cp1} />
-          </ImageContainer>
-        </ScrollAnimation>
-
-        <ScrollAnimation animateIn='fadeIn' offset='300'>
-          <ImageContainer>
-            <img src={cp2} />
-          </ImageContainer>
-        </ScrollAnimation>
-
-        <ScrollAnimation animateIn='fadeIn' offset='200'>
-          <ImageContainer>
-            <img src={cp3} />
-          </ImageContainer>
-        </ScrollAnimation>
-
-        <ScrollAnimation animateIn='fadeIn' offset='0'>
-          <ImageContainer>
-            <img src={cp4} />
-          </ImageContainer>
-        </ScrollAnimation>
-
-        <ScrollAnimation animateIn='fadeIn' offset='0'>
-          <ImageContainer>
-            <img src={cp5} />
-          </ImageContainer>
-        </ScrollAnimation>
+        <ProjectImageComp src={cp1} />
+        <ProjectImageComp src={cp2} />
+        <ProjectImageComp src={cp3} />
+        <ProjectImageComp src={cp4} />
+        <ProjectImageComp src={cp5} />
 
         <CTABannerComp weblink='https://codepen.io/Jimmynames/' />
 

@@ -3,6 +3,10 @@ import styled from 'styled-components'
 
 import FolderComp from './../components/Folder'
 
+import {H1} from './../components/HTML/H1'
+import {P} from './../components/HTML/P'
+import {A} from './../components/HTML/A'
+
 import ay1 from './../images/projects/auralyouth/ay1.png'
 import spr1 from './../images/projects/srdesign/spr3.png'
 import le1 from './../images/projects/left/le1.png'
@@ -29,10 +33,14 @@ const Page = styled.div`
   }
 `
 
-const A = styled.a`
+const Pprojects = styled(P)``
+const H1projects = styled(H1)``
+
+const Alink = styled(A)`
 position: relative;
 text-decoration: none;
 padding: 5px;
+z-index: 2;
 &:after {
   position: absolute;
   content: '';
@@ -48,6 +56,7 @@ padding: 5px;
 }
 
 &:hover {
+  color: ${props => props.theme.white} !important;
   &:after {
     height: 100%;
     bottom: 0;
@@ -71,8 +80,8 @@ export default class Projects extends React.Component {
   render () {
     return (
       <Page>
-        <h1>Projects</h1>
-        <p>Whilst the majority of my <i>most frequent</i> code has been written at <A href='https://ruin.studio' rel='noopener' target='_blank'>Ruin.Studio</A> here's a few selected works from my freelance and/or for projects/sites built for fun</p>
+        <H1projects>Projects</H1projects>
+        <Pprojects>Whilst the majority of my <i>most frequent</i> code has been written at <Alink href='https://ruin.studio' rel='noopener' target='_blank'>Ruin.Studio</Alink> here's a few selected works from my freelance and/or for projects/sites built for fun</Pprojects>
         <ProjectFolders fire={this.props.fire}>
           <FolderComp fire projectTitle='Aural Youth' info='' projectLink='/projects/auralyouth' src={ay1} src2x='' />
           <FolderComp fire projectTitle='SR Design' info='' projectLink='/projects/seanryan' src={spr1} src2x='' />

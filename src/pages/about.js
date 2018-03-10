@@ -1,6 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import {H1} from './../components/HTML/H1'
+import {H2} from './../components/HTML/H2'
+import {H3} from './../components/HTML/H3'
+import {H4} from './../components/HTML/H4'
+import {A} from './../components/HTML/A'
+
 import CubeComp from './../components/Cube'
 
 import logo from './../images/logo.png'
@@ -19,19 +25,26 @@ const AboutContainer = styled.div`
   width: 100%;
 `
 
-const H3 = styled.h3`
+const H3about = styled(H3)`
   margin: 0;
   margin-right: ${props => props.about ? '0.3em' : null};
 `
 
-const H1 = styled.h1`
+const H1about = styled(H1)`
   margin-top: 0;
 `
 
-const H2 = styled.h2`
+const H2about = styled(H2)`
   i {
     padding-right: 5px;
   }
+`
+
+const H4about = styled(H4)`
+`
+
+const Aabout = styled(A)`
+
 `
 
 const VerticalCenterAlign = styled.div`
@@ -49,6 +62,7 @@ const VerticalCenterAlign = styled.div`
     font-size: 18px;
     font-family: 'Open Sans Condensed', sans-serif;
     font-weight: 700;
+    color: ${props => props.theme.white};
     border: 2px solid ${props => props.theme.black};
     padding-right: 2px;
     transition: all 0.3s ease-in-out;
@@ -81,10 +95,10 @@ export default class Index extends React.Component {
     return (
       <Page>
         <AboutContainer>
-          <H1>My names James but most people call me Jimmy</H1>
-          <H2>I live on the internet under the alias of 👽<i>Names</i>👔</H2>
-          <VerticalCenterAlign about><H3 about>I'm a Front-end Web Developer and I work at </H3><a href='https://ruin.studio' target='_blank' rel='noopener'><RuinLogo src={logo} />Studio</a></VerticalCenterAlign>
-          <h4>I fuck with Css-in-js/Sass/Vanilla Css™, React.js⚛️ & SVGs💖</h4>
+          <H1about>My names James but most people call me Jimmy</H1about>
+          <H2about>I live on the internet under the alias of 👽<i>Names</i>👔</H2about>
+          <VerticalCenterAlign about><H3about about>I'm a Front-end Web Developer and I work at </H3about><a href='https://ruin.studio' target='_blank' rel='noopener'><RuinLogo src={logo} />Studio</a></VerticalCenterAlign>
+          <H4about>I fuck with Css-in-js/Sass/Vanilla Css™, React.js⚛️ & SVGs💖</H4about>
           <CubeComp />
         </AboutContainer>
       </Page>
