@@ -18,18 +18,19 @@ const Cube = styled.div`
   width: 100%;
   max-width: 300px;
   margin-left: 1rem;
-  border: 2px solid ${({theme}) => theme.darkColor.blue};
+  border: 2px solid ${props => props.theme.blue};
+
   overflow:hidden;
   overflow-y:auto;
   transition: height 0.3s ease-in-out;
   &:hover {
-    background: ${({theme}) => theme.darkColor.blue};
-    border: 2px solid ${({theme}) => theme.darkColor.blue};
+    background: ${props => props.theme.blue};
+    border: 2px solid ${props => props.theme.blue};
     transition: all 0.2s ease;
     height: 60px;
 
     ul {
-      color: ${({theme}) => theme.darkColor.black};
+      color: ${props => props.theme.black};
       transition: color 0.3s ease;
     }
   }

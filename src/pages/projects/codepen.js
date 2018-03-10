@@ -87,19 +87,19 @@ align-content: center;
 a {
   text-decoration: none;
   padding: 1em 1.5em;
-  background: ${({theme}) => theme.darkColor.blue};
+  background: ${props => props.theme.blue};
   min-width: 136.66px;
   display: flex;
   justify-content: center;
   align-items: center;
   align-content: center;
-  border: 2px solid ${({theme}) => theme.darkColor.black};
+  border: 2px solid ${props => props.theme.black};
   margin: 0.666em;
   transition: all 0.3s ease-in-out;
   &:hover {
     background: white;
     color: blue;
-    border: 2px solid ${({theme}) => theme.darkColor.blue};
+    border: 2px solid ${props => props.theme.blue};
     cursor: pointer;
   }
 }

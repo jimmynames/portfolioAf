@@ -23,7 +23,7 @@ const FolderHolder = styled.div`
        }
 
       p {
-        color: ${({theme}) => theme.darkColor.blue};
+        color: ${props => props.theme.blue};
       }
 
       div {
@@ -88,7 +88,7 @@ const FolderCloseP = styled.p`
  width: 86%;
  text-align: left;
  left: 11px;
- color: ${({theme}) => theme.darkColor.black};
+ color: ${props => props.theme.black};
  font-size: 18px;
 `
 

@@ -47,7 +47,7 @@ const NavMenu = styled.ul`
   }
 
   a:hover {
-    color: ${({theme}) => theme.darkColor.white};
+    color: ${props => props.theme.white};
   }
 `
 
@@ -84,10 +84,10 @@ const NavItem = styled.li`
   }
   &:hover {
    padding-left: 1em;
-   color: ${({theme}) => theme.darkColor.black};
+   color: ${props => props.theme.black};
    background-position: 0 0;
     a {
-      color: ${({theme}) => theme.darkColor.black};
+      color: ${props => props.theme.black};
     }
      &:before {
      visibility: visible;

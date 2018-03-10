@@ -49,7 +49,7 @@ const VerticalCenterAlign = styled.div`
     font-size: 18px;
     font-family: 'Open Sans Condensed', sans-serif;
     font-weight: 700;
-    border: 2px solid ${({theme}) => theme.darkColor.black};
+    border: 2px solid ${props => props.theme.black};
     padding-right: 2px;
     transition: all 0.3s ease-in-out;
     img {
@@ -58,8 +58,8 @@ const VerticalCenterAlign = styled.div`
     @media (max-width: 414px) {
     }
     &:hover {
-      background: ${({theme}) => theme.darkColor.blue};
-      border: 2px solid ${({theme}) => theme.darkColor.blue};
+      background: ${props => props.theme.blue};
+      border: 2px solid ${props => props.theme.blue};
     }
   }
 
@@ -79,7 +79,7 @@ const RuinLogo = styled.img`
 export default class Index extends React.Component {
   render () {
     return (
-      <Page theme={this.props.theme}>
+      <Page>
         <AboutContainer>
           <H1>My names James but most people call me Jimmy</H1>
           <H2>I live on the internet under the alias of 👽<i>Names</i>👔</H2>
