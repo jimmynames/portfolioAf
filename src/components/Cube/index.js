@@ -15,19 +15,27 @@ const CubeContainer = styled.div`
   }
 `
 
-// const HoverAdjustments = (state) => {
-//   if (this.state.theme.label === 'darkMode') {
-//     return `
-//       color: pink;
-//       background: pink;
-//     `
-//   } else {
-//     return `
-//       background: red;
-//       color: red;
-//     `
-//   }
-// }
+const HoverAdjustments = (theme, props) => {
+  if (theme.label === 'nightMode') {
+    console.log('hover theme: ', theme)
+    return `
+      &:hover {
+
+      }
+    `
+  } else {
+    console.log('hover theme: fail', theme)
+    return `
+      &:hover {
+      color: white;
+      transition: none;
+    }
+    ul, li {
+      transition: none;
+    }
+    `
+  }
+}
 
 const Cube = styled.div`
   height: 30px;
@@ -48,7 +56,7 @@ const Cube = styled.div`
   background-color: rgba(0, 0, 0, .5);
   -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, .5);
 }
-  ${'' /* ${({state}) => HoverAdjustments(state)} */}
+  ${({theme}) => HoverAdjustments(theme)}
   &:hover {
     background: ${props => props.theme.blue};
     border: 2px solid ${props => props.theme.blue};
@@ -56,8 +64,7 @@ const Cube = styled.div`
     height: 60px;
     ${'' /* color: ${(this.state.theme.label === 'nightMode') ? props => props.theme.blue : props => props.theme.white}; */}
     ul {
-
-      transition: color 0.3s ease;
+      ${'' /* transition: color 0.3s ease; */}
     }
   }
   @media (max-width: 693px) {
@@ -90,7 +97,7 @@ const CubeListItem = styled.li`
 export default class CubeComp extends React.Component {
   render () {
     return (
-      <CubeContainer theme={this.props.theme}>
+      <CubeContainer>
         <H4>I also dig</H4>
         <Cube >
           <CubeList>

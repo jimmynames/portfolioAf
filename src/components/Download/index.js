@@ -29,7 +29,9 @@ export default class DownloadComp extends React.Component {
   // }
   render () {
     return (
-      <DownloadPopup />
+      <DownloadPopup>
+        <h1>lol</h1>
+      </DownloadPopup>
     )
   }
 }

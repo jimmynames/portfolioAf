@@ -296,6 +296,7 @@ appearance: none;
 -webkit-appearance: none;
 height: 29px;
 width: 140px;
+width: 100%;
 background: transparent;
 position: absolute;
 left: 0px;
@@ -358,22 +359,22 @@ const DownloadPopup = styled.div`
   transform-origin: top right;
 `
 
-class TransitionHandler extends React.Component {
-  shouldComponentUpdate (nextProps, nextState) {
-    return location.pathname === window.location.pathname
-  }
+// class TransitionHandler extends React.Component {
+//   shouldComponentUpdate (nextProps, nextState) {
+//     return location.pathname === window.location.pathname
+//   }
+//
+//   render () {
+//     const {children} = this.props
+//     return (
+//       <TransitionContainer className='transition-container'>
+//         {children}
+//       </TransitionContainer>
+//     )
+//   }
+// }
 
-  render () {
-    const {children} = this.props
-    return (
-      <TransitionContainer className='transition-container'>
-        {children}
-      </TransitionContainer>
-    )
-  }
-}
-
-class TemplateWrapper extends React.Component {
+export default class Template extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
@@ -383,6 +384,9 @@ class TemplateWrapper extends React.Component {
     }
     this.handlePopUp = this.handlePopUp.bind(this)
   }
+  static propTypes = {
+   children: PropTypes.func,
+ }
 
   handlePopUp () {
     this.setState(prevState => ({
@@ -399,7 +403,7 @@ class TemplateWrapper extends React.Component {
     })
   }
   render () {
-    const { children, location } = this.props
+    // const { children, location } = this.props
     return (
       <div>
       {/* <a onClick={this.onClick}>CLick</a> */}
@@ -435,26 +439,27 @@ class TemplateWrapper extends React.Component {
 
             </PaddingMobile>
           </NavComp>
-    		  <TransitionGroup>
+    		  {/* <TransitionGroup>
     		    <CSSTransition
     		      key={location.pathname}
     		      classNames='example'
     		      timeout={{ enter: 666, exit: 333 }}
     		        >
-    		      <TransitionHandler >
+    		      <TransitionHandler > */}
     		    			<PageRender id='page-wrap' className='PageRender'>
 
-    		      				{children()}
+    		      			 {this.props.children()}
     		    			</PageRender>
-    		      </TransitionHandler>
+    		      {/* </TransitionHandler>
     		    </CSSTransition>
-    			</TransitionGroup>
+    			</TransitionGroup> */}
       	</WrapLayout>
       </ThemeProvider>
       </div>
     )
   }
 }
+
 //
 // const TemplateWrapper = ({ children, location }) => (
 //   <ThemeProvider className='Theme' theme={theme}>
@@ -485,8 +490,8 @@ class TemplateWrapper extends React.Component {
 //   </ThemeProvider>
 // )
 
-TemplateWrapper.propTypes = {
-  children: PropTypes.func
-}
-
-export default withRouter(TemplateWrapper)
+// TemplateWrapper.propTypes = {
+//   children: PropTypes.func
+// }
+//
+// export default withRouter(TemplateWrapper)
