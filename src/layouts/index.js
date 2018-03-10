@@ -100,7 +100,7 @@ const PageRender = styled.div`
 injectGlobal`
   body {
     font-family: sans-serif;
-    background: black;
+    background: blue;
     ${'' /* background: ${nightMode.black}; */}
   }
   * {
@@ -165,6 +165,11 @@ const Logo = styled.img`
 
 const PaddingMobile = styled.div`
   height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
 @media (max-width: 414px) {
   box-sizing: border-box;
 }
@@ -253,7 +258,9 @@ const NavItem = styled(LI)`
 
 const Emoji = styled.div`
 
-
+width: 100%;
+min-height: 60px;
+height: auto;
 
 .kitty-switch {
 width: auto;
@@ -274,7 +281,7 @@ right: 90px;
 top: 7px;
 border-radius: 10px;
 box-shadow: inset 0 2px 0 rgba(0, 0, 0, 0.1);
-border: 1px solid ${props => props.theme.white};
+border: 2px solid ${props => props.theme.blue};
 cursor: pointer;
 }
 .kitty-switch #toggle {
@@ -306,10 +313,10 @@ top: -5px;
 }
 .kitty-switch #toggle ~ div.kitty:before {
 ${'' /* content: "⚫️"; */}
-content: '🔮';
+content: '👽';
 position: absolute;
 right: 133.666px;
-top: 9.8px;
+top: 11px;
 font-size: 17px;
 z-index: 1;
 transition: all 1s ease-out;
@@ -322,8 +329,8 @@ left: -80px;
 }
 .kitty-switch #toggle:checked ~ div.kitty:before {
   ${'' /* content: '⚪️'; */}
-  content: '☀️';
-  top: 9.8px;
+  content: '👔';
+  top: 11px;
   right: 88px;
 }
 .kitty-switch #toggle:checked ~ div.visible {
@@ -406,6 +413,7 @@ class TemplateWrapper extends React.Component {
                   <label for="toggle" className="well"></label>
                 </div>
               </Emoji>
+
             </PaddingMobile>
           </NavComp>
     		  <TransitionGroup>
