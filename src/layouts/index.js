@@ -348,12 +348,14 @@ const DownloadPopup = styled.div`
   background: blue;
   position: fixed;
   top: 33.3%;
-  left: 66.6%;
+  left: 25%;
   z-index: 666;
   border: 2px solid white;
   visibility: ${props => props.visible ? 'visible' : 'hidden'};
-  height: ${props => props.visible ? '333px' : '0px'};
-  width: ${props => props.visible ? '333px' : '0px'};
+  height: ${props => props.visible ? null : '0px'};
+  width: ${props => props.visible ? null : '0px'};
+  transform: ${props => props.visible ? null : 'scale(0, 0) rotate(180deg)'};
+  transform-origin: top right;
 `
 
 class TransitionHandler extends React.Component {
@@ -382,12 +384,12 @@ class TemplateWrapper extends React.Component {
     this.handlePopUp = this.handlePopUp.bind(this)
   }
 
-  handlePopUp() {
+  handlePopUp () {
     this.setState(prevState => ({
       shouldHide: !prevState.shouldHide
-    }));
+    }))
   }
-  HandleColorChange() {
+  HandleColorChange () {
     // Toggle day / night on click
     const isDark = !this.state.isDark
 
