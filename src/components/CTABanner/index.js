@@ -2,6 +2,13 @@ import React from 'react'
 import styled from 'styled-components'
 import Link from 'gatsby-link'
 
+import {HoverAdjustments} from './../HoverAdjustments'
+import {A} from './../HTML/A'
+
+const Acta = styled(A)`
+
+`
+
 const CTABannerComp = styled.section`
 height: 100vh;
 width: 100%;
@@ -21,13 +28,15 @@ a {
   justify-content: center;
   align-items: center;
   align-content: center;
-  border: 2px solid black;
+  border: 2px solid ${props => props.theme.black};
+  color: ${props => props.theme.white};
+  ${'' /* ${({theme}) => HoverAdjustments(theme)} */}
   margin: 0.666em;
   transition: all 0.3s ease-in-out;
   &:hover {
-    background: white;
+    background: ${props => props.theme.black};
     color: blue;
-    border: 2px solid blue;
+    border: 2px solid ${props => props.theme.blue};
     cursor: pointer;
   }
 }
@@ -38,9 +47,9 @@ export default class CTABanner extends React.Component {
     return (
       <div>
         <CTABannerComp weblink={this.props.weblink} codelink={this.props.codelink}>
-          <Link to='/mycomputer'>🔙 Projects</Link>
-          ${(this.props.weblink) ? <a href={this.props.weblink} rel='noopener' target='_blank'>🌐 Website</a> : null }
-          ${(this.props.codelink) ? <a href={this.props.codelink} rel='noopener' target='_blank'>💾 Code</a> : null }
+          <Link to='/mycomputer'>🗃 Back</Link>
+          {(this.props.weblink) ? <a href={this.props.weblink} rel='noopener' target='_blank'>🌐 Website</a> : null }
+          {(this.props.codelink) ? <a href={this.props.codelink} rel='noopener' target='_blank'>💾 Code</a> : null }
         </CTABannerComp>
       </div>
     )

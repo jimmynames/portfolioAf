@@ -4,6 +4,10 @@ import Link from 'gatsby-link'
 import ScrollAnimation from 'react-animate-on-scroll'
 import 'animate.css/animate.min.css'
 
+import {H1} from './../../components/HTML/H1'
+import {P} from './../../components/HTML/P'
+
+import ProjectImageComp from './../../components/ProjectImage'
 import CTABannerComp from './../../components/CTABanner'
 
 import ay1 from './../../images/projects/auralyouth/ay1.png'
@@ -24,88 +28,59 @@ const Intro = styled.div`
   }
 `
 
-const H1 = styled.h1`
+const H1case = styled(H1)`
   margin-top: 0;
 `
 
-const P = styled.p`
-  a{
-    position: relative;
-    text-decoration: none;
-    padding: 5px;
-    &:after {
-      position: absolute;
-      content: '';
-      height: 2px;
-      bottom: -4px;
-      margin: 0 auto;
-      left: 0;
-      right: 0;
-      width: 100%;
-      background: blue;
-      -webkit-transition: 0.5s;
-      transition: 0.5s;
-    }
-
-    &:hover {
-      &:after {
-        height: 100%;
-        bottom: 0;
-        z-index: -1;
-      }
-    }
-  }
-`
-
-const ImageContainer = styled.section`
-  height: 100%;
-  width: 100%;
-  margin: 30px 0;
-  border: 2px solid white;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  align-content: center;
-  img {
-    height: 90%;
+const Pcase = styled(P)`
+a{
+  position: relative;
+  color: ${props => props.theme.white};
+  text-decoration: none;
+  padding: 5px;
+  z-index: 2;
+  &:after {
+    position: absolute;
+    content: '';
+    height: 2px;
+    bottom: -4px;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
     width: 100%;
+    background: blue;
+    transition: 0.5s;
   }
+
+  &:hover {
+    color: ${props => props.theme.white};
+    z-index: 666;
+    &:after {
+      height: 100%;
+      bottom: 0;
+      z-index: -1;
+    }
+  }
+}
 `
-
-
 
 export default class AuralYouthPage extends React.Component {
   render () {
     return (
       <Page theme={this.props.theme}>
         <Intro>
-          <H1>Aural Youth</H1>
-          <P>Freelance project</P>
-          <P>Built using Gatsby.js, Styled-components & React.js</P>
-          <P>Designed by <a href='https://www.linkedin.com/in/simone-ludeman-342042b3/' rel='noopener' target='_blank'>Simone Ludderman</a></P>
+          <H1case>Aural Youth</H1case>
+          <Pcase>Freelance project</Pcase>
+          <Pcase>Built using Gatsby.js, Styled-components & React.js</Pcase>
+          <Pcase>Designed by <a href='https://www.linkedin.com/in/simone-ludeman-342042b3/' rel='noopener' target='_blank'>Simone Ludderman</a></Pcase>
         </Intro>
 
-        <ScrollAnimation animateIn='fadeIn' offset='500'>
-          <ImageContainer>
-            <img src={ay1} />
-          </ImageContainer>
-        </ScrollAnimation>
-
-        <ScrollAnimation animateIn='fadeIn' offset='300'>
-          <ImageContainer>
-            <img src={ay2} />
-          </ImageContainer>
-        </ScrollAnimation>
-
-        <ScrollAnimation animateIn='fadeIn' offset='200'>
-          <ImageContainer>
-            <img src={ay3} />
-          </ImageContainer>
-        </ScrollAnimation>
+        <ProjectImageComp src={ay1} />
+        <ProjectImageComp src={ay2} />
+        <ProjectImageComp src={ay3} />
 
         <CTABannerComp codelink='https://github.com/jimmynames/auralYouth' weblink='https://auralyouth.co.uk' />
-        
+
       </Page>
     )
   }

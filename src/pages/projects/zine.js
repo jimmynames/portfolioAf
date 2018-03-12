@@ -1,9 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
-import Link from 'gatsby-link'
 import ScrollAnimation from 'react-animate-on-scroll'
 import 'animate.css/animate.min.css'
 
+import {H1} from './../../components/HTML/H1'
+import {P} from './../../components/HTML/P'
+
+import ProjectImageComp from './../../components/ProjectImage'
 import CTABannerComp from './../../components/CTABanner'
 
 import ay1 from './../../images/projects/zine/jb1.png'
@@ -24,37 +27,40 @@ const Intro = styled.div`
   }
 `
 
-const H1 = styled.h1`
+const H1case = styled(H1)`
   margin-top: 0;
 `
 
-const P = styled.p`
-  a{
-    position: relative;
-    text-decoration: none;
-    padding: 5px;
-    &:after {
-      position: absolute;
-      content: '';
-      height: 2px;
-      bottom: -4px;
-      margin: 0 auto;
-      left: 0;
-      right: 0;
-      width: 100%;
-      background: blue;
-      -webkit-transition: 0.5s;
-      transition: 0.5s;
-    }
+const Pcase = styled(P)`
+a{
+  position: relative;
+  color: ${props => props.theme.white};
+  text-decoration: none;
+  padding: 5px;
+  z-index: 2;
+  &:after {
+    position: absolute;
+    content: '';
+    height: 2px;
+    bottom: -4px;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background: blue;
+    transition: 0.5s;
+  }
 
-    &:hover {
-      &:after {
-        height: 100%;
-        bottom: 0;
-        z-index: -1;
-      }
+  &:hover {
+    color: ${props => props.theme.white};
+    z-index: 666;
+    &:after {
+      height: 100%;
+      bottom: 0;
+      z-index: -1;
     }
   }
+}
 `
 
 const ImageContainer = styled.section`
@@ -108,28 +114,14 @@ export default class JimmysBongoLifestyleBlog extends React.Component {
     return (
       <Page theme={this.props.theme}>
         <Intro>
-          <H1>Jimmy's Bongo Lifestyle Blog </H1>
-          <P>Personal project</P>
-          <P>2016</P>
+          <H1case>Jimmy's Bongo Lifestyle Blog </H1case>
+          <Pcase>Personal project</Pcase>
+          <Pcase>2016</Pcase>
         </Intro>
 
-        <ScrollAnimation animateIn='fadeIn' offset='500'>
-          <ImageContainer>
-            <img src={ay1} />
-          </ImageContainer>
-        </ScrollAnimation>
-
-        <ScrollAnimation animateIn='fadeIn' offset='300'>
-          <ImageContainer>
-            <img src={ay2} />
-          </ImageContainer>
-        </ScrollAnimation>
-
-        <ScrollAnimation animateIn='fadeIn' offset='200'>
-          <ImageContainer>
-            <img src={ay3} />
-          </ImageContainer>
-        </ScrollAnimation>
+        <ProjectImageComp src={ay1} />
+        <ProjectImageComp src={ay2} />
+        <ProjectImageComp src={ay3} />
 
         <CTABannerComp weblink='https://jimmynames.github.io/BongoLifestyle/' />
 

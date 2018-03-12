@@ -1,9 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
-import Link from 'gatsby-link'
-import ScrollAnimation from 'react-animate-on-scroll'
 import 'animate.css/animate.min.css'
 
+import {H1} from './../../components/HTML/H1'
+import {P} from './../../components/HTML/P'
+
+import ProjectImageComp from './../../components/ProjectImage'
 import CTABannerComp from './../../components/CTABanner'
 
 import le1 from './../../images/projects/left/le1.png'
@@ -22,81 +24,38 @@ const Intro = styled.div`
   }
 `
 
-const H1 = styled.h1`
+const H1case = styled(H1)`
   margin-top: 0;
 `
 
-const P = styled.p`
-  a{
-    position: relative;
-    text-decoration: none;
-    padding: 5px;
-    &:after {
-      position: absolute;
-      content: '';
-      height: 2px;
-      bottom: -4px;
-      margin: 0 auto;
-      left: 0;
-      right: 0;
-      width: 100%;
-      background: blue;
-      -webkit-transition: 0.5s;
-      transition: 0.5s;
-    }
-
-    &:hover {
-      &:after {
-        height: 100%;
-        bottom: 0;
-        z-index: -1;
-      }
-    }
-  }
-`
-
-const ImageContainer = styled.section`
-  height: 100%;
-  width: 100%;
-  margin: 30px 0;
-  border: 2px solid white;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  align-content: center;
-  img {
-    height: 90%;
-    width: 100%;
-  }
-`
-
-const Outro = styled.section`
-height: 100vh;
-width: 100%;
-display: flex;
-justify-content: center;
-flex-direction: row;
-align-items: center;
-align-content: center;
-
-a {
+const Pcase = styled(P)`
+a{
+  position: relative;
+  color: ${props => props.theme.white};
   text-decoration: none;
-  padding: 1em 1.5em;
-  background: blue;
-  min-width: 136.66px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-  border: 2px solid black;
-  margin: 0.666em;
-  transition: all 0.3s ease-in-out;
+  padding: 5px;
+  z-index: 2;
+  &:after {
+    position: absolute;
+    content: '';
+    height: 2px;
+    bottom: -4px;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background: blue;
+    transition: 0.5s;
+  }
+
   &:hover {
-    background: white;
-    color: blue;
-    border: 2px solid blue;
-    cursor: pointer;
+    color: ${props => props.theme.white};
+    z-index: 666;
+    &:after {
+      height: 100%;
+      bottom: 0;
+      z-index: -1;
+    }
   }
 }
 `
@@ -107,16 +66,12 @@ export default class LeftPage extends React.Component {
       <Page theme={this.props.theme}>
         <Intro>
           <H1>LEFT</H1>
-          <P>Geek Night Project</P>
-          <P>Designed & Built to promote m8s release/soundcloud</P>
-          <P>And generally to play with :pseudo css, this 3d cube and soundcloud import</P>
+          <Pcase>Geek Night Project</Pcase>
+          <Pcase>Designed & Built to promote m8s release/soundcloud</Pcase>
+          <Pcase>And generally to play with :pseudo css, this 3d cube and soundcloud import</Pcase>
         </Intro>
 
-        <ScrollAnimation animateIn='fadeIn' offset='500'>
-          <ImageContainer>
-            <img src={le1} />
-          </ImageContainer>
-        </ScrollAnimation>
+        <ProjectImageComp src={le1} />
 
         <CTABannerComp weblink='https://jimmynames.github.io/LEFT/' />
 

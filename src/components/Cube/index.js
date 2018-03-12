@@ -1,6 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import {HoverAdjustments} from './../HoverAdjustments'
+import {H4} from './../HTML/H4'
+
 const CubeContainer = styled.div`
   display: flex;
   flex-direction: row;
@@ -18,19 +21,29 @@ const Cube = styled.div`
   width: 100%;
   max-width: 300px;
   margin-left: 1rem;
-  border: 2px solid ${({theme}) => theme.darkColor.blue};
+  border: 2px solid ${props => props.theme.blue};
+  color: ${props => props.theme.white};
   overflow:hidden;
   overflow-y:auto;
   transition: height 0.3s ease-in-out;
+  ::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 7px;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, .5);
+  -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, .5);
+}
+  ${({theme}) => HoverAdjustments(theme)}
   &:hover {
-    background: ${({theme}) => theme.darkColor.blue};
-    border: 2px solid ${({theme}) => theme.darkColor.blue};
+    background: ${props => props.theme.blue};
+    border: 2px solid ${props => props.theme.blue};
     transition: all 0.2s ease;
     height: 60px;
-
+    ${'' /* color: ${(this.state.theme.label === 'nightMode') ? props => props.theme.blue : props => props.theme.white}; */}
     ul {
-      color: ${({theme}) => theme.darkColor.black};
-      transition: color 0.3s ease;
+      ${'' /* transition: color 0.3s ease; */}
     }
   }
   @media (max-width: 693px) {
@@ -63,9 +76,9 @@ const CubeListItem = styled.li`
 export default class CubeComp extends React.Component {
   render () {
     return (
-      <CubeContainer theme={this.props.theme}>
-        <h4>I also dig</h4>
-        <Cube>
+      <CubeContainer>
+        <H4>I also dig</H4>
+        <Cube >
           <CubeList>
             <CubeListItem>music</CubeListItem>
             <CubeListItem>anime</CubeListItem>

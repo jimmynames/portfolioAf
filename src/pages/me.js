@@ -1,6 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import {H1} from './../components/HTML/H1'
+import {P} from './../components/HTML/P'
+
 import me from './../images/me.png'
 import plant from './../images/plantlife.png'
 import fish from './../images/fish.png'
@@ -20,12 +23,14 @@ const Intro = styled.div`
   }
 `
 
-const H1 = styled.h1`
+const H1me = styled(H1)`
   margin-top: 0;
 `
 
-const P = styled.p`
+const Pme = styled(P)`
 `
+
+const H1link = styled(H1)``
 
 const ContactContainer = styled.div`
   display: block;
@@ -52,7 +57,7 @@ const ContactLi = styled.li`
   transition: background 1.666s ease;
   a {
     text-decoration: none;
-    ${'' /* color: ${({theme}) => theme.darkColor.white}; */}
+    ${'' /* color: ${props => props.theme.white}; */}
     transition: all .1s ease-out;
     h1 {
       margin: 0;
@@ -63,13 +68,13 @@ const ContactLi = styled.li`
     }
   }
   &:hover {
-    background: ${({theme}) => theme.darkColor.blue};
+    background: ${props => props.theme.blue};
     background: ${props => props.gallery ? 'none' : null};
     a {
-      color: ${({theme}) => theme.darkColor.black};
+      color: ${props => props.theme.black};
     }
     h1 {
-      color: ${({theme}) => theme.darkColor.black};
+      color: ${props => props.theme.black};
     }
   }
 `
@@ -103,23 +108,23 @@ export default class Index extends React.Component {
     return (
       <Page>
         <Intro>
-          <H1>Hyperlinks</H1>
-          <P>A collection of links to stalk me further   👀</P>
-          <P>Follow, Say <i>hey</i>     👋🏻</P>
-          <P>Always down for making friends, collaborating, freelance and/or sharing music     ♻️</P>
+          <H1me>Hyperlinks</H1me>
+          <Pme>A collection of links to stalk me further   👀</Pme>
+          <Pme>Follow, Say <i>hey</i>     👋🏻</Pme>
+          <Pme>Always down for making friends, collaborating, freelance and/or sharing music     ♻️</Pme>
         </Intro>
         <ContactContainer>
           <ContactUl>
-            <ContactLi><a href='mailto:jim.me.ryan@gmail.com'><h1>Email - jim.me.ryan@gmail.com</h1></a></ContactLi>
-            <ContactLi><a href='https://twitter.com/namescodes' target='_blank' rel='noopener'><h1>Twitter - @namescodes</h1></a></ContactLi>
-            <ContactLi><a href='https://github.com/jimmynames' target='_blank' rel='noopener'><h1>Github - jimmynames</h1></a></ContactLi>
-            <ContactLi><a href='https://www.linkedin.com/in/jimmyNames' target='_blank' rel='noopener'><h1>LinkedIn - /in/jimmyNames</h1></a></ContactLi>
-            <ContactLi><a href='https://codepen.io/Jimmynames/' target='_blank' rel='noopener'><h1>Codepen - /Jimmynames</h1></a></ContactLi>
-            <ContactLi><a href='http://teamtreehouse.com/names' target='_blank' rel='noopener'><h1>treehouse - /names</h1></a></ContactLi>
-            <ContactLi><a href='https://www.codecademy.com/jimmynames' target='_blank' rel='noopener'><h1>Codecademy - /jimmynames</h1></a></ContactLi>
-            <ContactLi><a href='https://www.freecodecamp.org/jimmynames' target='_blank' rel='noopener'><h1>freeCodeCamp - /jimmynames</h1></a></ContactLi>
-            <ContactLi><a href='https://jimmynames.tumblr.com/' target='_blank' rel='noopener'><h1>tumblr - //jimmynames.</h1></a></ContactLi>
-            <ContactLi><a href='https://soundcloud.com/namesnames' target='_blank' rel='noopener'><h1>Soundcloud - /namesnames</h1></a></ContactLi>
+            <ContactLi><a href='mailto:jim.me.ryan@gmail.com'><H1link>Email - jim.me.ryan@gmail.com</H1link></a></ContactLi>
+            <ContactLi><a href='https://twitter.com/namescodes' target='_blank' rel='noopener'><H1link>Twitter - @namescodes</H1link></a></ContactLi>
+            <ContactLi><a href='https://github.com/jimmynames' target='_blank' rel='noopener'><H1link>Github - jimmynames</H1link></a></ContactLi>
+            <ContactLi><a href='https://www.linkedin.com/in/jimmyNames' target='_blank' rel='noopener'><H1link>LinkedIn - /in/jimmyNames</H1link></a></ContactLi>
+            <ContactLi><a href='https://codepen.io/Jimmynames/' target='_blank' rel='noopener'><H1link>Codepen - /Jimmynames</H1link></a></ContactLi>
+            <ContactLi><a href='http://teamtreehouse.com/names' target='_blank' rel='noopener'><H1link>treehouse - /names</H1link></a></ContactLi>
+            <ContactLi><a href='https://www.codecademy.com/jimmynames' target='_blank' rel='noopener'><H1link>Codecademy - /jimmynames</H1link></a></ContactLi>
+            <ContactLi><a href='https://www.freecodecamp.org/jimmynames' target='_blank' rel='noopener'><H1link>freeCodeCamp - /jimmynames</H1link></a></ContactLi>
+            <ContactLi><a href='https://jimmynames.tumblr.com/' target='_blank' rel='noopener'><H1link>tumblr - //jimmynames.</H1link></a></ContactLi>
+            <ContactLi><a href='https://soundcloud.com/namesnames' target='_blank' rel='noopener'><H1link>Soundcloud - /namesnames</H1link></a></ContactLi>
             <ContactLi gallery>
               <Gallery>
                 <Window src={me} />
