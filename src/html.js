@@ -26,15 +26,14 @@ export default class HTML extends React.Component {
       css = (
         <style
           dangerouslySetInnerHTML={{
-            __html: require('!raw!../public/styles.css'),
-            'background': 'black !important;'
+            __html: require('!raw!../public/styles.css')
           }}
         />
       )
     }
 
     return (
-      <HTML lang='en' style='background:black !important;'>
+      <HTML lang='en'>
         <head>
           <meta charSet='utf-8' />
           <meta httpEquiv='X-UA-Compatible' content='IE=edge' />
