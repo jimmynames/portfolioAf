@@ -47,14 +47,20 @@ const lightMode = {
 }
 
 const WrapLayout = styled.div`
-  ${'' /* max-width: 1200px; */}
+  max-width: 1200px;
+  ${'' /* max-height: 750px; */}
   margin: 0 auto;
   display: flex;
-  flex-direcrion: row;
+  flex-direction: row;
+  justify-content: center;
   width: 100%;
   height: 100vh;
   @media (max-width: 693px) {
     flex-direction: column;
+  }
+
+  @media (min-width: ) {
+    min-width: 1200px;
   }
 `
 
@@ -112,6 +118,15 @@ injectGlobal`
     font-family: sans-serif;
     transition: color 0.3s ease-in-out;
     ${'' /* color: ${nightMode.blue}; */}
+  }
+
+  #___gatsby {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
   }
 `
 

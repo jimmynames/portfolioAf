@@ -7,6 +7,8 @@ import {H1} from './../components/HTML/H1'
 import {P} from './../components/HTML/P'
 import {A} from './../components/HTML/A'
 
+import {HoverAdjustments} from './../components/HoverAdjustments'
+
 import ay1 from './../images/projects/auralyouth/ay1.png'
 import spr1 from './../images/projects/srdesign/spr3.png'
 import le1 from './../images/projects/left/le1.png'
@@ -41,6 +43,7 @@ position: relative;
 text-decoration: none;
 padding: 5px;
 z-index: 2;
+${({theme}) => HoverAdjustments(theme)}
 &:after {
   position: absolute;
   content: '';
@@ -56,7 +59,7 @@ z-index: 2;
 }
 
 &:hover {
-  color: ${props => props.theme.white} !important;
+  color: ${props => props.theme.white};
   &:after {
     height: 100%;
     bottom: 0;
