@@ -244,6 +244,7 @@ const NavItem = styled(LI)`
    padding-left: 1em;
    color: ${props => props.theme.black};
    background-position: 0 0;
+   cursor: pointer;
     a {
       color: ${props => props.theme.black};
     }
@@ -361,12 +362,17 @@ overflow: visible;
 const DownloadPopup = styled.div`
   height: 333px;
   width: 333px;
-  background: blue;
+  background: ${props => props.theme.black};
   position: fixed;
+  display: flex;
+  justify-content: center;
+  color: ${props => props.theme.blue};
+  font-size: 4em;
+  align-items: center;
   top: 33.3%;
   left: 25%;
   z-index: 666;
-  border: 2px solid white;
+  border: 2px solid ${props => props.theme.white};
   visibility: ${props => props.visible ? 'visible' : 'hidden'};
   height: ${props => props.visible ? null : '0px'};
   width: ${props => props.visible ? null : '0px'};
@@ -431,7 +437,9 @@ export default class Template extends React.Component {
     	        { name: 'keywords', content: 'jimmy names, jimmyNames' },
     	      ]}
     	    />
-          <DownloadPopup visible={this.state.shouldHide} />
+          <DownloadPopup visible={this.state.shouldHide}>
+            SOON
+          </DownloadPopup>
         	{/* <Nav /> */}
           <NavComp className='Nav'>
             <PaddingMobile>
