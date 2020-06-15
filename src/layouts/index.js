@@ -11,7 +11,6 @@ import Link from 'gatsby-link'
 import {UL} from './../components/HTML/UL'
 import {LI} from './../components/HTML/LI'
 
-import withRouter from 'react-router-dom/withRouter'
 import styled, { ThemeProvider, injectGlobal } from 'styled-components'
 import { TransitionGroup, CSSTransition } from 'react-transition-group'
 import './animations.css'
