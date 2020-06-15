@@ -17,21 +17,6 @@ import './animations.css'
 
 require('normalize.css')
 
-// const theme = {
-//   header: '40px',
-//   copy: '20px',
-//   darkColor: {
-//     black: 'black',
-//     white: 'white',
-//     blue: 'blue'
-//   },
-//   lightColor: {
-//     black: 'blue',
-//     white: 'white',
-//     blue: 'blue'
-//   }
-// }
-
 const nightMode = {
   label: 'nightMode',
   black: 'black',
@@ -85,10 +70,12 @@ const PageRender = styled.div`
   height: 100%;
   box-sizing: border-box;
   padding: 1.35rem;
-  padding-left: 4rem;
-  width: 78vw;
+  /* padding-left: 4rem; */
+  width: 100%;
   overflow: hidden;
-  overflow-y: scroll;
+  display: flex;
+  align-items: center;
+  /* overflow-y: scroll; */
   background: ${props => props.theme.black};
   @media (max-width: 693px) {
     width: 100%;
@@ -108,7 +95,7 @@ const PageRender = styled.div`
 injectGlobal`
   body {
     font-family: sans-serif;
-    background: blue;
+    background: black;
     ${'' /* background: ${nightMode.black}; */}
   }
   * {
@@ -154,10 +141,19 @@ injectGlobal`
 //* NAV */
 
 const NavComp = styled.section`
-  width: 20%;
-  height: 100%;
+  width: 100%;
+  padding: 1rem 2.1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 50px;
   z-index: 666;
-  background: ${props => props.theme.black};
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+  background: red !@important;
+
+  /* background: ${props => props.theme.black}; */
   box-sizing: border-box;
   overflow: hidden;
   @media (max-width: 693px) {
@@ -170,21 +166,23 @@ const NavComp = styled.section`
 `
 
 const Logo = styled.img`
-  width: 100%;
-  padding-top: 1.25rem;
+  /* width: 100%; */
+  height: 100%;
+  object-fit: contain;
   margin: 0;
+  max-width: 300px;
   @media (max-width: 693px) {
-    padding-top: 0;
+    /* padding-top: 0;
     width: 50%;
-    margin: 0 auto;
+    margin: 0 auto; */
   }
 `
 
 const PaddingMobile = styled.div`
   height: 100%;
-
+  width: 100%;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: space-between;
 
 @media (max-width: 414px) {
@@ -197,6 +195,10 @@ const NavMenu = styled(UL)`
   width: 100%;
   margin: 0;
   padding: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
   @media (max-width: 693px) {  }
 
   a {
@@ -204,18 +206,17 @@ const NavMenu = styled(UL)`
   }
 
   a:hover {
-    color: ${props => props.theme.white};
+    /* color: ${props => props.theme.white}; */
   }
 `
 
 const NavItem = styled(LI)`
-  font-size: 18px;
-  padding: 0.666em;
+  font-size: 16px;
+  padding: 0.666em 2em;
   font-family: 'Open Sans Condensed', Helvetica;
   list-style-type: none;
   text-decoration: none;
   text-align: left;
-  margin: 1.5em 0;
   /* linear-gradient(to right, transparent, red 50%, transparent 90%, transparent) */
   background-image: linear-gradient(to right,
                                       blue,
@@ -225,10 +226,9 @@ const NavItem = styled(LI)`
     background-position: 100% 0;
     background-size: 200% 100%;
     transition: all .2s ease-in;
-    width: 100%;
   a {
     text-decoration: none;
-    color: ${props => props.theme.white};
+    color: ${props => props.theme.white} !important;
   }
   @media (max-width: 693px) {
     padding: 0.1333em;
@@ -242,8 +242,21 @@ const NavItem = styled(LI)`
   }
   &:hover {
    padding-left: 1em;
-   color: ${props => props.theme.black};
-   background-position: 0 0;
+   color: ${props => props.theme.white};
+   background-position: 80% 50%;
+   /* background-image: linear-gradient(to right,
+                                       blue,
+                                       blue 50%,
+                                       transparent 80%,
+
+                                       <Emoji>
+                                         <div className="kitty-switch" onClick={() => this.HandleColorChange()}>
+                                           <input type="checkbox" id="toggle" tabindex="1"></input>
+                                           <div className="kitty"></div>
+                                           <label for="toggle" className="well"></label>
+                                         </div>
+                                       </Emoji>
+                                       transparent); */
    cursor: pointer;
     a {
       color: ${props => props.theme.black};
@@ -380,21 +393,6 @@ const DownloadPopup = styled.div`
   transform-origin: top right;
 `
 
-// class TransitionHandler extends React.Component {
-//   shouldComponentUpdate (nextProps, nextState) {
-//     return location.pathname === window.location.pathname
-//   }
-//
-//   render () {
-//     const {children} = this.props
-//     return (
-//       <TransitionContainer className='transition-container'>
-//         {children}
-//       </TransitionContainer>
-//     )
-//   }
-// }
-
 export default class Template extends React.Component {
   constructor (props) {
     super(props)
@@ -437,9 +435,6 @@ export default class Template extends React.Component {
     	        { name: 'keywords', content: 'jimmy names, jimmyNames' },
     	      ]}
     	    />
-          <DownloadPopup visible={this.state.shouldHide}>
-            SOON
-          </DownloadPopup>
         	{/* <Nav /> */}
           <NavComp className='Nav'>
             <PaddingMobile>
@@ -448,73 +443,16 @@ export default class Template extends React.Component {
               <NavMenu className='Menu'>
                 <Link to='/about/'><NavItem>About.i</NavItem></Link>
                 <Link to='/me/'><NavItem>Me.href</NavItem></Link>
-                <Link to='/mycomputer/'><NavItem>Projects</NavItem></Link>
-                <a onClick={() => this.handlePopUp()}><NavItem>Cv.dmg</NavItem></a>
               </NavMenu>
-
-              <Emoji>
-                <div className="kitty-switch" onClick={() => this.HandleColorChange()}>
-                  <input type="checkbox" id="toggle" tabindex="1"></input>
-                  <div className="kitty"></div>
-                  <label for="toggle" className="well"></label>
-                </div>
-              </Emoji>
 
             </PaddingMobile>
           </NavComp>
-    		  {/* <TransitionGroup>
-    		    <CSSTransition
-    		      key={location.pathname}
-    		      classNames='example'
-    		      timeout={{ enter: 666, exit: 333 }}
-    		        >
-    		      <TransitionHandler > */}
     		    			<PageRender id='page-wrap' className='PageRender'>
-
     		      			 {this.props.children()}
     		    			</PageRender>
-    		      {/* </TransitionHandler>
-    		    </CSSTransition>
-    			</TransitionGroup> */}
       	</WrapLayout>
       </ThemeProvider>
       </div>
     )
   }
 }
-
-//
-// const TemplateWrapper = ({ children, location }) => (
-//   <ThemeProvider className='Theme' theme={theme}>
-//     <WrapLayout className='Nav-PageRender-Flex-Container Also-Wrap'>
-// 			<Helmet
-// 	      title='jimmyNames'
-// 	      meta={[
-// 	        { name: 'description', content: 'Jimmy Names' },
-// 	        { name: 'keywords', content: 'jimmy names, jimmyNames' },
-// 	      ]}
-// 	    />
-//     	<Nav />
-// 		  <TransitionGroup>
-// 		    <CSSTransition
-// 		      key={location.pathname}
-// 		      classNames='example'
-// 		      timeout={{ enter: 666, exit: 333 }}
-// 		        >
-// 		      <TransitionHandler location={location}>
-// 		    			<PageRender id='page-wrap' className='PageRender'>
-// 		      			<DownloadComp />
-// 		      				{children()}
-// 		    			</PageRender>
-// 		      </TransitionHandler>
-// 		    </CSSTransition>
-// 			</TransitionGroup>
-//   	</WrapLayout>
-//   </ThemeProvider>
-// )
-
-// TemplateWrapper.propTypes = {
-//   children: PropTypes.func
-// }
-//
-// export default withRouter(TemplateWrapper)

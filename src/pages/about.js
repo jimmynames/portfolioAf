@@ -34,6 +34,7 @@ const H3about = styled(H3)`
 
 const H1about = styled(H1)`
   margin-top: 0;
+  font-size: 40px;
 `
 
 const H2about = styled(H2)`
@@ -99,9 +100,9 @@ export default class Index extends React.Component {
     return (
       <Page>
         <AboutContainer>
-          <H1about>My names James but most people call me Jimmy</H1about>
+          <H1about>hello_world</H1about>
           <H2about>I live on the internet under the alias of 👽<i>Names</i>👔</H2about>
-          <VerticalCenterAlign about><H3about about>I'm a Front-end Web Developer and I work at </H3about><a href='https://ruin.studio' target='_blank' rel='noopener'><RuinLogo src={logo} />Studio</a></VerticalCenterAlign>
+          <VerticalCenterAlign about><H3about about>I'm a Front-end Web Developer and Designer</H3about></VerticalCenterAlign>
           <H4about>I fuck with Css-in-js/Sass/Vanilla Css™, React.js⚛️ & SVGs💖</H4about>
           <CubeComp />
         </AboutContainer>
