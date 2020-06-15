@@ -5,6 +5,7 @@ import Helmet from 'react-helmet'
 import DownloadComp from './../components/Download'
 
 import logo from './../gif/jn.gif'
+import logo2 from './../images/logo.svg'
 import Link from 'gatsby-link'
 
 import {UL} from './../components/HTML/UL'
@@ -165,7 +166,7 @@ const Logo = styled.img`
   height: 100%;
   object-fit: contain;
   margin: 0;
-  max-width: 300px;
+  max-width: 136px;
   @media (max-width: 693px) {
     /* padding-top: 0;
     width: 50%;
@@ -402,7 +403,7 @@ export default class Template extends React.Component {
         	{/* <Nav /> */}
           <NavComp className='Nav'>
             <PaddingMobile>
-              <Link to='/' exact><Logo src={logo} /></Link>
+              <Link to='/' exact><Logo src={logo2} /></Link>
 
               <NavMenu className='Menu'>
                 <Link to='/about/'><NavItem>About.i</NavItem></Link>

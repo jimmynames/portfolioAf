@@ -10,6 +10,7 @@ import {A} from './../components/HTML/A'
 import {HoverAdjustments} from './../components/HoverAdjustments'
 
 import CubeComp from './../components/Cube'
+import ThreeJs from './../components/ThreeJs/index.js'
 
 import logo from './../images/logo.png'
 
@@ -24,7 +25,7 @@ const AboutContainer = styled.div`
   box-sizing: border-box;
   position: relative;
   height: 100%;
-  width: 100%;
+  width: 50%;
 `
 
 const H3about = styled(H3)`
@@ -106,6 +107,7 @@ export default class Index extends React.Component {
           <H4about>I fuck with Css-in-js/Sass/Vanilla Css™, React.js⚛️ & SVGs💖</H4about>
           <CubeComp />
         </AboutContainer>
+        <ThreeJS />
       </Page>
     )
   }
