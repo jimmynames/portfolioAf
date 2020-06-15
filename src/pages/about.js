@@ -102,7 +102,7 @@ export default class Index extends React.Component {
         <AboutContainer>
           <H1about>hello_world</H1about>
           <H2about>I live on the internet under the alias of 👽<i>Names</i>👔</H2about>
-          <VerticalCenterAlign about><H3about about>I'm a Front-end Web Developer and Designer</H3about></VerticalCenterAlign>
+          <VerticalCenterAlign about><H3about about>I'm a Front-end Web Developer & Designer</H3about></VerticalCenterAlign>
           <H4about>I fuck with Css-in-js/Sass/Vanilla Css™, React.js⚛️ & SVGs💖</H4about>
           <CubeComp />
         </AboutContainer>

@@ -38,6 +38,7 @@ const WrapLayout = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
+  align-items: center;
   width: 100%;
   height: 100vh;
   @media (max-width: 693px) {
@@ -67,7 +68,8 @@ const TransitionContainer = styled.div`
 
 const PageRender = styled.div`
   width: auto;
-  height: 100%;
+  overflow: scroll;
+  height: 85%;
   box-sizing: border-box;
   padding: 1.35rem;
   /* padding-left: 4rem; */
@@ -82,14 +84,6 @@ const PageRender = styled.div`
     height: auto;
     padding: 0;
   }
-  @media (max-width: 414px) {
-    width: 100%;
-    height: auto;
-  }
-
-  @media (min-width: 1295px) {
-    width: 100%;
-  }
 `
 
 injectGlobal`
@@ -99,7 +93,7 @@ injectGlobal`
     ${'' /* background: ${nightMode.black}; */}
   }
   * {
-    transition: all 0.6s ease-in-out;
+    transition: all 0.5s ease-in-out;
   }
   h1, h2, h3, h4, h5, p, a, ul, li {
     font-family: sans-serif;
@@ -144,6 +138,7 @@ const NavComp = styled.section`
   width: 100%;
   padding: 1rem 2.1rem;
   max-width: 1200px;
+  max-width: 1150px;
   margin: 0 auto;
   height: 50px;
   z-index: 666;
@@ -151,10 +146,10 @@ const NavComp = styled.section`
   top: 0;
   left: 50%;
   transform: translate(-50%, 0);
+  z-index: 0;
   background: red !@important;
 
   /* background: ${props => props.theme.black}; */
-  box-sizing: border-box;
   overflow: hidden;
   @media (max-width: 693px) {
     width: 100%;
@@ -199,6 +194,7 @@ const NavMenu = styled(UL)`
   flex-direction: row;
   align-items: center;
   justify-content: flex-end;
+  user-select: none;
   @media (max-width: 693px) {  }
 
   a {
@@ -211,29 +207,15 @@ const NavMenu = styled(UL)`
 `
 
 const NavItem = styled(LI)`
-  font-size: 16px;
-  padding: 0.666em 2em;
-  font-family: 'Open Sans Condensed', Helvetica;
-  list-style-type: none;
-  text-decoration: none;
-  text-align: left;
-  /* linear-gradient(to right, transparent, red 50%, transparent 90%, transparent) */
-  background-image: linear-gradient(to right,
-                                      blue,
-                                      blue 50%,
-                                      transparent 80%,
-                                      transparent);
-    background-position: 100% 0;
-    background-size: 200% 100%;
     transition: all .2s ease-in;
+    list-style: none;
+    margin-left: 1.6rem;
+    user-select: none;
   a {
     text-decoration: none;
     color: ${props => props.theme.white} !important;
   }
-  @media (max-width: 693px) {
-    padding: 0.1333em;
-    margin: 0;
-  }
+  @media (max-width: 693px) {}
 
   &:hover,
   &:visited,
@@ -241,30 +223,12 @@ const NavItem = styled(LI)`
     text-decoration: none;
   }
   &:hover {
-   padding-left: 1em;
    color: ${props => props.theme.white};
-   background-position: 80% 50%;
-   /* background-image: linear-gradient(to right,
-                                       blue,
-                                       blue 50%,
-                                       transparent 80%,
-
-                                       <Emoji>
-                                         <div className="kitty-switch" onClick={() => this.HandleColorChange()}>
-                                           <input type="checkbox" id="toggle" tabindex="1"></input>
-                                           <div className="kitty"></div>
-                                           <label for="toggle" className="well"></label>
-                                         </div>
-                                       </Emoji>
-                                       transparent); */
-   cursor: pointer;
     a {
       color: ${props => props.theme.black};
     }
      &:before {
      visibility: visible;
-     -webkit-transform: scaleX(1);
-     transform: scaleX(1);
     }
   }
 
