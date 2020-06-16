@@ -17,7 +17,8 @@ const Page = styled.div`
 `
 
 const Intro = styled.div`
-  width: 50%;
+  width: 100%;
+  padding-top: 150px;
   @media (max-width: 693px) {
     width: 100%;
   }
@@ -43,6 +44,7 @@ const ContactUl = styled.ul`
   text-decoration: none;
   margin: 0;
   padding: 0;
+  overflow-y: scroll;
   ${'' /* height: 90vh;
   overflow: scroll;
   overflow: -moz-scrollbars-vertical;
@@ -55,10 +57,15 @@ const ContactLi = styled.li`
   margin: 0;
   box-sizing: border-box;
   transition: background 1.666s ease;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
   a {
     text-decoration: none;
     ${'' /* color: ${props => props.theme.white}; */}
     transition: all .1s ease-out;
+    flex: 1;
     h1 {
       margin: 0;
 
@@ -108,30 +115,18 @@ export default class Index extends React.Component {
     return (
       <Page>
         <Intro>
-          <H1me>Hyperlinks</H1me>
+          <H1me>hyper_Links</H1me>
           <Pme>A collection of links to stalk me further   👀</Pme>
           <Pme>Follow, Say <i>hey</i>     👋🏻</Pme>
           <Pme>Always down for making friends, collaborating, freelance and/or sharing music     ♻️</Pme>
         </Intro>
         <ContactContainer>
           <ContactUl>
-            <ContactLi><a href='mailto:jim.me.ryan@gmail.com'><H1link>Email - jim.me.ryan@gmail.com</H1link></a></ContactLi>
-            <ContactLi><a href='https://twitter.com/namescodes' target='_blank' rel='noopener'><H1link>Twitter - @namescodes</H1link></a></ContactLi>
-            <ContactLi><a href='https://github.com/jimmynames' target='_blank' rel='noopener'><H1link>Github - jimmynames</H1link></a></ContactLi>
-            <ContactLi><a href='https://www.linkedin.com/in/jimmyNames' target='_blank' rel='noopener'><H1link>LinkedIn - /in/jimmyNames</H1link></a></ContactLi>
-            <ContactLi><a href='https://codepen.io/Jimmynames/' target='_blank' rel='noopener'><H1link>Codepen - /Jimmynames</H1link></a></ContactLi>
-            <ContactLi><a href='http://teamtreehouse.com/names' target='_blank' rel='noopener'><H1link>treehouse - /names</H1link></a></ContactLi>
-            <ContactLi><a href='https://www.codecademy.com/jimmynames' target='_blank' rel='noopener'><H1link>Codecademy - /jimmynames</H1link></a></ContactLi>
-            <ContactLi><a href='https://www.freecodecamp.org/jimmynames' target='_blank' rel='noopener'><H1link>freeCodeCamp - /jimmynames</H1link></a></ContactLi>
-            <ContactLi><a href='https://jimmynames.tumblr.com/' target='_blank' rel='noopener'><H1link>tumblr - //jimmynames.</H1link></a></ContactLi>
-            <ContactLi><a href='https://soundcloud.com/namesnames' target='_blank' rel='noopener'><H1link>Soundcloud - /namesnames</H1link></a></ContactLi>
-            <ContactLi gallery>
-              <Gallery>
-                <Window src={me} />
-                <Window src={plant} />
-                <Window src={fish} />
-              </Gallery>
-            </ContactLi>
+            <ContactLi><a href='mailto:freebobcole@gmail.com'><H1link>Email - freebobcole@gmail.com</H1link></a></ContactLi>
+            <ContactLi><a href='https://www.instagram.com/names.fm/' target='_blank' rel='noopener'><H1link>Instagram - @names.fm</H1link></a></ContactLi>
+            <ContactLi><a href='https://twitter.com/namescodes' target='_blank' rel='noopener'><H1link>Twitter - @names_fm</H1link></a></ContactLi>
+            <ContactLi><a href='https://soundcloud.com/namesnames' target='_blank' rel='noopener'><H1link>Soundcloud - /names-fm</H1link></a></ContactLi>
+
           </ContactUl>
         </ContactContainer>
       </Page>

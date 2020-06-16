@@ -10,6 +10,7 @@ import {A} from './../components/HTML/A'
 import {HoverAdjustments} from './../components/HoverAdjustments'
 
 import CubeComp from './../components/Cube'
+import ThreeD from './../components/ThreeJs'
 
 import logo from './../images/logo.png'
 
@@ -18,13 +19,18 @@ const Page = styled.div`
   height: auto;
   box-sizing: border-box;
   padding: 0.75rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 `
 
 const AboutContainer = styled.div`
   box-sizing: border-box;
   position: relative;
   height: 100%;
-  width: 100%;
+  width: 60%;
+  flex: 1;
 `
 
 const H3about = styled(H3)`
@@ -34,6 +40,7 @@ const H3about = styled(H3)`
 
 const H1about = styled(H1)`
   margin-top: 0;
+  font-size: 40px;
 `
 
 const H2about = styled(H2)`
@@ -94,17 +101,24 @@ const RuinLogo = styled.img`
   margin: 0;
 `
 
+const Canvas = styled.div`
+height: 100% !important;
+width: 50% !important;
+`
+
 export default class Index extends React.Component {
   render () {
     return (
       <Page>
+              <ThreeD />
         <AboutContainer>
-          <H1about>My names James but most people call me Jimmy</H1about>
-          <H2about>I live on the internet under the alias of 👽<i>Names</i>👔</H2about>
-          <VerticalCenterAlign about><H3about about>I'm a Front-end Web Developer and I work at </H3about><a href='https://ruin.studio' target='_blank' rel='noopener'><RuinLogo src={logo} />Studio</a></VerticalCenterAlign>
+          <H1about>hello_world</H1about>
+          <H2about>iCreate under the alias of 👽<i>Names</i>👔</H2about>
+          <VerticalCenterAlign about><H3about about>I'm a Front-end Web Developer & Designer</H3about></VerticalCenterAlign>
           <H4about>I fuck with Css-in-js/Sass/Vanilla Css™, React.js⚛️ & SVGs💖</H4about>
           <CubeComp />
         </AboutContainer>
+        <Canvas id="canvas"></Canvas>
       </Page>
     )
   }
