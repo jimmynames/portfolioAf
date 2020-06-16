@@ -3,8 +3,14 @@ import ReactDOM from "react-dom";
 import * as THREE from "three";
 import { AsciiEffect } from './AEffect.js';
 import { TrackballControls } from './Track.js';
+import styled from 'styled-components'
 
-export default class ThreeJs extends Component {
+const Canvas = styled.div`
+  width: 50%;
+  height: 100%;
+`
+
+export default class ThreeD extends React.Component {
   componentDidMount() {
     // === THREE.JS CODE START ===
 
@@ -18,6 +24,7 @@ export default class ThreeJs extends Component {
     animate();
 
     function init() {
+      console.log('init')
 
       camera = new THREE.PerspectiveCamera( 70, window.innerWidth / window.innerHeight, 1, 1000 );
       camera.position.y = 150;
@@ -102,8 +109,11 @@ export default class ThreeJs extends Component {
     // === THREE.JS EXAMPLE CODE END ===
   }
   render() {
+    console.log('threeD')
     return (
+      <Canvas>
       <div />
+      </Canvas>
     )
   }
 }

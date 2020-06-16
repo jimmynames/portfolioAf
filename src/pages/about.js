@@ -10,7 +10,7 @@ import {A} from './../components/HTML/A'
 import {HoverAdjustments} from './../components/HoverAdjustments'
 
 import CubeComp from './../components/Cube'
-import ThreeJs from './../components/ThreeJs/index.js'
+import ThreeD from './../components/ThreeJs'
 
 import logo from './../images/logo.png'
 
@@ -19,6 +19,10 @@ const Page = styled.div`
   height: auto;
   box-sizing: border-box;
   padding: 0.75rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 `
 
 const AboutContainer = styled.div`
@@ -107,7 +111,7 @@ export default class Index extends React.Component {
           <H4about>I fuck with Css-in-js/Sass/Vanilla Css™, React.js⚛️ & SVGs💖</H4about>
           <CubeComp />
         </AboutContainer>
-        <ThreeJS />
+        <ThreeD />
       </Page>
     )
   }
