@@ -411,6 +411,7 @@ export default class Template extends React.Component {
               <NavMenu className='Menu'>
                 <Link to='/about/'><NavItem>About.i</NavItem></Link>
                 <Link to='/me/'><NavItem>Me.href</NavItem></Link>
+                <Link to='/404/'><NavItem>404</NavItem></Link>
               </NavMenu>
 
             </PaddingMobile>
