@@ -158,6 +158,10 @@ const NavComp = styled.section`
   }
   @media (max-width: 414px) {
   }
+
+  a {
+    display: inline-block;
+  }
 `
 
 const Logo = styled.img`

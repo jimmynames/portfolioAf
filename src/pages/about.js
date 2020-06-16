@@ -29,7 +29,8 @@ const AboutContainer = styled.div`
   box-sizing: border-box;
   position: relative;
   height: 100%;
-  width: 50%;
+  width: 60%;
+  flex: 1;
 `
 
 const H3about = styled(H3)`
@@ -100,18 +101,24 @@ const RuinLogo = styled.img`
   margin: 0;
 `
 
+const Canvas = styled.div`
+height: 100% !important;
+width: 50% !important;
+`
+
 export default class Index extends React.Component {
   render () {
     return (
       <Page>
+              <ThreeD />
         <AboutContainer>
           <H1about>hello_world</H1about>
-          <H2about>I live on the internet under the alias of 👽<i>Names</i>👔</H2about>
+          <H2about>iCreate under the alias of 👽<i>Names</i>👔</H2about>
           <VerticalCenterAlign about><H3about about>I'm a Front-end Web Developer & Designer</H3about></VerticalCenterAlign>
           <H4about>I fuck with Css-in-js/Sass/Vanilla Css™, React.js⚛️ & SVGs💖</H4about>
           <CubeComp />
         </AboutContainer>
-        <ThreeD />
+        <Canvas id="canvas"></Canvas>
       </Page>
     )
   }

@@ -6,8 +6,6 @@ import { TrackballControls } from './Track.js';
 import styled from 'styled-components'
 
 const Canvas = styled.div`
-  width: 50%;
-  height: 100%;
 `
 
 export default class ThreeD extends React.Component {
@@ -26,7 +24,10 @@ export default class ThreeD extends React.Component {
     function init() {
       console.log('init')
 
-      camera = new THREE.PerspectiveCamera( 70, window.innerWidth / window.innerHeight, 1, 1000 );
+      let width = window.innerWidth / 2;
+      let height =  window.innerHeight / 2;
+
+      camera = new THREE.PerspectiveCamera( 70, width / height, 1, 1000 );
       camera.position.y = 150;
       camera.position.z = 500;
 
@@ -41,7 +42,7 @@ export default class ThreeD extends React.Component {
       light.position.set( - 500, - 500, - 500 );
       scene.add( light );
 
-      sphere = new THREE.Mesh( new THREE.SphereBufferGeometry( 200, 20, 10 ), new THREE.MeshPhongMaterial( { flatShading: true } ) );
+      sphere = new THREE.Mesh( new THREE.SphereBufferGeometry( 160, 20, 10 ), new THREE.MeshPhongMaterial( { flatShading: true } ) );
       scene.add( sphere );
 
       // Plane
@@ -52,17 +53,22 @@ export default class ThreeD extends React.Component {
       scene.add( plane );
 
       renderer = new THREE.WebGLRenderer();
-      renderer.setSize( window.innerWidth, window.innerHeight );
+      renderer.setSize( width, height );
 
       effect = new AsciiEffect( renderer, ' .:-+*=%@#', { invert: true } );
-      effect.setSize( window.innerWidth, window.innerHeight );
+      effect.setSize( width, height);
       effect.domElement.style.color = 'white';
       effect.domElement.style.backgroundColor = 'black';
 
       // Special case: append effect.domElement, instead of renderer.domElement.
       // AsciiEffect creates a custom domElement (a div container) where the ASCII elements are placed.
 
-      document.body.appendChild( effect.domElement );
+
+
+      const container = document.getElementById('canvas')
+      console.log('container', container)
+
+      container.appendChild( effect.domElement );
 
       controls = new TrackballControls( camera, effect.domElement );
 
@@ -73,12 +79,13 @@ export default class ThreeD extends React.Component {
     }
 
     function onWindowResize() {
-
-      camera.aspect = window.innerWidth / window.innerHeight;
+      let width = window.innerWidth / 2;
+      let height =  window.innerHeight / 2;
+      camera.aspect = width / height;
       camera.updateProjectionMatrix();
 
-      renderer.setSize( window.innerWidth, window.innerHeight );
-      effect.setSize( window.innerWidth, window.innerHeight );
+      renderer.setSize( width, height );
+      effect.setSize( width, height );
 
     }
 
