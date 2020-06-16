@@ -160,7 +160,7 @@ const NavComp = styled.section`
   }
 
   a {
-    display: inline-block;
+    display: block;
   }
 `
 
